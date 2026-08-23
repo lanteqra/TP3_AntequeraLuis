@@ -5,7 +5,7 @@
     "description": "Site non-officiel dédié à l'écrivain Brandon Sanderson et à son univers du Cosmere.",
     "display": "standalone",
     "display_override": ["standalone", "minimal-ui"],
-    "categories": ["books", "reference", "entertainment", "education"],
+    "categories": ["books", "reference", "entertainment"],
     "background_color": "#e8e3d3",
     "theme_color": "#0d1117",
     "icons": [
@@ -36,20 +36,18 @@
     ],
     "screenshots": [
         {
-            "src": "/media/manifest-screenshot/screenshot-desktop-1920x1080.png",
+            "src": "/media/manifest-screenshots/screenshot-desktop-1920x1080.png",
             "sizes": "1920x1080",
             "type": "image/png",
-            "description": "version desktop",
-            "platform": "wide",
-            "form_factor": "desktop"
+            "form_factor": "wide",
+            "label": "Version desktop de La Forge des Mots"
         },
         {
-            "src": "/media/manifest-screenshot/screenshot-mobile-750x1334.png",
+            "src": "/media/manifest-screenshots/screenshot-mobile-750x1334.png",
             "sizes": "750x1334",
             "type": "image/png",
-            "description": "version mobile",
-            "platform": "narrow",
-            "form_factor": "mobile"
+            "form_factor": "narrow",
+            "label": "Version mobile de La Forge des Mots"
         }
     ],
     "shortcuts": [
@@ -59,12 +57,6 @@
             "description": "Retourner à la page d'accueil",
             "url": "/index.html",
             "icons": [
-                {
-                    "src": "/media/logo-icons/icon-andr-96x96.jpg",
-                    "sizes": "96x96",
-                    "type": "image/jpeg",
-                    "purpose": "any"
-                },
                 {
                     "src": "/media/logo-icons/icon-andr-192x192.jpg",
                     "sizes": "192x192",
@@ -80,13 +72,7 @@
             "url": "/auteurInfo.html",
             "icons": [
                 {
-                    "src": "/media/logo-icons/auteur-96x96.jpg",
-                    "sizes": "96x96",
-                    "type": "image/jpeg",
-                    "purpose": "any"
-                },
-                {
-                    "src": "/media/logo-icons/auteur-192x192.jpg",
+                    "src": "/media/logo-icons/icon-andr-192x192.jpg",
                     "sizes": "192x192",
                     "type": "image/jpeg",
                     "purpose": "any"
@@ -100,13 +86,7 @@
             "url": "/oeuvresInfo.html",
             "icons": [
                 {
-                    "src": "/media/logo-icons/oeuvres-96x96.jpg",
-                    "sizes": "96x96",
-                    "type": "image/jpeg",
-                    "purpose": "any"
-                },
-                {
-                    "src": "/media/logo-icons/oeuvres-192x192.jpg",
+                    "src": "/media/logo-icons/icon-andr-192x192.jpg",
                     "sizes": "192x192",
                     "type": "image/jpeg",
                     "purpose": "any"
@@ -120,13 +100,7 @@
             "url": "/communaute.html",
             "icons": [
                 {
-                    "src": "/media/logo-icons/community-96x96.jpg",
-                    "sizes": "96x96",
-                    "type": "image/jpeg",
-                    "purpose": "any"
-                },
-                {
-                    "src": "/media/logo-icons/community-192x192.jpg",
+                    "src": "/media/logo-icons/icon-andr-192x192.jpg",
                     "sizes": "192x192",
                     "type": "image/jpeg",
                     "purpose": "any"

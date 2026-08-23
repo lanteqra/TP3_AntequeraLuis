@@ -10,26 +10,26 @@
     "theme_color": "#0d1117",
     "icons": [
         {
-            "src": "/media/logo-icons/icon-ms-144x144.jpg",
-            "type": "image/jpeg",
+            "src": "/media/logo-icons/icon-ms-144x144.png",
+            "type": "image/png",
             "sizes": "144x144",
             "purpose": "maskable"
         },
         {
-            "src": "/media/logo-icons/icon-andr-192x192.jpg",
-            "type": "image/jpeg",
+            "src": "/media/logo-icons/icon-andr-192x192.png",
+            "type": "image/png",
             "sizes": "192x192",
             "purpose": "maskable"
         },
         {
-            "src": "/media/logo-icons/icon-andr-512x512.jpg",
-            "type": "image/jpeg",
+            "src": "/media/logo-icons/icon-andr-512x512.png",
+            "type": "image/png",
             "sizes": "512x512",
             "purpose": "maskable"
         },
         {
-            "src": "/media/logo-icons/icon-1000x1000.jpg",
-            "type": "image/jpeg",
+            "src": "/media/logo-icons/icon-1000x1000.png",
+            "type": "image/png",
             "sizes": "1000x1000",
             "purpose": "maskable"
         }
@@ -58,10 +58,16 @@
             "url": "/index.html",
             "icons": [
                 {
-                    "src": "/media/logo-icons/icon-andr-192x192.jpg",
+                    "src": "/media/logo-icons/icon-andr-192x192.png",
                     "sizes": "192x192",
-                    "type": "image/jpeg",
-                    "purpose": "any"
+                    "type": "image/png",
+                    "purpose": "maskable"
+                },
+                {
+                    "src": "/media/logo-icons/icon-96x96.png",
+                    "sizes": "96x96",
+                    "type": "image/png",
+                    "purpose": "maskable"
                 }
             ]
         },
@@ -72,10 +78,16 @@
             "url": "/auteurInfo.html",
             "icons": [
                 {
-                    "src": "/media/logo-icons/icon-andr-192x192.jpg",
+                    "src": "/media/logo-icons/auteur-192x192.png",
                     "sizes": "192x192",
-                    "type": "image/jpeg",
-                    "purpose": "any"
+                    "type": "image/png",
+                    "purpose": "maskable"
+                },
+                {
+                    "src": "/media/logo-icons/auteur-96x96.png",
+                    "sizes": "96x96",
+                    "type": "image/png",
+                    "purpose": "maskable"
                 }
             ]
         },
@@ -86,10 +98,16 @@
             "url": "/oeuvresInfo.html",
             "icons": [
                 {
-                    "src": "/media/logo-icons/icon-andr-192x192.jpg",
+                    "src": "/media/logo-icons/oeuvres-192x192.png",
                     "sizes": "192x192",
-                    "type": "image/jpeg",
-                    "purpose": "any"
+                    "type": "image/png",
+                    "purpose": "maskable"
+                },
+                {
+                    "src": "/media/logo-icons/oeuvres-96x96.png",
+                    "sizes": "96x96",
+                    "type": "image/png",
+                    "purpose": "maskable"
                 }
             ]
         },
@@ -100,10 +118,16 @@
             "url": "/communaute.html",
             "icons": [
                 {
-                    "src": "/media/logo-icons/icon-andr-192x192.jpg",
+                    "src": "/media/logo-icons/communaute-192x192.png",
                     "sizes": "192x192",
-                    "type": "image/jpeg",
-                    "purpose": "any"
+                    "type": "image/png",
+                    "purpose": "maskable"
+                },
+                {
+                    "src": "/media/logo-icons/communaute-96x96.png",
+                    "sizes": "96x96",
+                    "type": "image/png",
+                    "purpose": "maskable"
                 }
             ]
         }

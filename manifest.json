@@ -1,0 +1,137 @@
+{
+    "name": "La Forge des Mots",
+    "short_name": "LaForge",
+    "start_url": "index.html",
+    "description": "Site non-officiel dédié à l'écrivain Brandon Sanderson et à son univers du Cosmere.",
+    "display": "standalone",
+    "display_override": ["standalone", "minimal-ui"],
+    "categories": ["books", "reference", "entertainment", "education"],
+    "background_color": "#e8e3d3",
+    "theme_color": "#0d1117",
+    "icons": [
+        {
+            "src": "/media/logo-icons/icon-ms-144x144.jpg",
+            "type": "image/jpeg",
+            "sizes": "144x144",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/media/logo-icons/icon-andr-192x192.jpg",
+            "type": "image/jpeg",
+            "sizes": "192x192",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/media/logo-icons/icon-andr-512x512.jpg",
+            "type": "image/jpeg",
+            "sizes": "512x512",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/media/logo-icons/icon-1000x1000.jpg",
+            "type": "image/jpeg",
+            "sizes": "1000x1000",
+            "purpose": "maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/media/manifest-screenshot/screenshot-desktop-1920x1080.png",
+            "sizes": "1920x1080",
+            "type": "image/png",
+            "description": "version desktop",
+            "platform": "wide",
+            "form_factor": "desktop"
+        },
+        {
+            "src": "/media/manifest-screenshot/screenshot-mobile-750x1334.png",
+            "sizes": "750x1334",
+            "type": "image/png",
+            "description": "version mobile",
+            "platform": "narrow",
+            "form_factor": "mobile"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Accueil",
+            "short_name": "Accueil",
+            "description": "Retourner à la page d'accueil",
+            "url": "/index.html",
+            "icons": [
+                {
+                    "src": "/media/logo-icons/icon-andr-96x96.jpg",
+                    "sizes": "96x96",
+                    "type": "image/jpeg",
+                    "purpose": "any"
+                },
+                {
+                    "src": "/media/logo-icons/icon-andr-192x192.jpg",
+                    "sizes": "192x192",
+                    "type": "image/jpeg",
+                    "purpose": "any"
+                }
+            ]
+        },
+        {
+            "name": "Auteur",
+            "short_name": "Auteur",
+            "description": "Découvrir Brandon Sanderson et sa biographie",
+            "url": "/auteurInfo.html",
+            "icons": [
+                {
+                    "src": "/media/logo-icons/auteur-96x96.jpg",
+                    "sizes": "96x96",
+                    "type": "image/jpeg",
+                    "purpose": "any"
+                },
+                {
+                    "src": "/media/logo-icons/auteur-192x192.jpg",
+                    "sizes": "192x192",
+                    "type": "image/jpeg",
+                    "purpose": "any"
+                }
+            ]
+        },
+        {
+            "name": "Œuvres",
+            "short_name": "Œuvres",
+            "description": "Explorer toutes les œuvres du Cosmere",
+            "url": "/oeuvresInfo.html",
+            "icons": [
+                {
+                    "src": "/media/logo-icons/oeuvres-96x96.jpg",
+                    "sizes": "96x96",
+                    "type": "image/jpeg",
+                    "purpose": "any"
+                },
+                {
+                    "src": "/media/logo-icons/oeuvres-192x192.jpg",
+                    "sizes": "192x192",
+                    "type": "image/jpeg",
+                    "purpose": "any"
+                }
+            ]
+        },
+        {
+            "name": "Communauté",
+            "short_name": "Communauté",
+            "description": "Rejoindre la communauté des fans",
+            "url": "/communaute.html",
+            "icons": [
+                {
+                    "src": "/media/logo-icons/community-96x96.jpg",
+                    "sizes": "96x96",
+                    "type": "image/jpeg",
+                    "purpose": "any"
+                },
+                {
+                    "src": "/media/logo-icons/community-192x192.jpg",
+                    "sizes": "192x192",
+                    "type": "image/jpeg",
+                    "purpose": "any"
+                }
+            ]
+        }
+    ]
+}

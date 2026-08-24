@@ -13,7 +13,6 @@
     <script src="js/navbar.js" defer></script>
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css"
-        integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous">
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -47,7 +46,7 @@
         }
 
     </style>
-        <link rel="icon" href="favicon-48x48.ico">
+    <link rel="icon" href="favicon-48x48.ico">
 </head>
 
 <body class="font-body">
@@ -55,19 +54,22 @@
     <a href="#content" class="sr-only">Aller au contenu principal</a>
     <header>
         <!-- navbar -->
-        <div class="navbar__container grid grid-cols-12 gap-1 text-center border-b-4 border-white/5 sticky top-0 z-50 backdrop-blur">
+        <div
+            class="navbar__container grid grid-cols-12 gap-1 text-center border-b-4 border-white/5 sticky top-0 z-50 backdrop-blur">
             <!-- component -->
             <nav class="navbar col-span-12 flex items-center bg-abyss p-3 flex-wrap">
                 <!-- logo -->
                 <a href="index.html" class="navbar__brand p-2 mr-4 inline-flex items-center focus-visible"
                     aria-label="Retour à l'accueil - La Forge des Mots">
-                    <img src="media/logo-icons/icon-andr-192x192.png" alt="logo du site web du La Forge des Mots" aria-hidden="true"
-                        class="navbar__logo w-20 h-20 rounded-full m-2 border-4 border-abyss-light">
+                    <img src="media/logo-icons/icon-andr-192x192.png" alt="logo du site web du La Forge des Mots"
+                        aria-hidden="true" class="navbar__logo w-20 h-20 rounded-full m-2 border-4 border-abyss-light">
                     <span
-                        class="navbar__title font-titre text-2xl font-bold tracking-wide text-parchment hover:text-ember-light font-display">La Forge des Mots</span>
+                        class="navbar__title font-titre text-2xl font-bold tracking-wide text-parchment hover:text-ember-light font-display">La
+                        Forge des Mots</span>
                 </a>
 
-                <button class="navbar__toggle text-parchment inline-flex p-4 hover:bg-parchment/25 rounded lg:hidden ml-auto hover:text-ember-light nav-toggler focus-visible"
+                <button
+                    class="navbar__toggle text-parchment inline-flex p-4 hover:bg-parchment/25 rounded lg:hidden ml-auto hover:text-ember-light nav-toggler focus-visible"
                     data-target="#navigation" aria-expanded="false">
                     <i class="material-icons text-4xl!" aria-hidden="true">menu</i>
                 </button>
@@ -103,7 +105,19 @@
     <footer>
 
     </footer>
-
+    
+    <!--Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker
+                    .register('service-worker.js')
+                    .then((reg) => {
+                        console.log('SW enregistré', reg);
+                    });
+            });
+        }
+    </script>
 </body>
 
 </html>

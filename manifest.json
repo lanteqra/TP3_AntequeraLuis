@@ -34,25 +34,19 @@
             "purpose": "any"
         },
         {
-            "src": "media/logo-icons/icon-ms-144x144.png",
-            "type": "image/png",
-            "sizes": "144x144",
-            "purpose": "maskable"
-        },
-        {
-            "src": "media/logo-icons/icon-andr-192x192.png",
+            "src": "media/logo-icons/maskable_icon-192x192.png",
             "type": "image/png",
             "sizes": "192x192",
             "purpose": "maskable"
         },
         {
-            "src": "media/logo-icons/icon-andr-512x512.png",
+            "src": "media/logo-icons/maskable_icon-512x512.png",
             "type": "image/png",
             "sizes": "512x512",
             "purpose": "maskable"
         },
         {
-            "src": "media/logo-icons/icon-1000x1000.png",
+            "src": "media/logo-icons/maskable_icon-1000x1000.png",
             "type": "image/png",
             "sizes": "1000x1000",
             "purpose": "maskable"

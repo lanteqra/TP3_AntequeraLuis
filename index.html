@@ -9,6 +9,7 @@
     <title>Accueil | La Forge des Mots — Brandon Sanderson</title>
 
     <link rel="manifest" href="manifest.json">
+    <script src="js/carousel.js" defer></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous" defer></script>
@@ -114,55 +115,55 @@
         <section
             class="hero relative bg-storm bg-[url(media/hero.jpg)] bg-cover bg-right md:bg-center bg-no-repeat min-h-[clamp(400px,50vw,700px)] md:min-h-[clamp(500px,40vw,900px)] border-b-4 border-parchment-dim overflow-hidden">
             <div class="hero__overlay absolute inset-0 bg-abyss/40 z-0" aria-hidden="true"></div>
-                <div class="relative z-10 flex items-center min-h-[clamp(400px,50vw,700px)] md:min-h-[clamp(500px,40vw,900px)]">
-                    <div class="hero__container container mx-auto px-4">
-                        <div class="grid grid-cols-12 gap-2 h-full items-center text-center md:text-left m-7 gap-8">
-                            <div
-                                class="hero__text col-span-12  flex flex-col justify-center md:col-start-3 md:col-end-11 gap-6">
-                                <h1
-                                    class="hero__title font-display md:text-left  text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl  text-parchment font-bold [text-shadow:-5px_7px_7px_rgba(0,0,0,0.5)]">
-                                    La Forge de Mots</h1>
-                                <p
-                                    class="hero__description text-parchment font-normal text-base sm:text-lg md:text-xl lg:text-2xl [text-shadow:-5px_7px_7px_rgba(0,0,0,0.5)]">
-                                    Bienvenue dans un
-                                    espace dédié à l'œuvre de Brandon Sanderson, architecte de mondes et forgeron de
-                                    récits.
-                                </p>
-                                <p
-                                    class="hero__description hero__description--secondary text-parchment font-normal text-sm sm:text-base md:text-lg lg:text-xl [text-shadow:-0px_-2px_3px_rgba(0,0,0,1)]">
-                                    Entre les brumes de Scadrial et les tempêtes de Roshar, un souffle commun unit tous
-                                    les
-                                    mondes : celui de l'Imagination. Ce sanctuaire est dédié à ceux qui croient que les
-                                    livres
-                                    sont des portes, que les héros sont des miroirs, et que chaque fin n'est qu'un
-                                    nouveau
-                                    commencement. Entrez, et laissez le Cosmere vous révéler ses secrets.</p>
-                            </div>
-                            <div
-                                class="hero__cta col-span-12 flex flex-col justify-center md:col-start-2 md:col-end-6  gap-6">
-                                <a class="hero__cta-link relative md:w-auto w-full px-3 py-2 rounded text-parchment text-base md:text-lg lg:text-xl font-extrabold items-center justify-center bg-abyss-light/80 hover:bg-storm transition-colors hover:uppercase focus-visible flex overflow-hidden group "
-                                    href="auteurInfo.html">
-                                    <span class="relative z-10 p-2">
-                                        Découvrir l'auteur
-                                    </span>
-                                    <img class="absolute -right-2 top-1/2 -translate-y-1/2 w-35 h-35 rounded-full border-4 border-ember-light/50 shadow-2xl opacity-90 group-hover:scale-125 transition-transform duration-300"
-                                        src="media/logo-icons/auteur-96x96.png" alt="" aria-hidden="true">
-                                </a>
-                            </div>
-                            <div
-                                class="hero__cta col-span-12 flex flex-col justify-center md:col-start-8 md:col-end-12 gap-6">
-                                <a class="hero__cta-link relative md:w-auto w-full px-3 py-2 rounded text-parchment text-base md:text-lg lg:text-xl font-extrabold items-center justify-center bg-abyss-light/80 hover:bg-storm transition-colors hover:text-orange-horizon hover:uppercase focus-visible flex overflow-hidden group"
-                                    href="oeuvresInfo.html">
-                                    <span class="relative z-10 p-2">
+            <div
+                class="relative z-10 flex items-center min-h-[clamp(400px,50vw,700px)] md:min-h-[clamp(500px,40vw,900px)]">
+                <div class="hero__container container mx-auto px-4">
+                    <div class="grid grid-cols-12 gap-2 h-full items-center text-center md:text-left m-7 gap-8">
+                        <div
+                            class="hero__text col-span-12  flex flex-col justify-center md:col-start-3 md:col-end-11 gap-6">
+                            <h1
+                                class="hero__title font-display md:text-left  text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold [text-shadow:-5px_7px_7px_rgba(0,0,0,0.5)] pb-2">
+                                La Forge de Mots</h1>
+                            <p
+                                class="hero__description text-parchment font-normal text-base sm:text-lg md:text-xl lg:text-2xl [text-shadow:-5px_7px_7px_rgba(0,0,0,0.5)]">
+                                Bienvenue dans un
+                                espace dédié à l'œuvre de Brandon Sanderson, architecte de mondes et forgeron de
+                                récits.
+                            </p>
+                            <p
+                                class="hero__description hero__description--secondary text-parchment font-normal text-sm sm:text-base md:text-lg lg:text-xl [text-shadow:-0px_-2px_3px_rgba(0,0,0,1)]">
+                                Entre les brumes de Scadrial et les tempêtes de Roshar, un souffle commun unit tous
+                                les
+                                mondes : celui de l'Imagination. Ce sanctuaire est dédié à ceux qui croient que les
+                                livres
+                                sont des portes, que les héros sont des miroirs, et que chaque fin n'est qu'un
+                                nouveau
+                                commencement. Entrez, et laissez le Cosmere vous révéler ses secrets.</p>
+                        </div>
+                        <div
+                            class="hero__cta col-span-12 flex flex-col justify-center md:col-start-2 md:col-end-6  gap-6">
+                            <a class="hero__cta-link relative md:w-auto w-full px-3 py-2 rounded text-parchment text-base md:text-lg lg:text-xl font-extrabold items-center justify-center bg-abyss-light/80 hover:bg-storm transition-colors hover:uppercase focus-visible flex overflow-hidden group "
+                                href="auteurInfo.html">
+                                <span class="relative z-10 p-2">
+                                    Découvrir l'auteur
+                                </span>
+                                <img class="absolute -right-2 top-1/2 -translate-y-1/2 w-35 h-35 rounded-full border-4 border-ember-light/50 shadow-2xl opacity-90 group-hover:scale-125 transition-transform duration-300"
+                                    src="media/logo-icons/auteur-96x96.png" alt="" aria-hidden="true">
+                            </a>
+                        </div>
+                        <div
+                            class="hero__cta col-span-12 flex flex-col justify-center md:col-start-8 md:col-end-12 gap-6">
+                            <a class="hero__cta-link relative md:w-auto w-full px-3 py-2 rounded text-parchment text-base md:text-lg lg:text-xl font-extrabold items-center justify-center bg-abyss-light/80 hover:bg-storm transition-colors hover:text-orange-horizon hover:uppercase focus-visible flex overflow-hidden group"
+                                href="oeuvresInfo.html">
+                                <span class="relative z-10 p-2">
 
 
-                                        Explorer les œuvres
+                                    Explorer les œuvres
 
-                                    </span>
-                                    <img class="absolute -right-2 top-1/2 -translate-y-1/2 w-35 h-35 rounded-full border-4 border-ember-light/50 shadow-2xl opacity-90 group-hover:scale-125 transition-transform duration-300"
-                                        src="media/logo-icons/oeuvres-96x96.png" alt="" aria-hidden="true">
-                                </a>
-                            </div>
+                                </span>
+                                <img class="absolute -right-2 top-1/2 -translate-y-1/2 w-35 h-35 rounded-full border-4 border-ember-light/50 shadow-2xl opacity-90 group-hover:scale-125 transition-transform duration-300"
+                                    src="media/logo-icons/oeuvres-96x96.png" alt="" aria-hidden="true">
+                            </a>
                         </div>
                     </div>
                 </div>

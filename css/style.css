@@ -5,3 +5,31 @@
         display: inline-flex !important;
     }
 }
+
+/* Hero - title animation */
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.hero__title {
+    background: linear-gradient(110deg, #e8e3d3 30%, #f0b562 45%, #c77b3f 55%, #e8e3d3 70%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 2.5s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero__title {
+        animation: none;
+        background-position: 0 0;
+    }
+}

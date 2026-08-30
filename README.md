@@ -33,7 +33,7 @@ Comme le sujet était libre, j'ai choisi de faire un site web dédie à l'un de 
   - Carousel : "Full-bleed carousel" https://daisyui.com/components/carousel/?lang=es#full-bleed-carousel
 
 - Javascript (animations)
-  - Animation Js : - index Carousel - carousel.js : construit avec le composant Carousel de DaisyUI https://daisyui.com/components/carousel/?lang=es#full-bleed-carousel. L'autoplay et la pause au survol/focus suivent le patron d'accessibilité Carousel du W3C WAI-ARIA (https://w3.org/WAI/ARIA/apg/patterns/carousel/examples/carousel-1-prev-next).
+  - Animation Js : - index Carousel - carousel.js : construit avec le composant Carousel de DaisyUI https://daisyui.com/components/carousel/?lang=es#full-bleed-carousel. L'autoplay et la pause au survol/focus suivent le patron d'accessibilité Carousel du W3C WAI-ARIA (https://w3.org/WAI/ARIA/apg/patterns/carousel/examples/carousel-1-prev-next). 
 
 
 **note :** Tous les composants Tailwind () ainsi que les animations CSS et JavaScript utilisées dans ce projet ont été modifiés et adaptés à partir de leurs versions de base afin de correspondre à l'identité visuelle du projet (palette de couleurs, typographies et thème).

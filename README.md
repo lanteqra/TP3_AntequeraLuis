@@ -25,13 +25,15 @@ Comme le sujet était libre, j'ai choisi de faire un site web dédie à l'un de 
 - HTML5 sémantique
 - CSS3 (méthodologie BEM, animations)
   - Animations CSS :
-    
+    Hero Title : Effet de brillance métallique sur le <h1> du hero — technique de « gradient text » via background-clip: text. Adaptée du tutoriel de Let's Build UI (https://www.letsbuildui.dev/articles/css-text-effects-five-minimal-examples/).
+    - index Carousel : construit avec le composant Carousel de DaisyUI https://daisyui.com/components/carousel/?lang=es#full-bleed-carousel. L'autoplay et la pause au survol/focus suivent le patron d'accessibilité Carousel du W3C WAI-ARIA (https://w3.org/WAI/ARIA/apg/patterns/carousel/examples/carousel-1-prev-next).
 
 - Composants Tailwind :
   - Barre de navigation : "Simple Responsive Navigation Bar" - https://www.creative-tim.com/twcomponents/component/simple-responsive-navigation-bar
+  - Carousel : "Full-bleed carousel" https://daisyui.com/components/carousel/?lang=es#full-bleed-carousel
 
 - Javascript (animations)
-  - Animation Js :
-    
+  - Animation Js : - index Carousel - carousel.js : construit avec le composant Carousel de DaisyUI https://daisyui.com/components/carousel/?lang=es#full-bleed-carousel. L'autoplay et la pause au survol/focus suivent le patron d'accessibilité Carousel du W3C WAI-ARIA (https://w3.org/WAI/ARIA/apg/patterns/carousel/examples/carousel-1-prev-next).
+
 
 **note :** Tous les composants Tailwind () ainsi que les animations CSS et JavaScript utilisées dans ce projet ont été modifiés et adaptés à partir de leurs versions de base afin de correspondre à l'identité visuelle du projet (palette de couleurs, typographies et thème).

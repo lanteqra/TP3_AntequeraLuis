@@ -61,12 +61,27 @@
         }
     
         /* carousel*/
+        .carousel-item {
+            @apply shrink-0;
+            width: calc(100% - 2rem);
+            max-width: 28rem;
+        }
+
+        
+
+        #worlds-track {
+            @apply flex gap-4;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
         .worlds-carousel { @apply relative flex items-center gap-3; }
 
         .worlds-carousel__control {
         @apply hidden md:flex items-center justify-center w-10 h-10 rounded-full
-                border border-storm-light/40 text-storm-light shrink-0
-                hover:bg-storm/10 transition-colors;
+                border border-storm-light text-storm-light hover:text-storm shrink-0
+                hover:bg-storm/20 transition-colors;
         }
 
         .worlds-carousel__dots { @apply flex justify-center gap-2 mt-6; }
@@ -75,6 +90,7 @@
 
         .world-card {
             @apply relative h-64 rounded-lg overflow-hidden flex flex-col justify-end p-5 border border-ember-dark/20;
+            isolation: isolate;
         }
         .world-card::before {
             content: "";
@@ -85,9 +101,9 @@
             @apply absolute inset-x-0 bottom-0 h-2/3 -z-[6]; 
             background: linear-gradient(0deg, rgba(13,17,23,0.95) 15%, transparent 100%);
         }
-        .world-card__eyebrow { @apply font-mono text-base uppercase tracking-[0.2em] text-storm-light mb-1; }
-        .world-card__title { @apply text-2xl font-bold text-ember-light/80 mb-1; }
-        .world-card__desc { @apply text-base text-parchment-dim leading-relaxed; }
+        .world-card__eyebrow { @apply font-mono lg:text-base text-xs uppercase tracking-[0.2em] text-storm-light mb-1; }
+        .world-card__title { @apply lg:text-2xl text-xl font-bold text-ember-light/80 mb-1; }
+        .world-card__desc { @apply lg:text-base text-xs text-parchment-dim leading-relaxed; }
         
         
         /* Chaque monde : un dégradé "atmosphère" différent (modificateur BEM) */
@@ -102,13 +118,14 @@
 
 
         .world-card__emblem {
-            @apply absolute inset-0 -z-[8] bg-ember-light/20;
+            @apply absolute inset-0 -z-10 bg-ember-light/20;
             mask-repeat: no-repeat;
             mask-position: center 25%;
             mask-size: 50%;
             -webkit-mask-repeat: no-repeat;
             -webkit-mask-position: center 25%;
             -webkit-mask-size: 50%;
+            pointer-events: none;
         }
 
         .world-card--scadrial .world-card__emblem {
@@ -256,20 +273,24 @@
 
         </section>
         <!-- Section Univers - Carrousel -->
-        <section id="Univers" class="univers" aria-labelledby="cosmere-title">
+        <section id="Univers" class="univers bg-parchment" aria-labelledby="cosmere-title">
             <div class="Univers__container container mx-auto px-4 py-4">
-                <div class="grid grid-cols-12 gap-8">
+                <div class="grid grid-cols-12 gap-8 items-center">
 
                     <!-- Colonne gauche -->
                     <div class="Univers____header col-span-12 md:col-span-4">
                         <div class="Univers-seal">
-                            <span class="Univers-seal__label">Univers</span>
+                            <span class="Univers-seal__label text-ember-dark">Univers</span>
                             <div class="Univers-seal__content">
-                                <h2 id="cosmere-title" class="Univers-title text-3xl md:text-4xl mb-4">Un seul
+                                <h2 id="cosmere-title"
+                                    class="Univers-title text-3xl md:text-4xl mb-4 text-ember-light font-extrabold">Un
+                                    seul
                                     cosmos,<br>dix mondes</h2>
-                                <p class="text-parchment-dim">
-                                    Depuis plus de vingt ans, Sanderson tisse patiemment un univers partagé : le
-                                    <strong class="text-ember">Cosmere</strong>. Chaque roman est une porte vers une
+                                <p class="text-slate-card">
+                                    Depuis plus de vingt ans, Sanderson tisse patiemment un univers partagé,
+                                    <a href="oeuvresinfo"
+                                        class="text-storm hover:text-abyss-light hover:font-bold hover:uppercase"> le
+                                        cosmere</a>. Chaque roman est une porte vers une
                                     planète
                                     différente, mais tous obéissent à une même cosmologie sous-jacente, les Éclats
                                     d'Adonalsium.
@@ -290,10 +311,11 @@
                                 </svg>
                             </button>
 
-                            <div class="carousel carousel-center gap-6" id="worlds-track" tabindex="0"
+                            <div class="carousel carousel-center gap-4" id="worlds-track" tabindex="0"
                                 aria-label="Faites défiler pour voir tous les mondes">
 
-                                <div class="carousel-item w-[85%] sm:w-[46%] lg:w-[31%]">
+
+                                <div class="carousel-item ">
                                     <article class="world-card world-card--scadrial">
                                         <span class="world-card__emblem" aria-hidden="true"></span>
                                         <p class="world-card__eyebrow">Scadrial · Mistborn</p>
@@ -303,7 +325,7 @@
                                     </article>
                                 </div>
 
-                                <div class="carousel-item w-[85%] sm:w-[46%] lg:w-[31%]">
+                                <div class="carousel-item">
                                     <article class="world-card world-card--roshar">
                                         <span class="world-card__emblem" aria-hidden="true"></span>
                                         <p class="world-card__eyebrow">Roshar · Stormlight Archive</p>
@@ -313,7 +335,7 @@
                                     </article>
                                 </div>
 
-                                <div class="carousel-item w-[85%] sm:w-[46%] lg:w-[31%]">
+                                <div class="carousel-item">
                                     <article class="world-card world-card--sel">
                                         <span class="world-card__emblem" aria-hidden="true"></span>
                                         <p class="world-card__eyebrow">Sel · Elantris</p>
@@ -323,7 +345,7 @@
                                     </article>
                                 </div>
 
-                                <div class="carousel-item w-[85%] sm:w-[46%] lg:w-[31%]">
+                                <div class="carousel-item">
                                     <article class="world-card world-card--nalthis">
                                         <span class="world-card__emblem" aria-hidden="true"></span>
                                         <p class="world-card__eyebrow">Nalthis · Warbreaker</p>
@@ -333,7 +355,7 @@
                                     </article>
                                 </div>
 
-                                <div class="carousel-item w-[85%] sm:w-[46%] lg:w-[31%]">
+                                <div class="carousel-item">
                                     <article class="world-card world-card--taldain">
                                         <span class="world-card__emblem" aria-hidden="true"></span>
                                         <p class="world-card__eyebrow">Taldain · White Sand</p>
@@ -343,7 +365,7 @@
                                     </article>
                                 </div>
 
-                                <div class="carousel-item w-[85%] sm:w-[46%] lg:w-[31%]">
+                                <div class="carousel-item">
                                     <article class="world-card world-card--firstofthesun">
                                         <span class="world-card__emblem" aria-hidden="true"></span>
                                         <p class="world-card__eyebrow">Premier-du-Soleil · Sixth of the Dusk</p>
@@ -353,7 +375,7 @@
                                     </article>
                                 </div>
 
-                                <div class="carousel-item w-[85%] sm:w-[46%] lg:w-[31%]">
+                                <div class="carousel-item">
                                     <article class="world-card world-card--threnody">
                                         <span class="world-card__emblem" aria-hidden="true"></span>
                                         <p class="world-card__eyebrow">Threnody · Shadows for Silence</p>
@@ -363,7 +385,7 @@
                                     </article>
                                 </div>
 
-                                <div class="carousel-item w-[85%] sm:w-[46%] lg:w-[31%]">
+                                <div class="carousel-item">
                                     <article class="world-card world-card--upcoming">
                                         <span class="world-card__emblem" aria-hidden="true"></span>
                                         <p class="world-card__eyebrow">À venir</p>
@@ -375,30 +397,38 @@
 
                             </div>
 
-                            <button type="button" class="worlds-carousel__control worlds-carousel__control--next"
-                                aria-label="Monde suivant">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" aria-hidden="true">
-                                    <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </button>
-                            <button type="button" class="worlds-carousel__control worlds-carousel__control--playpause"
-                                id="carousel-playpause" aria-label="Mettre en pause le défilement automatique"
-                                aria-pressed="false">
-                                <svg class="icon-pause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"
-                                    aria-hidden="true">
-                                    <rect x="6" y="5" width="4" height="14" />
-                                    <rect x="14" y="5" width="4" height="14" />
-                                </svg>
-                                <svg class="icon-play hidden" width="16" height="16" viewBox="0 0 24 24"
-                                    fill="currentColor" aria-hidden="true">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
-                            </button>
+                            <div class="flex flex-col gap-2">
+                                <button type="button" class="worlds-carousel__control worlds-carousel__control--next"
+                                    aria-label="Monde suivant">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" aria-hidden="true">
+                                        <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+
+                                <button type="button"
+                                    class="worlds-carousel__control worlds-carousel__control--playpause"
+                                    id="carousel-playpause" aria-label="Mettre en pause le défilement automatique"
+                                    aria-pressed="false">
+                                    <svg class="icon-pause" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="currentColor" aria-hidden="true">
+                                        <rect x="6" y="5" width="4" height="14" />
+                                        <rect x="14" y="5" width="4" height="14" />
+                                    </svg>
+                                    <svg class="icon-play hidden" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="currentColor" aria-hidden="true">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </button>
+                            </div>
+
+
+
                         </div>
 
                         <div class="worlds-carousel__dots" id="worlds-dots" role="tablist"
                             aria-label="Aller à un monde"></div>
+
                     </div>
 
                 </div>

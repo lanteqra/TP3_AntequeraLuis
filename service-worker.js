@@ -1,6 +1,6 @@
 // SERVICE WORKER
 
-const CACHE_NAME = 'la-forge-v1';
+const CACHE_NAME = 'la-forge-v1.3.1';
 const FILES_TO_CACHE = [
     '/',
     '/index.html',
@@ -11,6 +11,9 @@ const FILES_TO_CACHE = [
     '/manifest.json',
     '/css/style.css',
     '/js/main.js',
+    '/js/carousel.js',
+    '/js/navbar.js',
+    '/js/chiffres.js',
     '/media/logo-icons/icon-andr-192x192.png',
     '/media/logo-icons/icon-andr-512x512.png'
 ];
@@ -18,7 +21,8 @@ const FILES_TO_CACHE = [
 // SERVICE WORKER
 self.addEventListener('install', (evt) => {
     evt.waitUntil(
-        caches.open(CACHE_NAME).then((cache) =>
+        caches.open(CACHE_NAME)
+        .then((cache) =>
             cache.addAll(FILES_TO_CACHE)
         )
     );

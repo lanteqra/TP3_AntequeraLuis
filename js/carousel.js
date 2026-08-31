@@ -1,4 +1,4 @@
-// carousel.js — Carrousel 
+// carousel.js — Carrousel animation
 (function () {
     const track = document.getElementById("worlds-track");
     const dotsContainer = document.getElementById("worlds-dots");

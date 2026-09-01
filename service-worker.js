@@ -1,21 +1,34 @@
 // SERVICE WORKER
 
-const CACHE_NAME = 'la-forge-v1.4.0';
+const CACHE_NAME = 'la-forge-v1.4.1';
 const FILES_TO_CACHE = [
-    '/',
-    '/index.html',
-    '/auteurInfo.html',
-    '/oeuvresInfo.html',
-    '/communaute.html',
-    '/offline.html',
-    '/manifest.json',
-    '/css/style.css',
-    '/js/main.js',
-    '/js/carousel.js',
-    '/js/navbar.js',
-    '/js/chiffres.js',
-    '/media/logo-icons/icon-andr-192x192.png',
-    '/media/logo-icons/icon-andr-512x512.png'
+    './',
+    'index.html',
+    'auteurInfo.html',
+    'oeuvresInfo.html',
+    'communaute.html',
+    'offline.html',
+    'manifest.json',
+    'css/style.css',
+    'js/main.js',
+    'js/carousel.js',
+    'js/navbar.js',
+    'js/chiffres.js',
+    'media/logo-icons/icon-andr-192x192.png',
+    'media/logo-icons/icon-andr-512x512.png',
+    'media/hero/hero.jpg',
+    'media/logo-icons/auteur-96x96.png',
+    'media/logo-icons/oeuvres-96x96.png',
+    'media/carousel/scadraial.svg',
+    'media/carousel/roshar.svg',
+    'media/carousel/Sel_icon.svg',
+    'media/carousel/Nalthis_icon.svg',
+    'media/carousel/taldain.svg',
+    'media/carousel/firstofthesun.svg',
+    'media/carousel/Threnody_icon.svg',
+    'media/carousel/Cosmere_symbol.svg',
+    'media/hero/bgsections/bgcosmere.jpg',
+    'media/hero/bgsections/bgcosmere2.jpg'
 ];
 
 // SERVICE WORKER

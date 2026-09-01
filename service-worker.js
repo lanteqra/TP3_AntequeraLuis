@@ -10,7 +10,6 @@ const FILES_TO_CACHE = [
     'offline.html',
     'manifest.json',
     'css/style.css',
-    'js/main.js',
     'js/carousel.js',
     'js/navbar.js',
     'js/chiffres.js',

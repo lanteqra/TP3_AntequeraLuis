@@ -1,6 +1,6 @@
 // SERVICE WORKER
 
-const CACHE_NAME = 'la-forge-v1.4.1';
+const CACHE_NAME = 'la-forge-v1.4.2';
 const FILES_TO_CACHE = [
     './',
     'index.html',
@@ -15,6 +15,7 @@ const FILES_TO_CACHE = [
     'js/chiffres.js',
     'media/logo-icons/icon-andr-192x192.png',
     'media/logo-icons/icon-andr-512x512.png',
+    'media/logo-icons/icon-ms-144x144.png',
     'media/hero/hero.jpg',
     'media/logo-icons/auteur-96x96.png',
     'media/logo-icons/oeuvres-96x96.png',
@@ -27,7 +28,9 @@ const FILES_TO_CACHE = [
     'media/carousel/Threnody_icon.svg',
     'media/carousel/Cosmere_symbol.svg',
     'media/hero/bgsections/bgcosmere.jpg',
-    'media/hero/bgsections/bgcosmere2.jpg'
+    'media/hero/bgsections/bgcosmere2.jpg',
+    'favicon-48x48.ico',
+    
 ];
 
 // SERVICE WORKER
@@ -73,6 +76,8 @@ self.addEventListener('fetch', (evt) => {
     // RESSOURCES STATIQUES → Cache First
     evt.respondWith(
         caches.match(request).then((cached) =>
-            cached || fetch(request))
+            cached || fetch(request).catch(() =>{
+                return new Response('', {status: 408, statusText: 'Ressource indisponible hors ligne'});
+            }))
     );
 });

@@ -1,6 +1,6 @@
 // SERVICE WORKER
 
-const CACHE_NAME = 'la-forge-v1.4.8';
+const CACHE_NAME = 'la-forge-v1.4.9';
 const FILES_TO_CACHE = [
     './',
     'index.html',

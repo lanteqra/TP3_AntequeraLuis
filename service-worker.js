@@ -1,6 +1,6 @@
 // SERVICE WORKER
 
-const CACHE_NAME = 'la-forge-v1.4.2';
+const CACHE_NAME = 'la-forge-v1.4.3';
 const FILES_TO_CACHE = [
     './',
     'index.html',
@@ -21,12 +21,12 @@ const FILES_TO_CACHE = [
     'media/logo-icons/oeuvres-96x96.png',
     'media/carousel/scadraial.svg',
     'media/carousel/roshar.svg',
-    'media/carousel/Sel_icon.svg',
-    'media/carousel/Nalthis_icon.svg',
+    'media/carousel/sel_icon.svg',
+    'media/carousel/nalthis_icon.svg',
     'media/carousel/taldain.svg',
     'media/carousel/firstofthesun.svg',
-    'media/carousel/Threnody_icon.svg',
-    'media/carousel/Cosmere_symbol.svg',
+    'media/carousel/threnody_icon.svg',
+    'media/carousel/cosmere_symbol.svg',
     'media/hero/bgsections/bgcosmere.jpg',
     'media/hero/bgsections/bgcosmere2.jpg',
     'favicon-48x48.ico',

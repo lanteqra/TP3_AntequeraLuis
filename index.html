@@ -183,7 +183,9 @@
 
 <body class="font-body">
     <!-- Accessibilité -->
-    <a href="#content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-100 focus:bg-ember focus:text-abyss focus:px-4 focus:py-2 focus:rounded">Aller au contenu principal</a>
+    <a href="#content"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-100 focus:bg-ember focus:text-abyss focus:px-4 focus:py-2 focus:rounded">Aller
+        au contenu principal</a>
     <header>
         <!-- navbar -->
         <div
@@ -237,8 +239,7 @@
         <section id="hero"
             class="hero relative bg-storm bg-[url(media/hero/hero.jpg)] bg-cover bg-right md:bg-center bg-no-repeat min-h-100 max-h-175 md:min-h-125 md:max-h-225 border-b-4 border-parchment-dim overflow-hidden  py-7 px-6">
             <div class="hero__overlay absolute inset-0 bg-abyss/40 z-0" aria-hidden="true"></div>
-            <div
-                class="relative z-10 flex items-center">
+            <div class="relative z-10 flex items-center">
                 <div class="hero__container container mx-auto px-4">
                     <div class="grid grid-cols-12 h-full items-center text-center md:text-left mt-10 mb-10">
                         <div
@@ -281,7 +282,7 @@
                                     src="media/logo-icons/oeuvres-96x96.png" alt="" aria-hidden="true">
                             </a>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -290,16 +291,17 @@
         <!-- Section Univers - Carrousel -->
         <section id="univers" class="univers bg-parchment  border-b-4 border-parchment-dim "
             aria-labelledby="cosmere-title">
-            <div class="univers__container container mx-auto px-20">
+            <div class="univers__container container mx-auto px-10 md:px-20">
                 <div class="univers-grid grid grid-cols-12 gap-8 items-center py-10 ">
 
                     <!-- Colonne gauche -->
-                    <div class="univers____header col-span-12 lg:col-span-4">
+                    <div class="univers____header col-start-2 col-end-12 lg:col-span-4">
                         <div class="univers-seal">
                             <span class="univers-seal__label text-storm">Univers</span>
                             <div class="univers-seal__content">
                                 <h2 id="cosmere-title"
-                                    class="univers-title font-display text-4xl md:text-5xl mb-4 text-ember font-extrabold">Un
+                                    class="univers-title font-display text-4xl md:text-5xl mb-4 text-ember font-extrabold">
+                                    Un
                                     seul
                                     cosmos,<br>dix mondes</h2>
                                 <p class="univers-text">
@@ -331,7 +333,7 @@
                             <div class="carousel carousel-center gap-4" id="worlds-track" tabindex="0"
                                 aria-label="Faites défiler pour voir tous les mondes">
 
-
+                                <!-- Carousel 1 -->
                                 <div class="carousel-item ">
                                     <article class="world-card world-card--scadrial">
                                         <span class="world-card__emblem" aria-hidden="true"></span>
@@ -341,7 +343,7 @@
                                             se boit et se brûle.</p>
                                     </article>
                                 </div>
-
+                                <!-- Carousel 2 -->
                                 <div class="carousel-item">
                                     <article class="world-card world-card--roshar">
                                         <span class="world-card__emblem" aria-hidden="true"></span>
@@ -351,7 +353,7 @@
                                             Chevaliers Radieux.</p>
                                     </article>
                                 </div>
-
+                                <!-- Carousel 3 -->
                                 <div class="carousel-item">
                                     <article class="world-card world-card--sel">
                                         <span class="world-card__emblem" aria-hidden="true"></span>
@@ -361,7 +363,7 @@
                                             une magie brisée.</p>
                                     </article>
                                 </div>
-
+                                <!-- Carousel 3 -->
                                 <div class="carousel-item">
                                     <article class="world-card world-card--nalthis">
                                         <span class="world-card__emblem" aria-hidden="true"></span>
@@ -371,7 +373,7 @@
                                             comme véritable pouvoir.</p>
                                     </article>
                                 </div>
-
+                                <!-- Carousel 4 -->
                                 <div class="carousel-item">
                                     <article class="world-card world-card--taldain">
                                         <span class="world-card__emblem" aria-hidden="true"></span>
@@ -381,7 +383,7 @@
                                             une arme.</p>
                                     </article>
                                 </div>
-
+                                <!-- Carousel 5 -->
                                 <div class="carousel-item">
                                     <article class="world-card world-card--firstofthesun">
                                         <span class="world-card__emblem" aria-hidden="true"></span>
@@ -391,7 +393,7 @@
                                             d'une magie inattendue.</p>
                                     </article>
                                 </div>
-
+                                <!-- Carousel 6 -->
                                 <div class="carousel-item">
                                     <article class="world-card world-card--threnody">
                                         <span class="world-card__emblem" aria-hidden="true"></span>
@@ -401,7 +403,7 @@
                                             ombres mortelles.</p>
                                     </article>
                                 </div>
-
+                                <!-- Carousel 7 -->
                                 <div class="carousel-item">
                                     <article class="world-card world-card--upcoming">
                                         <span class="world-card__emblem" aria-hidden="true"></span>
@@ -451,12 +453,12 @@
         </section>
         <!-- Section chiffres clés -->
         <section id="chiffres"
-            class="chiffres relative bg-abyss bg-[url('media/hero/bgsections/bgcosmere.jpg')] bg-cover bg-center bg-no-repeat min-h-100 max-h-225 flex items-center border-b-4 border-parchment-dim overflow-hidden"
+            class="chiffres relative bg-abyss bg-[url('media/hero/bgsections/bgcosmere.jpg')] bg-cover bg-center bg-no-repeat min-h-100 max-h-250 md:min-h-125  flex items-center border-b-4 border-parchment-dim overflow-hidden"
             aria-labelledby="chiffres-titre">
             <div class="absolute inset-0 bg-black/40"></div>
-            <div class="chiffres__container relative container mx-auto px-8 max-w-5xl xl:max-w-6xl py-8 ">
+            <div class="chiffres__container relative container mx-auto max-w-5xl xl:max-w-6xl px-10 py-12">
 
-                <div class="chiffres__grid grid grid-cols-12 gap-4 m-7 sm:gap-5 md:gap-6">
+                <div class="chiffres__grid grid grid-cols-12 gap-4 sm:gap-5 md:gap-6">
                     <div class="chiffres__header col-span-12">
                         <h2 id="chiffres-titre"
                             class="chiffres__titre font-display text-4xl md:text-5xl text-ember-light text-center mb-3 sm:mb-4">
@@ -469,87 +471,91 @@
                             métal.
                         </p>
                     </div>
-                    <!-- 1 - mondes -->
-                    <div
-                        class="chiffres__item chiffres__item--etain col-span-12 sm:col-span-6 lg:col-span-3 bg-slate-card border border-ember/30 rounded-lg p-5 sm:p-6 md:p-8 text-center shadow-xl shadow-parchment/10 hover:shadow-parchment/20 hover:scale-105 transition-all">
-                        <div class="chiffres__icone mb-3" aria-hidden="true">
-                            <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto text-ember-light" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                <circle cx="12" cy="12" r="9" />
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M3 12h18M12 3c2.5 2.5 3.5 6 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-6-3.5-9s1-6.5 3.5-9Z" />
-                            </svg>
+                    
+                            <!-- 1 - mondes -->
+                        <div
+                            class="chiffres__item chiffres__item--etain col-start-2 col-end-12 sm:col-span-6 lg:col-span-3 bg-slate-card border border-ember/30 rounded-lg p-5 sm:p-6 md:p-8 text-center shadow-xl shadow-parchment/10 hover:shadow-parchment/20 hover:scale-105 transition-all">
+                            <div class="chiffres__icone mb-3" aria-hidden="true">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto text-ember-light" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3 12h18M12 3c2.5 2.5 3.5 6 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-6-3.5-9s1-6.5 3.5-9Z" />
+                                </svg>
+                            </div>
+                            <p class="chiffres__valeur font-mono text-4xl sm:text-5xl text-ember-light" data-target="7"
+                                data-suffix="">
+                                0</p>
+                            <p
+                                class="chiffres__label text-parchment/70 text-xs sm:text-sm uppercase tracking-wider mt-2">
+                                Mondes du Cosmere<br>construits
+                            </p>
                         </div>
-                        <p class="chiffres__valeur font-mono text-4xl sm:text-5xl text-ember-light" data-target="7"
-                            data-suffix="">
-                            0</p>
-                        <p class="chiffres__label text-parchment/70 text-xs sm:text-sm uppercase tracking-wider mt-2">
-                            Mondes du Cosmere<br>construits
-                        </p>
-                    </div>
-                    <!-- 2 - langues -->
-                    <div
-                        class="chiffres__item chiffres__item--cuivre col-span-12 sm:col-span-6 lg:col-span-3 bg-slate-card border border-ember/30 rounded-lg p-5 sm:p-6 md:p-8 text-center shadow-xl shadow-parchment/10 hover:shadow-parchment/20 hover:scale-105 transition-all">
-                        <div class="chiffres__icone mb-3" aria-hidden="true">
-                            <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto text-ember-light"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M7 5h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-6l-4 3v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 9h6M9 12h4" />
-                            </svg>
+                        <!-- 2 - langues -->
+                        <div
+                            class="chiffres__item chiffres__item--cuivre col-start-2 col-end-12 sm:col-span-6 lg:col-span-3 bg-slate-card border border-ember/30 rounded-lg p-5 sm:p-6 md:p-8 text-center shadow-xl shadow-parchment/10 hover:shadow-parchment/20 hover:scale-105 transition-all">
+                            <div class="chiffres__icone mb-3" aria-hidden="true">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto text-ember-light"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M7 5h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-6l-4 3v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 9h6M9 12h4" />
+                                </svg>
+                            </div>
+                            <p class="chiffres__valeur font-mono text-4xl sm:text-5xl text-ember-light" data-target="40"
+                                data-suffix="+">0</p>
+                            <p
+                                class="chiffres__label text-parchment/70 text-xs sm:text-sm uppercase tracking-wider mt-2">
+                                Langues de traduction
+                            </p>
                         </div>
-                        <p class="chiffres__valeur font-mono text-4xl sm:text-5xl text-ember-light" data-target="40"
-                            data-suffix="+">0</p>
-                        <p class="chiffres__label text-parchment/70 text-xs sm:text-sm uppercase tracking-wider mt-2">
-                            Langues de traduction
-                        </p>
-                    </div>
-                    <!-- 3 - record -->
-                    <div
-                        class="chiffres__item chiffres__item--or col-span-12 sm:col-span-6 lg:col-span-3 bg-slate-card border border-ember/30 rounded-lg p-5 sm:p-6 md:p-8 text-center shadow-xl shadow-parchment/10 hover:shadow-parchment/20 hover:scale-105 transition-all">
-                        <div class="chiffres__icone mb-3" aria-hidden="true">
-                            <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto text-ember-light" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M12 2c2.5 2 4 5.5 4 9 0 2-1 4-1 4H9s-1-2-1-4c0-3.5 1.5-7 4-9Z" />
-                                <circle cx="12" cy="9" r="1.5" />
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M9 15l-2.5 2.5M15 15l2.5 2.5M9 19l-1 2M15 19l1 2" />
-                            </svg>
+                        <!-- 3 - record -->
+                        <div
+                            class="chiffres__item chiffres__item--or col-start-2 col-end-12 sm:col-span-6 lg:col-span-3 bg-slate-card border border-ember/30 rounded-lg p-5 sm:p-6 md:p-8 text-center shadow-xl shadow-parchment/10 hover:shadow-parchment/20 hover:scale-105 transition-all">
+                            <div class="chiffres__icone mb-3" aria-hidden="true">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto text-ember-light" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 2c2.5 2 4 5.5 4 9 0 2-1 4-1 4H9s-1-2-1-4c0-3.5 1.5-7 4-9Z" />
+                                    <circle cx="12" cy="9" r="1.5" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 15l-2.5 2.5M15 15l2.5 2.5M9 19l-1 2M15 19l1 2" />
+                                </svg>
+                            </div>
+                            <p class="chiffres__valeur font-mono text-4xl sm:text-5xl text-ember-light" data-target="41"
+                                data-suffix="M$">0</p>
+                            <p
+                                class="chiffres__label text-parchment/70 text-xs sm:text-sm uppercase tracking-wider mt-2">
+                                Record Kickstarter <br>(2022)
+                            </p>
                         </div>
-                        <p class="chiffres__valeur font-mono text-4xl sm:text-5xl text-ember-light" data-target="41"
-                            data-suffix="M$">0</p>
-                        <p class="chiffres__label text-parchment/70 text-xs sm:text-sm uppercase tracking-wider mt-2">
-                            Record Kickstarter <br>(2022)
-                        </p>
-                    </div>
-                    <!-- 4 - années -->
-                    <div
-                        class="chiffres__item chiffres__item--acier col-span-12 sm:col-span-6 lg:col-span-3 bg-slate-card border border-ember/30 rounded-lg p-5 sm:p-6 md:p-8 text-center shadow-xl shadow-parchment/10 hover:shadow-parchment/20 hover:scale-105 transition-all">
-                        <div class="chiffres__icone mb-3" aria-hidden="true">
-                            <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto text-ember-light" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M12 6c-2-1.5-5-2-8-1.5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5v-13c-3-.5-6 0-8 1.5Z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v13" />
-                            </svg>
+                        <!-- 4 - années -->
+                        <div
+                            class="chiffres__item chiffres__item--acier col-start-2 col-end-12 sm:col-span-6 lg:col-span-3 bg-slate-card border border-ember/30 rounded-lg p-5 sm:p-6 md:p-8 text-center shadow-xl shadow-parchment/10 hover:shadow-parchment/20 hover:scale-105 transition-all">
+                            <div class="chiffres__icone mb-3" aria-hidden="true">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto text-ember-light" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 6c-2-1.5-5-2-8-1.5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5v-13c-3-.5-6 0-8 1.5Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v13" />
+                                </svg>
+                            </div>
+                            <p class="chiffres__valeur font-mono text-4xl sm:text-5xl text-ember-light" data-target="20"
+                                data-suffix="+">0</p>
+                            <p
+                                class="chiffres__label text-parchment/70 text-xs sm:text-sm uppercase tracking-wider mt-2">
+                                Années d'écriture
+                            </p>
                         </div>
-                        <p class="chiffres__valeur font-mono text-4xl sm:text-5xl text-ember-light" data-target="20"
-                            data-suffix="+">0</p>
-                        <p class="chiffres__label text-parchment/70 text-xs sm:text-sm uppercase tracking-wider mt-2">
-                            Années d'écriture
-                        </p>
-                    </div>
-
+                        
                 </div>
-            </div>
         </section>
         <!-- Section Appel communauté -->
         <section id="appel-communaute"
             class="appel-communaute relative bg-abyss bg-[url('media/hero/bgsections/bgcosmere2.jpg')] bg-cover bg-center bg-no-repeat min-h-[clamp(400px,60vh,800px)] flex items-center overflow-hidden"
             aria-labelledby="cta-title">
-            <div class="absolute inset-0 bg-black/40"></div>
-            <div class="appel-communaute__container relative container mx-auto px-8 max-w-5xl xl:max-w-6xl py-8 ">
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="appel-communaute__container relative container mx-auto px-8 max-w-5xl xl:max-w-6xl py-10 ">
                 <div class="appel-communaute__grid grid grid-cols-12 gap-8 items-center">
                     <div class="appel-communaute__header col-span-12 md:col-span-7">
                         <h2 id="cta-title"
@@ -566,7 +572,7 @@
                             Communauté.
                         </p>
                     </div>
-                    <div class="appel-communaute__link col-span-12 md:col-span-5 flex md:justify-end">
+                    <div class="appel-communaute__link col-span-12 md:col-span-5 flex justify-end md:justify-center ">
                         <a href="communaute.html#contact" class="forge-btn forge-btn--primary">Rejoindre la
                             communauté</a>
                     </div>

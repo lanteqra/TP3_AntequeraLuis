@@ -1,6 +1,6 @@
 // SERVICE WORKER
 
-const CACHE_NAME = 'la-forge-v1.5';
+const CACHE_NAME = 'la-forge-v1.5.0';
 const FILES_TO_CACHE = [
     './',
     'index.html',
@@ -31,6 +31,7 @@ const FILES_TO_CACHE = [
     'media/hero/bgsections/bgcosmere.jpg',
     'media/hero/bgsections/bgcosmere2.jpg',
     'favicon-48x48.ico',
+    'media/hero/bgsections/page-auteur/brandonsanderson.webp',
     // Libraries
     'https://cdn.jsdelivr.net/combine/npm/daisyui@5/base/rootscrolllock.css,npm/daisyui@5/base/properties.css,npm/daisyui@5/base/scrollbar.css,npm/daisyui@5/base/rootscrollgutter.css,npm/daisyui@5/base/svg.css,npm/daisyui@5/base/rootcolor.css,npm/daisyui@5/base/reset.css,npm/daisyui@5/components/carousel.css',
     'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js',

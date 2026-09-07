@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr-ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Site non-officiel dédié à l'écrivain Brandon Sanderson et à son univers du Cosmere.">
+    <title>Accueil | La Forge des Mots — Brandon Sanderson</title>
+
+    <link rel="manifest" href="manifest.json">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/fadeInOnScroll.js" defer></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="js/navbar.js" defer></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css"
+        integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" defer>
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+
+    <link
+        href="https://cdn.jsdelivr.net/combine/npm/daisyui@5/base/rootscrolllock.css,npm/daisyui@5/base/properties.css,npm/daisyui@5/base/scrollbar.css,npm/daisyui@5/base/rootscrollgutter.css,npm/daisyui@5/base/svg.css,npm/daisyui@5/base/rootcolor.css,npm/daisyui@5/base/reset.css,npm/daisyui@5/components/carousel.css"
+        rel="stylesheet" type="text/css">
+
+    <!-- Style Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+    <style type="text/tailwindcss">
+        @theme {
+        /* Palette */
+            --color-abyss: #0d1117;
+            --color-abyss-light: #3e506b;
+            --color-slate-card: #1c2129;
+            --color-ember: #c77b3f;
+            --color-ember-light: #f0b562;
+            --color-ember-dark: #8a5326;
+            --color-storm: #4a7fb5;
+            --color-storm-light: #7ba7d9;
+            --color-parchment: #e8e3d3;
+            --color-parchment-dim: #a8a396;
+
+        /* Typographies */
+            --font-display: "Cormorant Garamond", serif;
+            --font-body: "Inter", sans-serif;
+            --font-mono: "JetBrains Mono", monospace;
+        }
+
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible,
+        [tabindex]:focus-visible {
+            outline: 3px solid var(--color-ember);
+            outline-offset: 5px;
+        }
+
+        .forge-btn {
+            @apply inline-flex items-center justify-center gap-2 text-sm  tracking-widest
+            px-6 py-3 rounded-md transition-all duration-300;
+        }
+        .forge-btn--primary {
+            @apply bg-ember text-abyss hover:uppercase hover:bg-ember-light hover:shadow-[0_0_25px_-5px_var(--color-ember-light)];
+        }
+
+        .footer__social-item, .footer__link {
+            @apply text-ember-light hover:text-ember-dark transition-colors duration-200;
+        }
+    
+    </style>
+    <link rel="icon" href="favicon-48x48.ico">
+</head>
+
+<body class="font-body">
+    <!-- Accessibilité -->
+    <a href="#content"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-100 focus:bg-ember focus:text-abyss focus:px-4 focus:py-2 focus:rounded">Aller
+        au contenu principal</a>
+    <header>
+        <!-- navbar -->
+        <div
+            class="navbar__container grid grid-cols-12 gap-1 text-center border-b-4 border-white/5 sticky top-0 z-50 backdrop-blur">
+            <!-- component -->
+            <nav class="navbar col-span-12 flex items-center bg-abyss p-3 flex-wrap">
+                <!-- logo -->
+                <a href="index.html" class="navbar__brand p-2 mr-4 inline-flex items-center"
+                    aria-label="Retour à l'accueil - La Forge des Mots">
+                    <img src="media/logo-icons/icon-andr-192x192.png" alt="logo du site web du La Forge des Mots"
+                        aria-hidden="true" class="navbar__logo w-20 h-20 rounded-full m-2 border-4 border-abyss-light">
+                    <span
+                        class="navbar__title font-titre text-2xl font-bold tracking-wide text-parchment hover:text-ember-light font-display">La
+                        Forge des Mots</span>
+                </a>
+
+                <button
+                    class="navbar__toggle text-parchment inline-flex p-4 hover:bg-parchment/25 rounded lg:hidden ml-auto hover:text-ember-light nav-toggler"
+                    data-target="#navigation" aria-expanded="false" aria-controls="navigation"
+                    aria-label="Ouvrir le menu de navigation">
+                    <i class="material-icons text-4xl!" aria-hidden="true">menu</i>
+                </button>
+                <div class="navbar__menu hidden top-navbar w-full lg:inline-flex lg:grow lg:w-auto" id="navigation">
+                    <div
+                        class=" navbar__list md:inline-flex md:flex-row md:ml-auto md:w-auto w-full md:items-center items-start  flex flex-col md:h-auto pr-5 gap-3.5 text-[1.2rem]">
+                        <a href="index.html"
+                            class="navbar__link  md:inline-flex md:w-auto w-full px-3 py-2 rounded text-parchment font-extrabold items-center justify-center bg-abyss-light hover:bg-storm transition-colors hover:text-orange-horizon">
+                            <span>Accueil</span>
+                        </a>
+
+                        <a href="auteurInfo.html"
+                            class="navbar__link navbar__link--active md:inline-flex md:w-auto w-full px-3 py-2 rounded text-abyss font-bold items-center justify-center bg-storm hover:bg-parchment hover:text-storm uppercase transition-colors ">
+                            <span>L'Auteur</span>
+                        </a>
+                        <a href="oeuvresInfo.html"
+                            class="navbar__link md:inline-flex md:w-auto w-full px-3 py-2 rounded text-parchment font-extrabold items-center justify-center bg-abyss-light hover:bg-storm transition-colors hover:text-orange-horizon ">
+                            <span>Les œuvres</span>
+                        </a>
+                        <a href="communaute.html"
+                            class="navbar__link md:inline-flex md:w-auto w-full px-3 py-2 rounded text-parchment font-extrabold items-center justify-center bg-abyss-light hover:bg-storm transition-colors hover:text-orange-horizon ">
+                            <span>Communauté</span>
+                        </a>
+
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main id="content">
+        <!-- Section auteur-hero -->
+        <section id="auteur-hero"
+            class="auteur-hero relative bg-storm bg-[url(media/hero/bgsections/bgcosmere.jpg)] bg-cover bg-right md:bg-center bg-no-repeat h-full border-b-4 border-parchment-dim overflow-hidden  py-7 px-6">
+            <div class="auteur-hero__overlay absolute inset-0 bg-abyss/40 z-0" aria-hidden="true"></div>
+            <div class="relative z-10 flex items-center">
+                <div class="auteur-hero__container js-fade-in container mx-auto px-4">
+                    <div
+                        class="auteur-hero__grid grid grid-cols-12 h-full items-center text-center md:text-left mt-10 mb-10 gap-6">
+                        <div
+                            class="auteur-hero__img-wrapper col-span-12 md:col-start-3 md:col-end-11 lg:col-span-6  flex justify-center h-auto mb-10">
+                            <figure class="auteur-hero__frame flex justify-center      ">
+                                <img src="media/page-auteur/brandonsanderson.webp" alt="Portrait de Brandon Sanderson"
+                                    class="auteur-hero__image w-[70%] rounded-2xl shadow-lg shadow-ember-dark">
+                            </figure>
+                        </div>
+                        <div
+                            class="auteur-hero__content col-span-12 lg:col-span-6  flex flex-col justify-center md:col-start-3 md:col-end-11 gap-6">
+                            <p
+                                class="auteur-hero__eyebrow font-mono text-ember uppercase tracking-[0.2em] text-sm mb-3">
+                                L'architecte du Cosmere</p>
+                            <h1
+                                class="hero__title font-display md:text-center  text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold [text-shadow:-5px_7px_7px_rgba(0,0,0,0.5)] pb-2 mb-5">
+                                Brandon Sanderson</h1>
+                            <p
+                                class="auteur-hero__intro text-parchment font-normal text-base sm:text-lg md:text-xl lg:text-2xl [text-shadow:-5px_7px_7px_rgba(0,0,0,0.5)]">
+                                Écrivain américain de fantasy, forgeron de mondes reliés par un
+                                univers commun, le Cosmere. Dès <em>Fils-des-Brumes</em> à
+                                <em>L'Archive des Tempêtes</em>, il construit une mythologie
+                                où la magie obéit à des lois aussi rigoureuses que la physique.
+                            </p>
+                            <div class="auteur-hero__quote text-parchment font-normal text-sm sm:text-base md:text-lg lg:text-xl [text-shadow:-0px_-2px_3px_rgba(0,0,0,1)] mb-5
+                                border-l-2 border-ember pl-6 italic">
+                                <p class="auteur-hero__quote-text">
+                                    “The purpose of a storyteller is not to tell you how to think, but to give you
+                                    questions to think upon.”</p>
+                                <p
+                                    class="auteur-hero__quote-source flex justify-end mt-2 not-italic font-mono text-sm text-ember/80">
+                                    Brandon Sanderson, The Way of Kings</p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- Section  -->
+
+        <!-- Section  -->
+
+        <!-- Section  -->
+
+
+    </main>
+    <footer class="footer bg-abyss text-parchment text-base border-t-4 border-parchment-dim">
+        <div class="footer__container container mx-auto px-4 py-8">
+            <div class="footer__grid grid grid-cols-12 gap-4 items-center">
+
+                <!-- top left -->
+                <div
+                    class="footer__top-left col-span-12 sm:col-span-8 flex flex-row items-center gap-2 justify-center sm:justify-start">
+                    <address class="footer__address flex flex-col md:flex-row gap-4 text-center sm:text-left">
+                        <a href="tel:819-123-4567" class="footer__link flex items-center">
+                            <box-icon name='phone' type='solid' color='currentColor' size='md'
+                                aria-hidden="true"></box-icon> 819-123-4567
+                        </a>
+                        <a href="mailto:info@laforge-mots.com" class="footer__link flex items-center">
+                            <box-icon name='envelope' type='solid' color='currentColor' size='md'
+                                aria-hidden="true"></box-icon>
+                            info@laforge-mots.com
+                        </a>
+                    </address>
+                </div>
+
+                <!-- top right -->
+                <div
+                    class="footer__top-right col-span-12 sm:col-span-4 flex flex-col md:flex-row items-center sm:items-end md:items-center justify-center md:justify-end gap-5 text-center sm:text-right">
+
+                    <ul class="footer__social-list flex gap-4">
+                        <li class="footer__social-item">
+                            <a class="footer__social-link" href="https://www.facebook.com/" aria-label="Facebook"
+                                target="_blank" rel="noopener noreferrer">
+                                <box-icon type='logo' name='facebook-circle' color='currentColor' size='md'
+                                    aria-hidden="true"></box-icon>
+                            </a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a class="footer__social-link" href="https://www.linkedin.com/" aria-label="Linkedin"
+                                target="_blank" rel="noopener noreferrer">
+                                <box-icon type='logo' name='linkedin' size='md' color='currentColor'
+                                    aria-hidden="true"></box-icon>
+                            </a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a class="footer__social-link" href="https://x.com/" aria-label="X (Twitter)"
+                                target="_blank" rel="noopener noreferrer">
+                                <box-icon type='logo' name='twitter' color='currentColor' size='md'
+                                    aria-hidden="true"></box-icon>
+                            </a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a class="footer__social-link" href="https://www.instagram.com/" aria-label="Instagram"
+                                target="_blank" rel="noopener noreferrer">
+                                <box-icon type='logo' name='instagram-alt' color='currentColor' size='md'></box-icon>
+                            </a>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+                <!-- bottom footer-->
+                <div
+                    class="footer-bottom col-span-12 grid grid-cols-12 border-t-4 border-parchment-dim justify-between text-parchment-dim">
+                    <div
+                        class="footer__bottom-left col-span-12 sm:col-span-6 flex flex-col justify-center text-center sm:text-left items-center md:items-baseline mt-2">
+                        <p class="footer__cegep">
+                            <span class="footer__cegep--accent font-bold">Dans le cadre de :</span>
+                            Techniques d'integration des interfaces Web 2
+                            <br>Cégep de Trois-Rivières
+                        </p>
+                    </div>
+                    <div
+                        class="footer__bottom-right col-span-12 sm:col-span-6  text-center sm:text-right items-center md:items-baseline mt-2">
+
+                        <p class="footer__names">
+                            <span class="footer__names--accent font-bold">
+                                Site integré par : </span><br>Luis Antequera
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

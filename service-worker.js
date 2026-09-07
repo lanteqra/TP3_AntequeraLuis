@@ -1,6 +1,6 @@
 // SERVICE WORKER
 
-const CACHE_NAME = 'la-forge-v1.4.9';
+const CACHE_NAME = 'la-forge-v1.5';
 const FILES_TO_CACHE = [
     './',
     'index.html',
@@ -13,6 +13,7 @@ const FILES_TO_CACHE = [
     'js/carousel.js',
     'js/navbar.js',
     'js/chiffres.js',
+    // img - icons
     'media/logo-icons/icon-andr-192x192.png',
     'media/logo-icons/icon-andr-512x512.png',
     'media/logo-icons/icon-ms-144x144.png',
@@ -30,16 +31,22 @@ const FILES_TO_CACHE = [
     'media/hero/bgsections/bgcosmere.jpg',
     'media/hero/bgsections/bgcosmere2.jpg',
     'favicon-48x48.ico',
-    
+    // Libraries
+    'https://cdn.jsdelivr.net/combine/npm/daisyui@5/base/rootscrolllock.css,npm/daisyui@5/base/properties.css,npm/daisyui@5/base/scrollbar.css,npm/daisyui@5/base/rootscrollgutter.css,npm/daisyui@5/base/svg.css,npm/daisyui@5/base/rootcolor.css,npm/daisyui@5/base/reset.css,npm/daisyui@5/components/carousel.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js',
+    'https://unpkg.com/boxicons@2.1.4/dist/boxicons.js',
+    'https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4',
 ];
 
 // SERVICE WORKER
 self.addEventListener('install', (evt) => {
     evt.waitUntil(
         caches.open(CACHE_NAME)
-        .then((cache) =>
-            cache.addAll(FILES_TO_CACHE)
-        )
+            .then((cache) =>
+                cache.addAll(FILES_TO_CACHE)
+            )
     );
     self.skipWaiting();
 });
@@ -76,8 +83,8 @@ self.addEventListener('fetch', (evt) => {
     // RESSOURCES STATIQUES → Cache First
     evt.respondWith(
         caches.match(request).then((cached) =>
-            cached || fetch(request).catch(() =>{
-                return new Response('', {status: 408, statusText: 'Ressource indisponible hors ligne'});
+            cached || fetch(request).catch(() => {
+                return new Response('', { status: 408, statusText: 'Ressource indisponible hors ligne' });
             }))
     );
 });

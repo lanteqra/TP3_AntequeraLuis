@@ -26,7 +26,7 @@ Comme le sujet était libre, j'ai choisi de faire un site web dédie à l'un de 
 - HTML5 sémantique
 - CSS3 (méthodologie BEM, animations)
   - Animations CSS :
-  - index - Hero Title : Effet de brillance métallique sur le <h1> du hero — technique de « gradient text » via background-clip: text. Adaptée du tutoriel de Let's Build UI (https://www.letsbuildui.dev/articles/css-text-effects-five-minimal-examples/).
+  - index - Hero Title / auteurInfo - auteur heri title: Effet de brillance métallique sur le <h1> du hero — technique de « gradient text » via background-clip: text. Adaptée du tutoriel de Let's Build UI (https://www.letsbuildui.dev/articles/css-text-effects-five-minimal-examples/).
   
 
 - Composants Tailwind :
@@ -34,10 +34,12 @@ Comme le sujet était libre, j'ai choisi de faire un site web dédie à l'un de 
   - Carousel : "Full-bleed carousel" https://daisyui.com/components/carousel/?lang=es#full-bleed-carousel
 
 - Javascript (animations)
-  - Animation Js : - index Carousel - carousel.js : construit avec le composant Carousel de DaisyUI https://daisyui.com/components/carousel/?lang=es#full-bleed-carousel. L'autoplay et la pause au survol/focus suivent le patron d'accessibilité Carousel du W3C WAI-ARIA (https://w3.org/WAI/ARIA/apg/patterns/carousel/examples/carousel-1-prev-next). 
-  - index - section chiffres clés - Animation de comptage progressif (0 → valeur finale) déclenchée lorsque l'élément entre dans le viewport, avec easing "ease-out-cubic":
-    Sources de MDN Web Docs, IntersectionObserver API - https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API, requestAnimationFrame - https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame - Respect de prefers-reduced-motion - https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
-    pour accessibilité l'animation est désactivée si l'utilisateur a activé la réduction de mouvement dans son système ; aria-live="off"  évite les annonces répétées du lecteur d'écran pendant le comptage, et le résultat final est exposé via aria-label une fois l'animation terminée. (Effet hover sur les cartes de chiffres clés - Transition CSS tailwind)
+  - Animation Js : 
+    - general dans le Site : Fade-in/slide-up au scroll (librairie GSAP 3.12.2 + plugin ScrollTrigger) - via la classe utilitaire réutilisable ".js-fade-in" conçue pour être appliquée à n'importe quel élément sur n'importe quelle page du site - le contenu apparaît avec un fondu (opacity 0 → 1),  Eases (elastic.out)  et une translation verticale (translateY 40px → 0) dès qu'il entre à 85% de la hauteur du viewport
+    - index Carousel - carousel.js : construit avec le composant Carousel de DaisyUI https://daisyui.com/components/carousel/?lang=es#full-bleed-carousel. L'autoplay et la pause au survol/focus suivent le patron d'accessibilité Carousel du W3C WAI-ARIA (https://w3.org/WAI/ARIA/apg/patterns/carousel/examples/carousel-1-prev-next). 
+    - index - section chiffres clés - Animation de comptage progressif (0 → valeur finale) déclenchée lorsque l'élément entre dans le viewport, avec easing "ease-out-cubic":
+      Sources de MDN Web Docs, IntersectionObserver API - https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API, requestAnimationFrame - https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame - Respect de prefers-reduced-motion - https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+      pour accessibilité l'animation est désactivée si l'utilisateur a activé la réduction de mouvement dans son système ; aria-live="off"  évite les annonces répétées du lecteur d'écran pendant le comptage, et le résultat final est exposé via aria-label une fois l'animation terminée. (Effet hover sur les cartes de chiffres clés - Transition CSS tailwind)
 
 
 

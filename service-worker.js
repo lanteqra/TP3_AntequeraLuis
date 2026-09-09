@@ -1,6 +1,6 @@
 // SERVICE WORKER
 
-const CACHE_NAME = 'la-forge-v1.5.1'; 
+const CACHE_NAME = 'la-forge-v1.5.2'; 
 const FILES_TO_CACHE = [
     './',
     'index.html',
@@ -35,10 +35,10 @@ const FILES_TO_CACHE = [
     'favicon-48x48.ico',
     'media/page-auteur/brandonsanderson.webp',
     'media/page-auteur/evolution-of-brandons.webp',
-    'media/page-auteur/byu-edificio-benson.jpg',
-    'media/page-auteur/byu-leading-edge-41.jpg',
-    'media/page-auteur/byu-leading-edge-42.jpg',
-    'media/page-auteur/byu-leading-edge-50.jpg',
+    'media/page-auteur/byu-building-benson.jpg',
+    'media/page-auteur/byu-leadingedge-41.jpg',
+    'media/page-auteur/byu-leadingedge-42.jpg',
+    'media/page-auteur/byu-leadingedge-50.jpg',
     'media/page-auteur/brandon-sanderson-david-farland.webp',
     'media/page-auteur/the-first-edition-elantris-cover.jpg',
     'media/page-auteur/the-first-edition-elantris-backcover.jpg',

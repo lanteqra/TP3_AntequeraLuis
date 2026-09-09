@@ -1,6 +1,6 @@
 // SERVICE WORKER
 
-const CACHE_NAME = 'la-forge-v1.5.3'; 
+const CACHE_NAME = 'la-forge-v1.5.4'; 
 const FILES_TO_CACHE = [
     './',
     'index.html',
@@ -72,30 +72,41 @@ self.addEventListener('activate', (evt) => {
     );
     self.clients.claim();
 });
+
 // STRATEGIES DE CACHE
 async function cacheFirst(request) {
-    const cached = await caches.match(request);
-    if (cached) return cached;
-
     try {
-        const response = await fetch(request);
+        const cached = await caches.match(request);
+        if (cached) return cached;
+
+        const response = await fetch(request, {
+            mode: 'no-cors',
+            credentials: 'omit'
+        });
+
         if (response && (response.status === 200 || response.type === 'opaque')) {
             const cache = await caches.open(CACHE_NAME);
             cache.put(request, response.clone());
         }
+
         return response;
     } catch (err) {
+        const cached = await caches.match(request);
+        if (cached) return cached;
         return new Response('', { status: 408, statusText: 'Ressource indisponible hors ligne' });
     }
 }
 
 self.addEventListener('fetch', (evt) => {
-    // cache-first
     const url = evt.request.url;
+    const { request } = evt;
 
+    // Ne pas intercepter les requêtes avec Subresource Integrity (SRI, ex: jQuery, Material Icons)
     if (evt.request.integrity) {
         return;
     }
+
+    if (request.method !== 'GET') return;
 
     // Google Fonts → cache-first
     if (url.includes('fonts.googleapis.com') || url.includes('fonts.gstatic.com')) {
@@ -112,10 +123,6 @@ self.addEventListener('fetch', (evt) => {
         evt.respondWith(cacheFirst(evt.request));
         return;
     }
-
-    const { request } = evt;
-
-    if (request.method !== 'GET') return;
 
     // NAVIGATION → Network First
     if (request.mode === 'navigate') {

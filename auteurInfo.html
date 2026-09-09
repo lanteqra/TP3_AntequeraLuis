@@ -24,9 +24,6 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
 
-    <link
-        href="https://cdn.jsdelivr.net/combine/npm/daisyui@5/base/rootscrolllock.css,npm/daisyui@5/base/properties.css,npm/daisyui@5/base/scrollbar.css,npm/daisyui@5/base/rootscrollgutter.css,npm/daisyui@5/base/svg.css,npm/daisyui@5/base/rootcolor.css,npm/daisyui@5/base/reset.css,npm/daisyui@5/components/carousel.css"
-        rel="stylesheet" type="text/css">
 
     <!-- Style Tailwind -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -152,6 +149,11 @@
         }
     }
 
+    .sagesse__citations {
+        @apply  bg-linear-to-br from-[#b6b5b5] via-[#b8b8b8] to-[#6d6d6d]
+            rounded-xl p-8 shadow-[inset_0_2px_4px_rgba(255,255,255,0.9),0_8px_20px_rgba(0,0,0,0.3)] border border-white/30
+            transition-all  
+    }
 
     </style>
     <link rel="icon" href="favicon-48x48.ico">
@@ -261,9 +263,9 @@
             </div>
 
         </section>
-        <!-- Section  -->
-        <!-- SECTION 2 : BIOGRAPHIE -->
-        <section id="auteur-bio" class="auteur-bio bg-parchment" aria-labelledby="auteur-bio__titre">
+        <!-- Section 2 - auteur biographie -->
+        <section id="auteur-bio" class="auteur-bio bg-parchment border-b-4 border-parchment-dim"
+            aria-labelledby="auteur-bio__titre">
             <div class="auteur-bio__container container mx-auto pt-10 pb-10">
                 <div class="auteur-bio__grid grid grid-cols-12 h-full items-center text-center md:text-left">
                     <div class="auteur-bio__intro js-fade-in col-span-12 text-center mb-10">
@@ -288,7 +290,8 @@
                     <!-- Chapitre 1  -->
                     <span class="auteur-bio__marker hidden md:flex order-1" aria-hidden="true"></span>
 
-                    <div class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6 flex items-center order-2">
+                    <div
+                        class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6 flex items-center order-2">
                         <div class="auteur-bio__content flex flex-col justify-center">
                             <p class="auteur-bio__ere font-mono text-sm text-ember tracking-widest uppercase">
                                 Chapitre I
@@ -312,7 +315,8 @@
                             </p>
                         </div>
                     </div>
-                    <div class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6 flex items-center order-3">
+                    <div
+                        class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6 flex items-center order-3">
                         <div class="auteur-bio__content">
                             <p class="auteur-bio__texte text-abyss leading-relaxed mb-5">
                                 En 1994, Brandon s'est inscrit en biochimie à la <a class="link"
@@ -329,7 +333,8 @@
                                     alt="Brigham Young University, Édifice Benson, siège des départements de chimie et de biochimie"
                                     class="auteur-bio__image w-full object-cover" loading="lazy">
                                 <figcaption>
-                                    <p class="auteur-bio__image-capt text-xs text-center mt-3  italic ">Brigham Young University,
+                                    <p class="auteur-bio__image-capt text-xs text-center mt-3  italic ">Brigham Young
+                                        University,
                                         Édifice Benson, siège des départements de chimie et de biochimie</p>
                                 </figcaption>
                             </figure>
@@ -393,7 +398,8 @@
                     </div>
                     <span class="auteur-bio__marker hidden md:flex order-6" aria-hidden="true"></span>
                     <!-- Chapitre 3 -->
-                    <div class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6  flex items-center order-7 ">
+                    <div
+                        class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6  flex items-center order-7 ">
                         <div class="auteur-bio__content flex flex-col justify-center">
                             <p class="auteur-bio__ere font-mono text-sm text-ember tracking-widest uppercase">
                                 Chapitre III - Fin des années 1990
@@ -413,14 +419,16 @@
                             </p>
                         </div>
                     </div>
-                    <div class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6 flex items-center order-8">
+                    <div
+                        class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6 flex items-center order-8">
                         <div class="auteur-bio__content w-full">
                             <figure class="auteur-bio__figure flex flex-col items-center">
                                 <img src="media/page-auteur/brandon-sanderson-david-farland.webp"
                                     alt="Portrait de David Farland et Brandon Sanderson"
                                     class="auteur-bio__image w-[80%] sm:w-full sm:max-w-75 loading=" lazy">
                                 <figcaption>
-                                    <p class="auteur-bio__image-capt text-xs text-center m-3  italic ">Portrait de David Farland
+                                    <p class="auteur-bio__image-capt text-xs text-center m-3  italic ">Portrait de David
+                                        Farland
                                         et Brandon Sanderson</p>
                                 </figcaption>
                             </figure>
@@ -489,7 +497,8 @@
 
                     <span class="auteur-bio__marker hidden md:flex order-12" aria-hidden="true"></span>
                     <!-- Chapitre 5 -->
-                    <div class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6  flex items-center order-13">
+                    <div
+                        class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6  flex items-center order-13">
                         <div class="auteur-bio__content flex flex-col justify-center">
                             <p class="auteur-bio__ere font-mono text-sm text-ember tracking-widest uppercase">
                                 Chapitre V - 2007 - 2013
@@ -514,7 +523,8 @@
                             </p>
                         </div>
                     </div>
-                    <div class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6  flex items-center order-14">
+                    <div
+                        class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6  flex items-center order-14">
                         <div class="auteur-bio__content w-full">
                             <figure class="auteur-bio__figure flex flex-col gap-2">
                                 <div
@@ -556,8 +566,7 @@
                                 sa communauté grandissante lors de conventions à travers le globe. Pour découvrir
                                 l'ensemble de son œuvre et suivre ses prochains projets, visitez
                                 <a href="https://www.brandonsanderson.com/pages/hello-my-names-brandon" target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="auteur-bio__link uppercase link">
+                                    rel="noopener noreferrer" class="auteur-bio__link uppercase link">
                                     son site officiel</a>
                             </p>
                             <figure class="auteur-bio__figure">
@@ -576,9 +585,285 @@
                 </div>
             </div>
         </section>
-        <!-- Section  -->
+        <!-- Section 3 Citations - Anecdotes-->
+        <section id="sagesse" class="sagesse bg-parchment border-b-4 border-parchment-dim"
+            aria-labelledby="sagesse__titre">
+            <div class="sagesse__container container mx-auto pt-10 pb-10">
+                <div class="sagesse__grid grid grid-cols-12 h-full items-center text-center md:text-left">
+                    <div class="sagesse__eyebrow js-fade-in col-span-12 text-center mb-10">
+                        <span class="sagesse__label font-mono text-base tracking-[0.3em] uppercase text-ember">
+                            Étincelles de Sagesse
+                        </span>
+                        <h2 id="sagesse__titre"
+                            class="sagesse__titre font-display text-4xl md:text-5xl mb-4 text-ember font-extrabold mt-2">
+                            Citations du Forgeron
+                        </h2>
+                        
+                        
+                    </div>
+                </div>
 
-        <!-- Section  -->
+                <div class="sagesse__content relative grid grid-cols-12 gap-10">
+
+                    <!--Quote 1 -->
+                    
+                    <div class="sagesse__citations js-fade-in col-start-4 col-end-10">
+
+                        <blockquote class="relative mx-auto p-4 text-center">
+                            <span
+                                class="sagesse__citation-mark absolute -top-6 left-6 font-serif text-9xl text-ember/30 select-none"
+                                aria-hidden="true">
+                                &ldquo;
+                            </span>
+                            <div class="sagesse__content relative z-1">
+                                <p class="sagesse__quote--en text-lg"><em>
+                                    "J'écris ces mots dans l'acier, car on ne peut se fier à rien qui ne soit pas inscrit dans le métal."
+                                </em>
+                                </p>
+                                <p class="sagesse__quote-original text-xs italic">("I write these words in steel, for anything not set in metal cannot be trusted. I have begun to wonder if I am the only sane man remaining...")
+                                </p> 
+                            </div>   
+                            <div class="sagesse__citation-source font-mono text-sm text-storm not-italic">
+                                - Le Puits de l'Ascension (The Well of Ascension), le deuxième tome de la série Fils-des-Brumes (Mistborn)
+                            </div>
+                        </blockquote>
+                    </div>
+                    
+                    <!--Quote 2 -->
+                    <div class="sagesse__citations js-fade-in col-start-2 col-end-12  md:col-end-7 2xl:col-start-1 lg:col-end-8 flex items-center ">
+                        <blockquote class="relative mx-auto p-4 text-center lg:text-left">
+                            <span
+                                class="sagesse__citation-mark absolute -top-6 left-6 font-serif text-9xl text-ember/30 select-none"
+                                aria-hidden="true">
+                                &ldquo;
+                            </span>
+
+                            <div class="sagesse__content relative z-1">
+                                <p class="sagesse__quote-text text-lg">
+                                    <em>La vie avant la mort. La force avant la faiblesse. Le voyage avant la
+                                        destination
+                                    </em>
+                                </p>
+                                <p class="sagesse__quote-original text-xs italic">("Life before Death. Strength before
+                                    Weakness.Journey
+                                    before Destination.")</p>
+                            </div>
+                            <div class="sagesse__citation-source font-mono text-sm text-storm not-italic">
+                                - Le Serment, La Voie des rois - (The Way of Kings)
+                            </div>
+                        </blockquote>
+                    </div>
+                    <!--Quote 3 -->
+                    <div class="sagesse__citations js-fade-in col-start-2 col-end-12 md:col-start-7 md:col-end-12 lg:col-start-6 2xl:col-end-13">
+                        <blockquote class="relative mx-auto p-4 text-center lg:text-right">
+                            <span
+                                class="sagesse__citation-mark absolute -top-6 left-6 font-serif text-9xl text-ember/30 select-none"
+                                aria-hidden="true">
+                                &ldquo;
+                            </span>
+
+                            <div class="sagesse__content relative z-1">
+                                <p class="sagesse__quote-text text-lg">
+                                    <em>La vie avant la mort. La force avant la faiblesse. Le voyage avant la
+                                        destination.
+                                    </em>
+                                <p class="sagesse__quote-original text-xs italic">("You see, that is the sad, sorry,
+                                    terrible thing about
+                                    sarcasm. It's really funny.")</p>
+                                </p>
+                            </div>
+                            <div class="sagesse__citation-source font-mono text-sm text-storm not-italic">
+                                - Alcatraz Versus the Evil Librarians
+                            </div>
+                        </blockquote>
+                    </div>
+                    <!--Quote 4 -->
+                    <div class="sagesse__citations js-fade-in col-start-2 col-end-12">
+                        <blockquote class="relative mx-auto p-4 text-center">
+                            <span
+                                class="sagesse__citation-mark absolute -top-6 left-6 font-serif text-9xl text-ember/30 select-none"
+                                aria-hidden="true">
+                                &ldquo;
+                            </span>
+
+                            <div class="sagesse__content relative z-1">
+                                <p class="sagesse__quote-text text-lg">
+                                    <em>"À ce stade, il est probablement très tard dans la nuit, et tu es resté éveillé
+                                        pour lire ce livre alors que tu aurais dû aller dormir. Si c'est le cas, alors
+                                        je te félicite d'être tombé dans mon piège. C'est le plus grand plaisir d'un
+                                        écrivain que d'apprendre que quelqu'un est resté éveillé jusqu'aux heures indues
+                                        de la matinée pour lire l'un de ses livres. Cela remonte au fait que les auteurs
+                                        sont des personnes terribles qui se délectent de la souffrance des autres. En
+                                        plus, nous recevons des commissions de l'industrie de la caféine..."
+                                    </em>
+                                </p>
+                                <p class="sagesse__quote-original text-xs italic">(“By now, it is probably very late at
+                                    night, and you have stayed up to read this book when you should have gone to sleep.
+                                    If this is the case, then I commend you for falling into my trap. It is a writer's
+                                    greatest pleasure to hear that someone was kept up until the unholy hours of the
+                                    morning reading one of his books. It goes back to authors being terrible people who
+                                    delight in the suffering of others. Plus, we get a kickback from the caffeine
+                                    industry...”.)
+                                </p>
+                            </div>
+                            <div class="sagesse__citation-source font-mono text-sm text-storm not-italic">
+                                - Alcatraz Versus the Evil Librarians
+                            </div>
+                        </blockquote>
+                    </div>
+                    <!--Quote 5 -->
+                    <div class="sagesse__citations js-fade-in col-start-2 col-end-12  md:col-end-7 2xl:col-start-1 lg:col-end-8 md:flex md:flex-col md:justify-center">
+                        <blockquote class="relative mx-auto p-4 text-center lg:text-left">
+                            <span
+                                class="sagesse__citation-mark absolute -top-6 left-6 font-serif text-9xl text-ember/30 select-none"
+                                aria-hidden="true">
+                                &ldquo;
+                            </span>
+
+                            <div class="sagesse__content relative z-1">
+                                <p class="sagesse__quote-text text-lg">
+                                    <em>Il est facile de croire en quelque chose quand on gagne tout le temps... Ce sont
+                                        les défaites qui définissent la foi d'un homme.
+                                    </em>
+                                </p>
+                                <p class="sagesse__quote-original text-xs italic">(“It's easy to believe in something when
+                                    you win all the time...The losses are what define a man's faith.”.)
+                                </p>
+                            </div>
+                            <div class="sagesse__citation-source font-mono text-sm text-storm not-italic">
+                                - Justicière (Oathbringer)
+                            </div>
+                        </blockquote>
+                    </div>
+                    <!--Quote 6 -->
+                    <div class="sagesse__citations js-fade-in col-start-2 col-end-12 md:col-start-7 md:col-end-12 lg:col-start-6 2xl:col-end-13">
+                        <blockquote class="relative mx-auto p-4 text-center lg:text-right">
+                            <span
+                                class="sagesse__citation-mark absolute -top-6 left-6 font-serif text-9xl text-ember/30 select-none"
+                                aria-hidden="true">
+                                &ldquo;
+                            </span>
+                            <div class="sagesse__content relative z-1">
+                                <p class="sagesse__quote-text text-lg">
+                                    <em>"Je ne sais pas vraiment pourquoi. Mais... est-ce qu'on arrête d'aimer quelqu'un
+                                        juste parce qu'il vous a trahi ? Je ne pense pas. C'est ce qui rend la trahison
+                                        si douloureuse - la peine, la frustration, la colère... et je l'aimais encore.
+                                        Je l'aime toujours."
+                                    </em>
+                                </p>
+                                <p class="sagesse__quote-original text-xs italic">(“I'm not really sure why. But... do you
+                                    stop loving someone just because they betray you? I don't think so. That's what
+                                    makes the betrayal hurt so much - pain, frustration, anger... and I still loved her.
+                                    I still do.”)
+                                </p>
+                            </div>
+                            <div class="sagesse__citation-source font-mono text-sm text-storm not-italic">
+                                - L'Empire Ultime (The Final Empire), le premier tome de la série Fils-des-brumes
+                                (Mistborn)
+                            </div>
+                        </blockquote>
+                    </div>
+                    <!--Quote 7 -->
+                    <div class="sagesse__citations js-fade-in col-start-2 col-span-10">
+                        <blockquote class="relative mx-auto p-4 text-center">
+                            <span
+                                class="sagesse__citation-mark absolute -top-6 left-6 font-serif text-9xl text-ember/30 select-none"
+                                aria-hidden="true">
+                                &ldquo;
+                            </span>
+
+                            <div class="sagesse__content relative z-1">
+                                <p class="sagesse__quote-text text-lg">
+                                    <em>"Par conséquent, la destination importe-t-elle ? Ou seulement le chemin que nous
+                                        empruntons ? Je déclare qu'aucune réussite ne possède de substance aussi grande
+                                        que la route qui mène à elle. Nous ne sommes pas des créatures de destination.
+                                        C'est le voyage qui nous façonne. Nos pieds calleux, nos dos renforcés d'avoir
+                                        supporté le poids de nos voyages, nos yeux ouverts par le ravissement nouveau
+                                        des expériences vécues."
+                                    </em>
+                                </p>
+                                <p class="sagesse__quote-original text-xs italic">(“And so, does the destination matter? Or
+                                    is it the path we take? I declare that no accomplishment has substance nearly as
+                                    great as the road used to achieve it. We are not creatures of destinations. It is
+                                    the journey that shapes us. Our callused feet, our backs strong from carrying the
+                                    weight of our travels, our eyes open with the fresh delight of experiences lived.”.)
+                                </p>
+                            </div>
+                            <div class="sagesse__citation-source font-mono text-sm text-storm not-italic">
+                                - La Voie des rois (The Way of Kings)
+                            </div>
+                        </blockquote>
+                    </div>
+                    <!--Quote 8 -->
+                    <div class="sagesse__citations js-fade-in col-start-2 col-end-12 lg:col-start-4 lg:col-end-10">
+                        <blockquote class="relative mx-auto p-4 text-center">
+                            <span
+                                class="sagesse__citation-mark absolute -top-6 left-6 font-serif text-9xl text-ember/30 select-none"
+                                aria-hidden="true">
+                                &ldquo;
+                            </span>
+
+                            <div class="sagesse__content relative z-1">
+                                <p class="sagesse__quote-text text-lg">
+                                    <em>J'essaie d'éviter d'avoir des pensées. Elles mènent à d'autres pensées, et—si on
+                                        n'y prend pas garde—ces pensées mènent à des actions. Les actions fatiguent. Je
+                                        tiens cette information d'une source plutôt fiable qui l'a un jour lue dans un
+                                        livre.
+                                    </em>
+                                </p>
+                                <p class="sagesse__quote-original text-xs italic">(“I try to avoid having thoughts. They
+                                    lead to other thoughts, and—if you're not careful—those lead to actions. Actions
+                                    make you tired. I have this on rather good authority from someone who once read it
+                                    in a book.”)
+                                </p>
+                            </div>
+                            <div class="sagesse__citation-source font-mono text-sm text-storm not-italic">
+                                - Alcatraz Versus the Evil Librarians
+                            </div>
+                        </blockquote>
+                    </div>
+                    <!--Quote 9 -->
+                    <div class="sagesse__citations js-fade-in col-start-2 col-span-10">
+                        <blockquote class="relative mx-auto p-4 text-center">
+                            <span
+                                class="sagesse__citation-mark absolute -top-6 left-6 font-serif text-9xl text-ember/30 select-none"
+                                aria-hidden="true">
+                                &ldquo;
+                            </span>
+
+                            <div class="sagesse__content relative z-1">
+                                <p class="sagesse__quote-text text-lg">
+                                    <em>Croire n'est pas simplement une chose pour les beaux jours et les moments
+                                        lumineux... Qu'est-ce que la croyance - qu'est-ce que la foi - si on ne la garde
+                                        pas après un échec ?... Tout le monde peut croire en quelqu'un, ou en quelque
+                                        chose qui réussit toujours... Mais l'échec... ah, voilà qui est difficile à
+                                        croire, certainement et véritablement. Assez difficile pour avoir de la valeur.
+                                        Parfois, nous devons simplement attendre assez longtemps... puis nous découvrons
+                                        pourquoi exactement nous avons continué à croire... Il y a toujours un autre
+                                        secret
+                                    </em>
+                                </p>
+                                <p class="sagesse__quote-original text-xs italic">(“Belief isn't simply a thing for fair
+                                    times and bright days...What is belief - what is faith - if you don't continue in it
+                                    after failure?...Anyone can believe in someone, or something that always
+                                    succeeds...But failure...ah, now, that is hard to believe in, certainly and truly.
+                                    Difficult enough to have value. Sometimes we just have to wait long enough...then we
+                                    find out why exactly it was that we kept believing...There's always another
+                                    secret.”.)
+                                </p>
+                            </div>
+                            <div class="sagesse__citation-source font-mono text-sm text-storm not-italic">
+                                - L'Empire Ultime (The Final Empire), le premier tome de la série Fils-des-brumes
+                                (Mistborn)
+                            </div>
+                        </blockquote>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
 
 
     </main>

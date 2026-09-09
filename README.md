@@ -26,7 +26,8 @@ Comme le sujet était libre, j'ai choisi de faire un site web dédie à l'un de 
 - HTML5 sémantique
 - CSS3 (méthodologie BEM, animations)
   - Animations CSS :
-  - index - Hero Title / auteurInfo - auteur heri title: Effet de brillance métallique sur le <h1> du hero — technique de « gradient text » via background-clip: text. Adaptée du tutoriel de Let's Build UI (https://www.letsbuildui.dev/articles/css-text-effects-five-minimal-examples/).
+    - index - Hero Title / auteurInfo - auteur heri title: Effet de brillance métallique sur le <h1> du hero — technique de « gradient text » via background-clip: text. Adaptée du tutoriel de Let's Build UI (https://www.letsbuildui.dev/articles/css-text-effects-five-minimal-examples/).
+    - auteurInfo.html - section Biographie - (.auteur-bio__marker::after) situés entre chaque chapitre de la timeline. Effet de pulsation lumineuse continue simulant une braise vivante.Technologie : CSS pur (@keyframes), sans librairie externe. Note technique : Le code de cette animation a été placé directement dans le bloc style 'type="text/tailwindcss"' du head (plutôt que dans style.css externe) afin d'éviter un bug de timing au chargement de la page
   
 
 - Composants Tailwind :

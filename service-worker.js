@@ -1,6 +1,6 @@
 // SERVICE WORKER
 
-const CACHE_NAME = 'la-forge-v1.5.4'; 
+const CACHE_NAME = 'la-forge-v1.5.6'; 
 const FILES_TO_CACHE = [
     './',
     'index.html',
@@ -45,7 +45,13 @@ const FILES_TO_CACHE = [
     'media/page-auteur/evillibrarians.jpg',
     'media/page-auteur/ruetemps.jpg',
     'media/page-auteur/seo-on_img_5013.webp',
-    
+     // Libraries
+    'https://cdn.jsdelivr.net/combine/npm/daisyui@5/base/rootscrolllock.css,npm/daisyui@5/base/properties.css,npm/daisyui@5/base/scrollbar.css,npm/daisyui@5/base/rootscrollgutter.css,npm/daisyui@5/base/svg.css,npm/daisyui@5/base/rootcolor.css,npm/daisyui@5/base/reset.css,npm/daisyui@5/components/carousel.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js',
+    'https://unpkg.com/boxicons@2.1.4/dist/boxicons.js',
+    'https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4'
 ];
 
 // SERVICE WORKER installation
@@ -74,55 +80,11 @@ self.addEventListener('activate', (evt) => {
 });
 
 // STRATEGIES DE CACHE
-async function cacheFirst(request) {
-    try {
-        const cached = await caches.match(request);
-        if (cached) return cached;
-
-        const response = await fetch(request, {
-            mode: 'no-cors',
-            credentials: 'omit'
-        });
-
-        if (response && (response.status === 200 || response.type === 'opaque')) {
-            const cache = await caches.open(CACHE_NAME);
-            cache.put(request, response.clone());
-        }
-
-        return response;
-    } catch (err) {
-        const cached = await caches.match(request);
-        if (cached) return cached;
-        return new Response('', { status: 408, statusText: 'Ressource indisponible hors ligne' });
-    }
-}
-
 self.addEventListener('fetch', (evt) => {
-    const url = evt.request.url;
     const { request } = evt;
-
-    // Ne pas intercepter les requêtes avec Subresource Integrity (SRI, ex: jQuery, Material Icons)
-    if (evt.request.integrity) {
-        return;
-    }
 
     if (request.method !== 'GET') return;
 
-    // Google Fonts → cache-first
-    if (url.includes('fonts.googleapis.com') || url.includes('fonts.gstatic.com')) {
-        evt.respondWith(cacheFirst(evt.request));
-        return;
-    }
-
-    // CDN externes (GSAP, ScrollTrigger, DaisyUI, Tailwind, jQuery, etc.) → cache-first
-    if (
-        url.includes('cdnjs.cloudflare.com') ||
-        url.includes('cdn.jsdelivr.net') ||
-        url.includes('unpkg.com')
-    ) {
-        evt.respondWith(cacheFirst(evt.request));
-        return;
-    }
 
     // NAVIGATION → Network First
     if (request.mode === 'navigate') {

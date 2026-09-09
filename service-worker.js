@@ -1,6 +1,6 @@
 // SERVICE WORKER
 
-const CACHE_NAME = 'la-forge-v1.5.0';
+const CACHE_NAME = 'la-forge-v1.5.1'; 
 const FILES_TO_CACHE = [
     './',
     'index.html',
@@ -13,10 +13,12 @@ const FILES_TO_CACHE = [
     'js/carousel.js',
     'js/navbar.js',
     'js/chiffres.js',
+    'js/fadeInOnScroll.js',
     // img - icons
     'media/logo-icons/icon-andr-192x192.png',
     'media/logo-icons/icon-andr-512x512.png',
     'media/logo-icons/icon-ms-144x144.png',
+    'media/manifest-screenshots/screenshot-desktop-1920x1080.png',
     'media/hero/hero.jpg',
     'media/logo-icons/auteur-96x96.png',
     'media/logo-icons/oeuvres-96x96.png',
@@ -31,17 +33,22 @@ const FILES_TO_CACHE = [
     'media/hero/bgsections/bgcosmere.jpg',
     'media/hero/bgsections/bgcosmere2.jpg',
     'favicon-48x48.ico',
-    'media/hero/bgsections/page-auteur/brandonsanderson.webp',
-    // Libraries
-    'https://cdn.jsdelivr.net/combine/npm/daisyui@5/base/rootscrolllock.css,npm/daisyui@5/base/properties.css,npm/daisyui@5/base/scrollbar.css,npm/daisyui@5/base/rootscrollgutter.css,npm/daisyui@5/base/svg.css,npm/daisyui@5/base/rootcolor.css,npm/daisyui@5/base/reset.css,npm/daisyui@5/components/carousel.css',
-    'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js',
-    'https://unpkg.com/boxicons@2.1.4/dist/boxicons.js',
-    'https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4',
+    'media/page-auteur/brandonsanderson.webp',
+    'media/page-auteur/evolution-of-brandons.webp',
+    'media/page-auteur/byu-edificio-benson.jpg',
+    'media/page-auteur/byu-leading-edge-41.jpg',
+    'media/page-auteur/byu-leading-edge-42.jpg',
+    'media/page-auteur/byu-leading-edge-50.jpg',
+    'media/page-auteur/brandon-sanderson-david-farland.webp',
+    'media/page-auteur/the-first-edition-elantris-cover.jpg',
+    'media/page-auteur/the-first-edition-elantris-backcover.jpg',
+    'media/page-auteur/evillibrarians.jpg',
+    'media/page-auteur/ruetemps.jpg',
+    'media/page-auteur/seo-on_img_5013.webp',
+    
 ];
 
-// SERVICE WORKER
+// SERVICE WORKER installation
 self.addEventListener('install', (evt) => {
     evt.waitUntil(
         caches.open(CACHE_NAME)
@@ -66,7 +73,42 @@ self.addEventListener('activate', (evt) => {
     self.clients.claim();
 });
 // STRATEGIES DE CACHE
+async function cacheFirst(request) {
+    const cached = await caches.match(request);
+    if (cached) return cached;
+
+    try {
+        const response = await fetch(request);
+        if (response && (response.status === 200 || response.type === 'opaque')) {
+            const cache = await caches.open(CACHE_NAME);
+            cache.put(request, response.clone());
+        }
+        return response;
+    } catch (err) {
+        return new Response('', { status: 408, statusText: 'Ressource indisponible hors ligne' });
+    }
+}
+
 self.addEventListener('fetch', (evt) => {
+    // cache-first
+    const url = evt.request.url;
+
+    // Google Fonts → cache-first
+    if (url.includes('fonts.googleapis.com') || url.includes('fonts.gstatic.com')) {
+        evt.respondWith(cacheFirst(evt.request));
+        return;
+    }
+
+    // CDN externes (GSAP, ScrollTrigger, DaisyUI, Tailwind, jQuery, etc.) → cache-first
+    if (
+        url.includes('cdnjs.cloudflare.com') ||
+        url.includes('cdn.jsdelivr.net') ||
+        url.includes('unpkg.com')
+    ) {
+        evt.respondWith(cacheFirst(evt.request));
+        return;
+    }
+
     const { request } = evt;
 
     if (request.method !== 'GET') return;

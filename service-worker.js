@@ -1,6 +1,6 @@
 // SERVICE WORKER
 
-const CACHE_NAME = 'la-forge-v1.5.2'; 
+const CACHE_NAME = 'la-forge-v1.5.3'; 
 const FILES_TO_CACHE = [
     './',
     'index.html',
@@ -92,6 +92,10 @@ async function cacheFirst(request) {
 self.addEventListener('fetch', (evt) => {
     // cache-first
     const url = evt.request.url;
+
+    if (evt.request.integrity) {
+        return;
+    }
 
     // Google Fonts → cache-first
     if (url.includes('fonts.googleapis.com') || url.includes('fonts.gstatic.com')) {

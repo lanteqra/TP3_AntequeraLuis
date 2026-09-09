@@ -9,7 +9,7 @@
     <title>Accueil | La Forge des Mots — Brandon Sanderson</title>
 
     <link rel="manifest" href="manifest.json">
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/fadeInOnScroll.js" defer></script>
@@ -56,6 +56,9 @@
             --font-mono: "JetBrains Mono", monospace;
         }
 
+        .link {
+            @apply text-ember hover:text-ember-dark hover:font-bold
+        }
 
         a:focus-visible,
         button:focus-visible,
@@ -65,6 +68,10 @@
         [tabindex]:focus-visible {
             outline: 3px solid var(--color-ember);
             outline-offset: 5px;
+        }
+
+        .js-fade-in {
+            @apply opacity-0 motion-reduce:opacity-100;
         }
 
         .forge-btn {
@@ -78,7 +85,74 @@
         .footer__social-item, .footer__link {
             @apply text-ember-light hover:text-ember-dark transition-colors duration-200;
         }
-    
+
+        .auteur-bio__timeline {
+            @apply relative;
+        }
+
+        .auteur-bio__timeline::before {
+            content: "";
+            @apply absolute left-1/2 top-0 bottom-0 w-2.5 -translate-x-1/2 opacity-[0.5] hidden;
+            background: linear-gradient(
+                to bottom,
+                transparent,
+                var(--color-ember) 15%,
+                var(--color-storm) 85%,
+                transparent
+            );
+        }
+
+        @media (min-width: 768px) {
+            .auteur-bio__timeline::before {
+                @apply block;
+            }
+        }
+
+        .auteur-bio__marker {
+            @apply hidden md:flex items-center justify-center w-8 h-8 mx-auto col-span-12 ;
+        }
+
+
+
+        .auteur-bio__image {
+            @apply transition-transform duration-500 ease-out rounded-2xl shadow-lg shadow-ember-dark;
+        }
+
+
+        .auteur-bio__chapter {
+            @apply bg-white/40 p-5 rounded-xl
+        }
+        .auteur-bio__image:hover {
+            @apply scale-[1.05];
+        }
+
+        @keyframes ember-pulse {
+        0%, 100% {
+            box-shadow: 0 0 8px 1px var(--color-ember);
+            opacity: 0.3;
+            transform: scale(1);
+        }
+        50% {
+            box-shadow: 0 0 30px 10px var(--color-ember);
+            opacity: 0.9;
+            transform: scale(1.3);
+        }
+    }
+
+    .auteur-bio__marker::after {
+        content: "";
+        @apply w-[0.65rem] h-[0.65rem] bg-ember-light rounded-full;
+        animation: ember-pulse 2.5s ease-in-out infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .auteur-bio__marker::after {
+            animation: none;
+            box-shadow: 0 0 12px 2px var(--color-ember);
+        }
+    }
+
+
     </style>
     <link rel="icon" href="favicon-48x48.ico">
 </head>
@@ -164,8 +238,8 @@
                             <p
                                 class="auteur-hero__intro text-parchment font-normal text-base sm:text-lg md:text-xl lg:text-2xl [text-shadow:-5px_7px_7px_rgba(0,0,0,0.5)]">
                                 Écrivain américain de fantasy, forgeron de mondes reliés par un
-                                univers commun, le Cosmere. Dès <em>Fils-des-Brumes</em> à
-                                <em>L'Archive des Tempêtes</em>, il construit une mythologie
+                                univers commun, le Cosmere. Dès Fils-des-Brumes à
+                                L'Archive des Tempêtes, il construit une mythologie
                                 où la magie obéit à des lois aussi rigoureuses que la physique.
                             </p>
                             <div class="auteur-hero__quote text-parchment font-normal text-sm sm:text-base md:text-lg lg:text-xl [text-shadow:-0px_-2px_3px_rgba(0,0,0,1)] mb-5
@@ -188,7 +262,320 @@
 
         </section>
         <!-- Section  -->
+        <!-- SECTION 2 : BIOGRAPHIE -->
+        <section id="auteur-bio" class="auteur-bio bg-parchment" aria-labelledby="auteur-bio__titre">
+            <div class="auteur-hero__container container mx-auto pt-10 pb-10">
+                <div class="auteur-hero-grid grid grid-cols-12 h-full items-center text-center md:text-left">
+                    <div class="auteur-hero__content js-fade-in col-span-12 text-center mb-10">
+                        <span class="auteur-bio__label font-mono text-xs tracking-[0.3em] uppercase text-ember">
+                            Biographie
+                        </span>
+                        <h2 id="auteur-bio__titre"
+                            class="auteur-bio__titre font-display text-3xl md:text-4xl text-ember mt-2">
+                            Une vie forgée dans les mots
+                        </h2>
+                    </div>
+                </div>
 
+                <div class="auteur-bio__timeline relative grid grid-cols-12 gap-5">
+
+
+                    <div class="auteur-bio__chapter js-fade-in col-start-2 col-span-10">
+                        <img src="media/page-auteur/evolution-of-brandons-official-photography-v0-j79sxi7ffvbe1.webp"
+                            alt="Brandon Sanderson jeune, à l'époque de ses études à Brigham Young University"
+                            class="auteur-bio__image" loading="lazy">
+                    </div>
+                    <!-- Chapitre 1  -->
+                    <span class="auteur-bio__marker hidden md:flex order-1" aria-hidden="true"></span>
+
+                    <div class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6 flex items-center order-2">
+                        <div class="auteur-bio__content flex flex-col justify-center">
+                            <p class="auteur-bio__ere font-mono text-sm text-ember tracking-widest uppercase">
+                                Chapitre I
+                            </p>
+                            <h3 class="auteur-bio__heading font-display text-2xl text-ember mt-1 mb-3">
+                                Jeunesse et découverte
+                            </h3>
+                            <p class="auteur-bio__texte text-abyss leading-relaxed">
+                                Il est né le 19 décembre 1975, à Lincoln, au Nebraska. Enfant, il adorait lire, mais il
+                                a perdu l'intérêt pour le genre d'œuvres qu'on lui suggérait habituellement, si bien
+                                qu'au secondaire, il évitait d'ouvrir un livre autant que possible. Tout a changé
+                                lorsqu'il avait 13 ou 14 ans : une enseignante perspicace, madame Reader, lui a offert
+                                l'occasion de lire <a class="link"
+                                    href="https://www.goodreads.com/book/show/176268.Dragonsbane">(Fendragon), de
+                                    Barbara Hambly</a>. Brandon a savouré ce livre du début à la fin, puis s'est mis à
+                                en chercher d'autres du même genre. <br> Il a ainsi découvert des auteurs comme Robert
+                                Jordan, Melanie Rawn, David Eddings, Anne McCaffrey et Orson Scott Card. Il est demeuré
+                                un lecteur avide jusqu'à la fin de ses études secondaires. Il aimait tant la fantasy
+                                épique qu'il a même tenté d'écrire lui-même quelques récits. Ses premières tentatives,
+                                dit-il, étaient exécrables.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6 flex items-center order-3">
+                        <div class="auteur-bio__content">
+                            <p class="auteur-bio__texte text-abyss leading-relaxed mb-5">
+                                En 1994, Brandon s'est inscrit en biochimie à la <a class="link"
+                                    href="https://www.byu.edu/">Brigham Young University (BYU)</a>. Entre 1995 et 1997,
+                                il a pris une année sabbatique pour servir comme missionnaire au sein de l'Église de
+                                Jésus-Christ des Saints des Derniers Jours. Brandon raconte souvent que c'est pendant
+                                son séjour à Séoul, en Corée, qu'il a réalisé qu'il ne s'ennuyait aucunement de la
+                                chimie, mais qu'il s'ennuyait beaucoup de l'écriture. À son retour à la BYU, il est
+                                devenu étudiant en anglais, au grand désarroi de sa mère, qui avait toujours espéré
+                                qu'il devienne médecin.
+                            </p>
+                            <figure class="auteur-bio__figure ">
+                                <img src="media/page-auteur/BYU-Edificio-Benson.jpg"
+                                    alt="Brigham Young University, Édifice Benson, siège des départements de chimie et de biochimie"
+                                    class="auteur-bio__image w-full object-cover" loading="lazy">
+                                <figcaption>
+                                    <p class="auteur-bio__image-capt text-xs text-center mt-3  italic ">Brigham Young University,
+                                        Édifice Benson, siège des départements de chimie et de biochimie</p>
+                                </figcaption>
+                            </figure>
+
+                        </div>
+                    </div>
+                    <span class="auteur-bio__marker hidden md:flex order-4" aria-hidden="true"></span>
+
+                    <!-- Chapitre 2 -->
+                    <div
+                        class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6  flex items-center order-5 md:order-4">
+                        <div class="auteur-bio__content">
+                            <figure class="auteur-bio__figure flex flex-col gap-2">
+                                <div
+                                    class="flex flex-nowrap gap-2 min-[768px]:max-[1032px]:flex-col min-[768px]:max-[1032px]:items-center">
+                                    <img src="media/page-auteur/BYU-Leading-Edge-41.jpg"
+                                        alt="Couverture du magazine The Leading Edge, numéro 41 - 2001, illustrant..."
+                                        class="auteur-bio__image flex-1 min-w-0 aspect-3/4 object-cover min-[768px]:max-[1032px]:flex-none min-[768px]:max-[1032px]:w-50"
+                                        loading="lazy">
+                                    <img src="media/page-auteur/BYU-Leading-Edge-42.jpg"
+                                        alt="Couverture du magazine The Leading Edge, numéro 42 - octobre 2001, illustrant..."
+                                        class="auteur-bio__image flex-1 min-w-0 aspect-3/4 object-cover min-[768px]:max-[1032px]:flex-none min-[768px]:max-[1032px]:w-50"
+                                        loading="lazy">
+                                    <img src="media/page-auteur/BYU-Leading-Edge-50.jpg"
+                                        alt="Couverture du magazine The Leading Edge, numéro 50 - 2005, illustrant..."
+                                        class="auteur-bio__image flex-1 min-w-0 aspect-3/4 object-cover min-[768px]:max-[1032px]:flex-none min-[768px]:max-[1032px]:w-50"
+                                        loading="lazy">
+                                </div>
+                                <figcaption class="auteur-bio__image-capt text-xs text-center italic  m-3">
+                                    The Leading Edge, la revue de fantasy et de science-fiction de la BYU
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div
+                        class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6  flex items-center order-4 md:order-5">
+                        <div class="auteur-bio__content flex flex-col justify-center">
+                            <p class="auteur-bio__ere font-mono text-sm text-ember tracking-widest uppercase">
+                                Chapitre II
+                            </p>
+                            <h3 class="auteur-bio__heading font-display text-2xl text-ember mt-1 mb-3">
+                                Les premiers pas
+                            </h3>
+                            <p class="auteur-bio__texte text-abyss leading-relaxed">
+                                Brandon a pris l'écriture au sérieux, travaillant de nuit comme concierge dans un hôtel,
+                                car cet emploi lui permettait d'écrire pendant ses heures de travail. Durant cette
+                                période, il fréquentait l'université à temps plein le jour, travaillait de nuit pour
+                                payer ses études, et écrivait tout ce qu'il pouvait. Il confesse qu'il n'avait
+                                pratiquement aucune vie sociale, mais il a néanmoins terminé sept romans pendant cette
+                                période. Brandon a soumis plusieurs de ses écrits pour publication… et a accumulé un bon
+                                nombre de lettres de refus. Malgré tout, il est demeuré un écrivain dévoué.
+                            </p>
+                            <p class="auteur-bio__texte text-abyss leading-relaxed mb-3">
+                                Faire du bénévolat pour <a class="link" href="https://ling.byu.edu/leading-edge">The
+                                    Leading Edge</a>, la revue de fantasy et de science-fiction de la BYU, fut une
+                                expérience merveilleuse pour lui. Il a lu de nombreux textes soumis à la revue, y a
+                                forgé des amitiés durables, et y a occupé le poste de rédacteur en chef durant sa
+                                dernière année.
+                            </p>
+                        </div>
+                    </div>
+                    <span class="auteur-bio__marker hidden md:flex order-6" aria-hidden="true"></span>
+                    <!-- Chapitre 3 -->
+                    <div class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6  flex items-center order-7 ">
+                        <div class="auteur-bio__content flex flex-col justify-center">
+                            <p class="auteur-bio__ere font-mono text-sm text-ember tracking-widest uppercase">
+                                Chapitre III - Fin des années 1990
+                            </p>
+                            <h3 class="auteur-bio__heading font-display text-2xl text-ember mt-1 mb-3">
+                                Le mentorat et les conventions
+                            </h3>
+                            <p class="auteur-bio__texte text-abyss leading-relaxed mb-3">
+                                Brandon a beaucoup appris sur les aspects commerciaux du métier d'écrivain grâce
+                                aux cours de David Farland, auteur de la populaire saga
+                                <span class="italic text-storm-light">Runelords</span>. Un des conseils que
+                                Dave lui a donnés fut d'assister à des conventions comme la WorldCon et la World
+                                Fantasy, afin de tisser des liens avec des professionnels de l'industrie. Brandon
+                                et un petit groupe d'amis qui aspiraient eux aussi à devenir écrivains ont commencé
+                                à le faire. C'est d'ailleurs dans l'une de ces conventions qu'il ferait plus tard
+                                la connaissance à la fois de son agent actuel et de l'un de ses éditeurs.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6 flex items-center order-8">
+                        <div class="auteur-bio__content w-full">
+                            <figure class="auteur-bio__figure flex flex-col items-center">
+                                <img src="media/page-auteur/brandon-sanderson-david-farland-qgasok9tymxsgbjn5jrn4qs0nq9ty9zbluf5svtoo.webp"
+                                    alt="Portrait de David Farland et Brandon Sanderson"
+                                    class="auteur-bio__image w-[80%] sm:w-full sm:max-w-75 loading=" lazy">
+                                <figcaption>
+                                    <p class="auteur-bio__image-capt text-xs text-center m-3  italic ">Portrait de David Farland
+                                        et Brandon Sanderson</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <span class="auteur-bio__marker hidden md:flex order-9" aria-hidden="true"></span>
+                    <!-- Chapitre 4 -->
+                    <div
+                        class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6  flex items-center order-10 md:order-11">
+                        <div class="auteur-bio__content flex flex-col justify-center">
+                            <p class="auteur-bio__ere font-mono text-sm text-ember tracking-widest uppercase">
+                                Chapitre IV - 2003 - 2005
+                            </p>
+                            <h3 class="auteur-bio__heading font-display text-2xl text-ember mt-1 mb-3">
+                                L'Appel
+                            </h3>
+                            <p class="auteur-bio__texte text-abyss leading-relaxed">
+                                C'est en 2003, alors que Brandon poursuivait des études supérieures à la BYU, qu'il
+                                a reçu l'appel d'un éditeur de Tor souhaitant acheter l'un de ses livres. Brandon
+                                avait soumis le manuscrit un an et demi plus tôt, et avait presque perdu espoir
+                                d'obtenir une réponse, si bien qu'il fut à la fois surpris et ravi de recevoir cette
+                                offre. En mai 2005, Brandon a tenu entre ses mains son premier roman publié,
+                                <span class="not-italic text-storm-light">Elantris</span>. Tor a également publié
+                                la trilogie <span class="not-italic text-storm-light">Fils-des-Brumes</span>, et a
+                                fait paraître depuis <span class="not-italic text-storm-light">Warbreaker</span>,
+                                <span class="not-italic text-storm-light">La Voie des rois</span>,
+                                <span class="not-italic text-storm-light">The Rithmatist</span>,
+                                <span class="not-italic text-storm-light">Le Livre des Radieux</span>,
+                                <span class="not-italic text-storm-light">Arcanum Unbounded: The Cosmere
+                                    Collection</span>, <span class="not-italic text-storm-light">Justicière</span>, et
+                                <span class="not-italic text-storm-light">Rythme de guerre</span>, d'autres titres
+                                de Sanderson devant suivre dans les années à venir.
+                            </p>
+                            <p class="auteur-bio__texte text-abyss leading-relaxed">
+                                En 2004, après l'obtention de sa maîtrise en création littéraire à la Brigham Young
+                                University, Brandon a été invité à enseigner le cours qu'il avait lui-même suivi comme
+                                étudiant de premier cycle avec Dave Farland. Malgré son horaire chargé, Brandon continue
+                                d'enseigner cette unique section de création littéraire axée sur la science-fiction et
+                                la fantasy, car il aime aider les écrivains en herbe. Ça lui permet aussi de changer
+                                d'air, dit-il.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6  flex items-center order-11 md:order-10">
+                        <div class="auteur-bio__content w-full">
+                            <figure class="auteur-bio__figure flex flex-col gap-2">
+                                <div
+                                    class="flex flex-nowrap gap-2 min-[768px]:max-[1032px]:flex-col min-[768px]:max-[1032px]:items-center">
+                                    <img src="media/page-auteur/the-first-edition-elantris-cover.jpg"
+                                        alt="the first edition elantris cover"
+                                        class="auteur-bio__image flex-1 min-w-0 aspect-3/4 object-cover min-[768px]:max-[1032px]:flex-none min-[768px]:max-[1032px]:w-50"
+                                        loading="lazy">
+                                    <img src="media/page-auteur/the-first-edition-elantris-backcover.jpg"
+                                        alt="the first edition elantris backcover"
+                                        class="auteur-bio__image flex-1 min-w-0 aspect-3/4 object-cover min-[768px]:max-[1032px]:flex-none min-[768px]:max-[1032px]:w-50"
+                                        loading="lazy">
+                                </div>
+                                <figcaption class="auteur-bio__image-capt text-xs text-center  italic  m-3">
+                                    Premiere edition d'Elantris
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <span class="auteur-bio__marker hidden md:flex order-12" aria-hidden="true"></span>
+                    <!-- Chapitre 5 -->
+                    <div class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6  flex items-center order-13">
+                        <div class="auteur-bio__content flex flex-col justify-center">
+                            <p class="auteur-bio__ere font-mono text-sm text-ember tracking-widest uppercase">
+                                Chapitre V - 2007 - 2013
+                            </p>
+                            <h3 class="auteur-bio__heading font-body text-base text-ember mt-1 mb-3">
+                                Nouveaux horizons
+                            </h3>
+                            <p class="auteur-bio__texte text-abyss leading-relaxed">
+                                Le répertoire de Brandon s'est élargi au marché jeunesse lorsque Scholastic a
+                                publié <span class="not-italic text-storm-light">Alcatraz Versus the Evil
+                                    Librarians</span>, un roman destiné aux jeunes lecteurs, en octobre 2007. Nancy
+                                Pearl a offert une critique très favorable de ce livre sur National Public Radio,
+                                ce qui a réjoui les admirateurs de Sanderson. Depuis la parution d'Alcatraz,
+                                Brandon prend plaisir à visiter des écoles et à échanger avec de jeunes lecteurs.
+                            </p>
+                            <p class="auteur-bio__texte text-abyss leading-relaxed">
+                                En décembre 2007, Brandon a été choisi par Harriet Rigney pour achever
+                                <span class="not-italic text-storm-light">Un souvenir de Lumière</span>, le
+                                dernier tome de la série <span class="not-italic text-storm-light">La Roue du
+                                    Temps</span> de Robert Jordan. La version originale anglaise est parue le 8
+                                janvier 2013, tandis que l'édition française a été publiée le 2 novembre 2022.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 md:col-span-6  flex items-center order-14">
+                        <div class="auteur-bio__content w-full">
+                            <figure class="auteur-bio__figure flex flex-col gap-2">
+                                <div
+                                    class="flex flex-nowrap gap-2 min-[768px]:max-[1032px]:flex-col min-[768px]:max-[1032px]:items-center">
+                                    <img src="media/page-auteur/evillibrarians.jpg"
+                                        alt="Couverture d'Alcatraz Versus the Evil Librarians"
+                                        class="auteur-bio__image flex-1 min-w-0 aspect-3/4 object-cover min-[768px]:max-[1032px]:flex-none min-[768px]:max-[1032px]:w-50"
+                                        loading="lazy">
+                                    <img src="media/page-auteur/ruetemps.jpg" alt="Couverture d'Un souvenir de Lumière"
+                                        class="auteur-bio__image flex-1 min-w-0 aspect-3/4 object-cover min-[768px]:max-[1032px]:flex-none min-[768px]:max-[1032px]:w-50"
+                                        loading="lazy">
+                                </div>
+                                <figcaption class="auteur-bio__image-capt text-xs text-center italic m-3">
+                                    Alcatraz contre les Bibliothécaires Maléfiques et Un souvenir de Lumière
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <span class="auteur-bio__marker hidden md:flex order-14" aria-hidden="true"></span>
+                    <!-- Chapitre 6 -->
+                    <div class="auteur-bio__chapter js-fade-in col-start-2 col-span-10 flex items-center order-15">
+                        <div class="auteur-bio__content flex flex-col justify-center">
+                            <p class="auteur-bio__ere font-mono text-sm text-ember tracking-widest uppercase">
+                                Chapitre VI - Aujourd'hui
+                            </p>
+                            <h3 class="auteur-bio__heading font-body text-base text-ember mt-1 mb-3">
+                                Le Cosmère aujourd'hui
+                            </h3>
+                            <p class="auteur-bio__texte text-abyss leading-relaxed">
+                                Depuis 2010, Sanderson développe <span class="not-italic text-storm-light">Les Archives
+                                    de Roshar</span>, pierre angulaire de son univers partagé, le Cosmère.
+                                En 2022, sa campagne Kickstarter pour quatre romans surprises pulvérise tous les records
+                                du financement participatif, dépassant 41 millions de dollars et confirmant l'ampleur de
+                                sa communauté de lecteurs à travers le monde.
+                            </p>
+                            <p class="auteur-bio__texte text-abyss leading-relaxed mb-4">
+                                Aujourd'hui encore, Brandon continue de forger de nouveaux mondes et d'accueillir
+                                sa communauté grandissante lors de conventions à travers le globe. Pour découvrir
+                                l'ensemble de son œuvre et suivre ses prochains projets, visitez
+                                <a href="https://www.brandonsanderson.com/pages/hello-my-names-brandon" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="auteur-bio__link link text-ember underline hover:text-ember-light">
+                                    son site officiel</a>
+                            </p>
+                            <figure class="auteur-bio__figure">
+                                <img src="media/page-auteur/SEOon_IMG_5013.webp"
+                                    alt="Brandon Sanderson entouré de lecteurs lors d'une convention récente"
+                                    class="auteur-bio__image w-full h-56 md:h-150 object-cover object-[50%_40%]"
+                                    loading="lazy">
+                                <figcaption class="auteur-bio__image-capt text-xs text-center italic mt-4">
+                                    Brandon Sanderson à la rencontre de ses lecteurs
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
         <!-- Section  -->
 
         <!-- Section  -->

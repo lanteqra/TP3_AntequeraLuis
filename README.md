@@ -32,7 +32,8 @@ Comme le sujet était libre, j'ai choisi de faire un site web dédie à l'un de 
 
 - Composants Tailwind :
   - Barre de navigation : "Simple Responsive Navigation Bar" - https://www.creative-tim.com/twcomponents/component/simple-responsive-navigation-bar
-  - Carousel : "Full-bleed carousel" https://daisyui.com/components/carousel/?lang=es#full-bleed-carousel
+  - Carousel : Section 2 de la page index.html - hero de la page auteurinfo.html"Full-bleed carousel" https://daisyui.com/components/carousel/?lang=es#full-bleed-carousel
+  - Blockquote: Citations — Section 3 de la page auteurinfo.html - "FlyonUI Blockquote" - https://flyonui.com/docs/content/blockquote/ - utilisées comme référence, le composant a été adapté manuellement, sans installation de la librairie FlyonUI 
 
 - Javascript (animations)
   - Animation Js : 

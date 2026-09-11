@@ -1,6 +1,6 @@
 // SERVICE WORKER
 
-const CACHE_NAME = 'la-forge-v1.5.9';
+const CACHE_NAME = 'la-forge-v1.5.9.2';
 const FILES_TO_CACHE = [
     './',
     'index.html',
@@ -88,12 +88,32 @@ const FILES_TO_CACHE = [
 
 // SERVICE WORKER installation
 self.addEventListener('install', (evt) => {
-    evt.waitUntil(
+    /* evt.waitUntil(
         caches.open(CACHE_NAME)
             .then((cache) =>
                 cache.addAll(FILES_TO_CACHE)
             )
+    );*/
+    evt.waitUntil(
+        caches.open(CACHE_NAME).then(async (cache) => {
+            const fail = [];
+            for (const url of FILES_TO_CACHE) {
+                try {
+                    await cache.add(url);
+                } catch (err) {
+                    console.warn('[SW] Fail:', url, err);
+                    fail.push(url);
+                }
+            }
+            if (fail.length) {
+                console.warn(`[SW] ${fail.length} pas cache:`, fail);
+            } else {
+                console.log('[SW]');
+            }
+        })
     );
+
+
     self.skipWaiting();
 });
 

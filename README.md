@@ -26,14 +26,16 @@ Comme le sujet était libre, j'ai choisi de faire un site web dédie à l'un de 
 - HTML5 sémantique
 - CSS3 (méthodologie BEM, animations)
   - Animations CSS :
-    - index - Hero Title / auteurInfo - auteur heri title: Effet de brillance métallique sur le <h1> du hero — technique de « gradient text » via background-clip: text. Adaptée du tutoriel de Let's Build UI (https://www.letsbuildui.dev/articles/css-text-effects-five-minimal-examples/). - .hero__title (classe partagée, définie une seule fois dans style.css global) — réutilisée sur tous les pages pour garder cohérente visuelle entre tous les Heros du site.
+    - index - Hero Title / auteurInfo - auteur heri title: Effet de brillance métallique sur le <h1> du hero — technique de  gradient text via background-clip: text. Adaptée du tutoriel de Let's Build UI (https://www.letsbuildui.dev/articles/css-text-effects-five-minimal-examples/). - .hero__title (classe partagée, définie une seule fois dans style.css global) — réutilisée sur tous les pages pour garder cohérente visuelle entre tous les Heros du site.
     - auteurInfo.html - section Biographie - (.auteur-bio__marker::after) situés entre chaque chapitre de la timeline. Effet de pulsation lumineuse continue simulant une braise vivante.Technologie : CSS pur (@keyframes), sans librairie externe. Note technique : Le code de cette animation a été placé directement dans le bloc style 'type="text/tailwindcss"' du head (plutôt que dans style.css externe) afin d'éviter un bug de timing au chargement de la page
-  
+    - oeuvresInfo.html -  section catalogue an effet de "pile de livres" pour les œuvres publiées en plusieurs volumes en français. Les deux couvertures se superposent avec une légère rotation opposée simulant des livres empilés. Au survol de la carte, les deux images "s'éventent" davantage via une transition CSS fluide, révélant qu'il s'agit de deux volumes distincts. (aucun JavaScript requis). - Pour les cartes à une seule couverture : l'image s'agrandit légèrement et pivote
+    scale-105 rotate-12.
 
 - Composants Tailwind :
   - Barre de navigation : "Simple Responsive Navigation Bar" - https://www.creative-tim.com/twcomponents/component/simple-responsive-navigation-bar
   - Carousel : Section 2 de la page index.html - hero de la page auteurinfo.html"Full-bleed carousel" https://daisyui.com/components/carousel/?lang=es#full-bleed-carousel
   - Blockquote: Citations — Section 3 de la page auteurinfo.html - "FlyonUI Blockquote" - https://flyonui.com/docs/content/blockquote/ - utilisées comme référence, le composant a été adapté manuellement, sans installation de la librairie FlyonUI 
+  - -Accordéon : "Accordion" - Section 3 de la page oeuvresInfo.html - https://tailwindflex.com/@abhirajk/accordion-2
 
 - Javascript (animations)
   - Animation Js : 

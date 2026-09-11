@@ -1,4 +1,4 @@
-/*@import "tailwindcss";*/
+@import "tailwindcss";
 
 @media (min-width: 1024px) {
     .top-navbar {
@@ -19,18 +19,25 @@
 }
 
 .hero__title {
-    background: linear-gradient(110deg, #e8e3d3 30%, #f0b562 45%, #c77b3f 55%, #e8e3d3 70%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: shimmer 2.5s linear infinite;
+    background: linear-gradient(110deg, #e8e3d3 30%, #f0b562 45%, #c77b3f 55%, #e8e3d3 70%) !important;
+    background-size: 200% auto !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    animation: shimmer 2.5s linear infinite !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
     .hero__title {
         animation: none;
         background-position: 0 0;
+    }
+
+     *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
 

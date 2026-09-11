@@ -83,6 +83,35 @@
             @apply text-ember-light hover:text-ember-dark transition-colors duration-200;
         }
 
+        .catalogue__carte {
+            @apply p-5;
+        } 
+        .catalogue__carte-image {
+            @apply transition-transform duration-300 ease-out origin-center;
+        }
+
+        .catalogue__carte:hover .catalogue__carte-image {
+            @apply scale-105 rotate-12;
+            
+        }
+
+        .catalogue__carte-pile-image--arriere {
+            @apply -rotate-6 -translate-x-4 z-1;
+        }
+
+        .catalogue__carte-pile-image--avant {
+            @apply rotate-3 translate-x-4 z-2 shadow-[-4px_8px_16px_rgba(0,0,0,0.5)];
+        }
+
+        .catalogue__carte:hover .catalogue__carte-pile-image--arriere {
+            @apply -rotate-12 -translate-x-10;
+        }
+
+        .catalogue__carte:hover .catalogue__carte-pile-image--avant {
+            @apply rotate-12 translate-x-10;
+        }
+
+        
 
     </style>
     <link rel="icon" href="favicon-48x48.ico">
@@ -129,7 +158,7 @@
                         </a>
                         <a href="oeuvresInfo.html"
                             class="navbar__link navbar__link--active md:inline-flex md:w-auto w-full px-3 py-2 rounded text-abyss font-bold items-center justify-center bg-storm hover:bg-parchment hover:text-storm uppercase transition-colors">
-                            <span>Les œuvres</span>  
+                            <span>Les œuvres</span>
                         </a>
                         <a href="communaute.html"
                             class="navbar__link md:inline-flex md:w-auto w-full px-3 py-2 rounded text-parchment font-extrabold items-center justify-center bg-abyss-light hover:bg-storm transition-colors hover:text-orange-horizon ">
@@ -145,17 +174,17 @@
     <main id="content">
         <!-- Section hero-oeuvres -->
         <section id="hero-oeuvres"
-            class="auteur-hero relative bg-storm bg-[url(media/hero/bgsections/bgcosmere3.webp)] bg-cover bg-right md:bg-center bg-no-repeat h-full border-b-4 border-parchment-dim overflow-hidden  py-7 px-6" aria-labelledby="hero-oeuvres__titre">
+            class="hero-oeuvres relative bg-storm bg-[url(media/hero/bgsections/bgcosmere3.webp)] bg-cover bg-right md:bg-center bg-no-repeat h-full border-b-4 border-parchment-dim overflow-hidden  py-7 px-6"
+            aria-labelledby="hero-oeuvres__titre">
             <div class="hero-oeuvres__overlay absolute inset-0 bg-abyss/40 z-0" aria-hidden="true"></div>
             <div class="relative z-10 flex items-center">
                 <div class="hero-oeuvres__container js-fade-in container mx-auto px-4">
-                    <div
-                        class="hero-oeuvres__grid grid grid-cols-12 h-full items-center text-center mt-10 mb-10 gap-6">
+                    <div class="hero-oeuvres__grid grid grid-cols-12 h-full items-center text-center mt-10 mb-10 gap-6">
                         <div
                             class="hero-oeuvres__content col-span-12  flex flex-col justify-center md:col-start-3 md:col-end-11 gap-6">
                             <p
                                 class="hero-oeuvres__eyebrow font-mono text-ember uppercase tracking-[0.2em] text-sm mb-3">
-                                L'architecte du Cosmere</p>
+                                Le Cosmere</p>
                             <h1
                                 class="hero-oeuvres__title hero__title font-display md:text-center  text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold [text-shadow:-5px_7px_7px_rgba(0,0,0,0.5)] pb-2 mb-5">
                                 L'Atelier des Œuvres</h1>
@@ -170,24 +199,939 @@
                             <div class="hero-oeuvres__quote text-parchment font-normal text-sm sm:text-base md:text-lg lg:text-xl [text-shadow:-0px_-2px_3px_rgba(0,0,0,1)] mb-5
                                 border-l-2 border-ember pl-6 italic">
                                 <p class="hero-oeuvres__quote-text">
-                                    "C'était incroyable combien de livres on pouvait entasser dans une pièce, à condition de ne pas vouloir se déplacer beaucoup." <br><span>(“It was amazing how many books one could fit into a room, assuming one didn't want to move around very much.”)</span> </p>
+                                    "C'était incroyable combien de livres on pouvait entasser dans une pièce, à
+                                    condition de ne pas vouloir se déplacer beaucoup." <br><span>(“It was amazing how
+                                        many books one could fit into a room, assuming one didn't want to move around
+                                        very much.”)</span> </p>
                                 <p
                                     class="hero-oeuvres__quote-source flex justify-end mt-2 not-italic font-mono text-sm text-ember/80">
                                     Le Puits de l'Ascension (The Well of Ascension)</p>
-
                             </div>
-
                         </div>
-
-
                     </div>
                 </div>
             </div>
-
         </section>
-        <!-- Section 2 - auteur biographie -->
+        <!-- Section 2 - catalogue -->
+        <section id="catalogue" class="catalogue bg-abyss py-16 px-6" aria-labelledby="catalogue__titre">
+            <div class="catalogue-container container mx-auto px-4">
+                <div class="catalogue__liste grid grid-cols-12 gap-4">
+                    <div class="catalogue__header col-start-2 col-end-12 pt-10">
+                        <h2 id="catalogue__titre"
+                            class="catalogue__titre font-display text-ember text-3xl md:text-4xl font-bold text-center mb-10">
+                            Le Catalogue de la Forge
+                        </h2>
+                        <p
+                            class="catalogue__intro font-sans text-parchment text-base md:text-lg text-center max-w-2xl mx-auto mb-12">
+                            Voici une sélection forgée avec soin, les tomes les plus essentiels pour quiconque
+                            souhaite franchir le seuil du Cosmère pour la première fois. Chaque œuvre présentée
+                            ici porte l'empreinte d'un même métal, celui d'un univers partagé où tout se répond.
+                            Pour explorer la bibliographie complète de l'auteur, forge après forge,
+                            <a href="https://www.brandonsanderson.com/pages/books-and-art"
+                                class="catalogue__intro-lien link" target="_blank" rel="noopener noreferrer">
+                                visite l'atelier officiel de Brandon Sanderson
+                            </a>.
+                        </p>
+                    </div>
+                    <!--  Bloc : Romans indépendants du Cosmère -->
+                    <div
+                        class="col-span-12 catalogue__saga bg-storm/10 border border-ember/30 rounded-lg overflow-hidden">
+                        <input type="checkbox" id="saga-independants" class="catalogue__saga-input peer sr-only">
+                        <h3 class="catalogue__saga-titre">
+                            <label for="saga-independants"
+                                class="catalogue__saga-bouton flex items-center justify-between p-4 md:p-5 bg-storm/20 text-parchment cursor-pointer hover:bg-storm/30 transition-colors"
+                                aria-expanded="false" aria-controls="panneau-independants" id="entete-independants">
+                                <span class="catalogue__saga-nom text-xl md:text-2xl">Romans indépendants
+                                    du Cosmère</span>
+                                <svg class="catalogue__saga-icone w-6 h-6 text-ember transition-transform duration-300 peer-checked:rotate-180"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </label>
+                        </h3>
 
-        <!-- Section 3 Citations - Anecdotes-->
+                        <div id="panneau-independants"
+                            class="catalogue__panneau max-h-0 overflow-hidden transition-all duration-500 peer-checked:max-h-[8000px]"
+                            role="region" aria-labelledby="entete-independants">
+                            <div class="grid grid-cols-12 gap-4 catalogue__grille p-4 md:p-6">
+
+                                <article
+                                    class="col-span-12 sm:col-span-6 lg:col-span-4 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <img src="media/couvertures/elantris.jpg" alt="Couverture d'Elantris"
+                                        class="catalogue__carte-image w-[50%]">
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            Elantris</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Roman
+                                                indépendant</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : 2017,
+                                                trad. Pierre-Paul Durastanti</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Mai 2005,
+                                                Tor</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Le premier roman de Brandon Sanderson, qui met en scène la fascinante cité
+                                            d'Elantris. Une parution qui fait partie de notre offre de Noël. Une
+                                            nouvelle édition augmentée avec des rabats aux gardes illustrées, de
+                                            nouvelles cartes, une préface inédite de Dan Wells ainsi qu'une fin
+                                            alternative. Un auteur traduit dans 30 pays et avec 5 millions d'ex. vendus
+                                            à travers le monde, et dont toutes les séries sont optionnées au cinéma. Les
+                                            très bonnes ventes de l'auteur au Livre de Poche, et sa renommée
+                                            internationale.
+                                        </p>
+                                    </div>
+                                </article>
+                                <article
+                                    class="col-span-12 sm:col-span-6 lg:col-span-4 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <img src="media/couvertures/warbreaker.jpg" alt="Couverture de Warbreaker"
+                                        class=" catalogue__carte-image w-[50%]">
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            Warbreaker</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Roman
+                                                indépendant</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : 2012,
+                                                Orbit</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Juillet 2009,
+                                                Tor</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Voici l'histoire de deux sœurs : Siri, une jeune fille rebelle envoyée par
+                                            son père pour épouser le tyrannique Dieu-Roi, et Vivenna, qui va tenter de
+                                            la sauver de son sort. C’est aussi l’histoire de Chanteflamme, un autre dieu
+                                            qui n'aime pas son travail, celle de Vasher, un immortel qui essaie de
+                                            réparer les erreurs qu'il a commises autrefois, et de Saignenuit, sa
+                                            mystérieuse épée. Dans leur monde, celui qui meurt auréolé de gloire devient
+                                            un dieu et vit dans le panthéon du royaume d'Hallandren. C’est un monde
+                                            transformé par la magie biochromatique, la magie du Souffle. Un Souffle
+                                            qu'on ne récupère définitivement que sur un individu à la fois.
+                                        </p>
+                                    </div>
+                                </article>
+                                <article
+                                    class="col-span-12 sm:col-span-6 lg:col-span-4 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <img src="media/couvertures/lamedelempereur.webp"
+                                        alt="Couverture de L'Âme de l'Empereur" class="catalogue__carte-image w-[50%]">
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            L'Âme de l'Empereur</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Roman
+                                                indépendant</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : 2014,
+                                                trad. Mélanie Fazi</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Octobre 2012,
+                                                Tachyon Publications</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            La jeune Shai a été arrêtée alors qu’elle tentait de voler le Sceptre de
+                                            Lune de l’Empereur. Mais au lieu d’être exécutée, ses geôliers concluent
+                                            avec elle un marché : l’Empereur, resté inconscient après une tentative
+                                            d’assassinat ratée, a besoin d’une nouvelle âme. Or, Shai est une jeune
+                                            Forgeuse, une étrangère qui possède la capacité magique de modifier le passé
+                                            d’un objet, et donc d’altérer le présent. Le destin de l’Empire repose sur
+                                            une tâche impossible : comment forger le simulacre d’une âme qui serait
+                                            meilleur que l’âme elle-même ? Shai doit agir vite si elle veut échapper au
+                                            complot néfaste de ceux qui l’ont capturée.
+                                        </p>
+                                    </div>
+                                </article>
+                                <article
+                                    class="col-span-12 sm:col-span-6 lg:col-span-4  catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <img src="media/couvertures/lilenoirebraise.jpg"
+                                        alt="Couverture de L'Île de Noirebraise" class="catalogue__carte-image w-[50%]">
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            L'Île de Noirebraise</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Roman
+                                                indépendant</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : 2026,
+                                                Le Livre de Poche</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Février 2026,
+                                                Tor</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Trappeur des îles du Panthéon, Crépuscule est toujours accompagné de ses
+                                            deux Aviares, des oiseaux aux pouvoirs magiques avec lesquels son peuple est
+                                            capable de tisser des Liens. Afin de résister à Ceux-d’en-haut, des
+                                            envahisseurs venus des étoiles qui souhaitent exploiter les Aviares, il
+                                            exhorte ses semblables, les Eelakin, à réagir, mais cela semble déjà trop
+                                            tard. <br>
+                                            Aussi, lorsqu’il découvre par hasard un portail vers Shadesmar, le Royaume
+                                            cognitif qui relie tout le Cosmère, il décide de s’y aventurer afin de
+                                            trouver, il l’espère, le salut de son peuple…
+                                        </p>
+                                    </div>
+                                </article>
+                                <article
+                                    class="col-span-12 sm:col-span-6 lg:col-span-4 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <img src="media/couvertures/arcanum.jpg"
+                                        alt="Couverture d'Arcanum Unbounded: The Cosmere Collection"
+                                        class="catalogue__carte-image w-[50%]">
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            Arcanum Unbounded: The Cosmere Collection</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Recueil</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-parchment/40 italic">Non traduit
+                                                en français</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Novembre
+                                                2016, Tor</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Cette collection comprend :
+                                        </p>
+                                        <ul class="catalogue__carte-synopsis-list text-parchment/80 text-sm">
+                                            <li>« L'espoir d'Elantris » (Elantris)</li>
+                                            <li>"Le onzième métal" (Mistborn)</li>
+                                            <li>« L'âme de l'empereur » (Elantris)</li>
+                                            <li>« Allomancer Jak and the Pits of Eltania, épisodes 28 à 30 » (Mistborn)
+                                            </li>
+                                            <li>"White Sand" (extrait; Taldain)</li>
+                                            <li>« Ombres pour le silence dans les forêts de l'enfer » (Threnody)</li>
+                                            <li>« Sixth of Dusk » (Premier du Soleil)</li>
+                                            <li>"Mistborn: Secret History" (Mistborn)</li>
+                                            <li>« Edgedancer » (The Stormlight Archive)</li>
+                                        </ul>
+                                    </div>
+                                </article>
+                                <article
+                                    class="col-span-12 sm:col-span-6 lg:col-span-4 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <img src="media/couvertures/sixième-crépuscule-autres-nouvelles.jpg"
+                                        alt="Couverture Sixième du crépuscule et autres nouvelles (French Edition)"
+                                        class="catalogue__carte-image w-[50%]">
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            Sixième du crépuscule et autres nouvelles (French Edition)</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Recueil de
+                                                nouvelles</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : 2018,
+                                                Le Livre de Poche</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Septembre
+                                                2014, Tor.com</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Cette collection comprend :
+                                        </p>
+                                        <ul class="catalogue__carte-synopsis-list text-parchment/80 text-sm">
+                                            <li>Parfait État</li>
+                                            <li>Instantané</li>
+                                            <li>Des ombres pour Silence dans les Forêts de l’enfer</li>
+                                            <li>Sixième du Crépuscule</li>
+                                            <li>Dansecorde</li>
+                                        </ul>
+                                    </div>
+                                </article>
+                                <article
+                                    class="col-span-12 sm:col-span-6 lg:col-span-4 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <img src="media/couvertures/white-sand.jpg"
+                                        alt="Couverture White sand - (French Edition)"
+                                        class="catalogue__carte-image w-[50%]">
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            White Sand (French Edition)</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Bande
+                                                dessinée</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : 2019,
+                                                Graph Zeppelin</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Juin 2016,
+                                                Dynamite Entertainment</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Sur la planète Taldain, les légendaires Maîtres des sables ont le pouvoir de
+                                            manipuler le sable de manière spectaculaire. Mais quand ils sont massacrés
+                                            dans le cadre d'un sinistre complot, le plus faible d'entre eux, Kenton est
+                                            le seul survivant. Du moins, c'est ce qu'il pense. Alors que les ennemis
+                                            l'assaillent de toutes parts, il constitue une alliance improbable avec
+                                            Khriss, une mystérieuse jeune femme issue du côté obscur…
+                                        </p>
+
+                                    </div>
+                                </article>
+                                <article
+                                    class="col-span-12 sm:col-span-6 lg:col-span-4  catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <img src="media/couvertures/yumi-lepeintrecauchemars.jpg"
+                                        alt="Couverture Yumi et le peintre de cauchemars (French Edition)"
+                                        class="catalogue__carte-image w-[50%]">
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            Yumi et le peintre de cauchemars (French Edition)</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Roman
+                                                indépendant</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : 2023,
+                                                trad. Mélanie Fazi</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Juillet 2023,
+                                                Dragonsteel Entertainment</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Sur une planète baignée de lumière et écrasée par la chaleur, Yumi est une
+                                            yoki-hijo, une prêtresse qui invoque les esprits pour venir en aide à son
+                                            peuple. <br>
+                                            Dans une cité froide entourée de ténèbres perpétuelles, Peintre repousse
+                                            chaque jour les manifestations physiques des cauchemars des habitants grâce
+                                            à ses pinceaux. <br>
+                                            Tout les oppose, ils ignorent même jusqu’à l’existence du monde de l’autre.
+                                            Pourtant, leurs destins vont littéralement s’entremêler le jour où ils
+                                            commencent à échanger leur place à chaque réveil. Parviendront-ils à mettre
+                                            leurs différences de côté et à travailler ensemble afin de sauver leurs
+                                            peuples d’un désastre imminent ?
+                                        </p>
+
+                                    </div>
+                                </article>
+                                <article
+                                    class="col-span-12  sm:col-span-6 lg:col-span-4 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <img src="media/couvertures/tress-dela-mer-emeraude_.jpg"
+                                        alt="Couverture Tress de la mer Émeraude (French Edition)"
+                                        class="catalogue__carte-image w-[50%]">
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            Tress de la mer Émeraude (French Edition)</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Roman
+                                                indépendant</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : 2023,
+                                                trad. Sébastien Guillot</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Avril 2023,
+                                                Tor</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Edition contenant les illustrations de la version collector de Howard Lyon.
+                                            <br>
+                                            Tress vit sur une petite île isolée au beau milieu d’un océan… de spores.
+                                            Simple laveuse de vitres, elle partage néanmoins une belle complicité avec
+                                            Charlie, le fils du duc, et est secrètement amoureuse de lui. Quand celui-ci
+                                            disparaît, la jeune femme décide de partir à sa recherche. C’est le début
+                                            d’un périple au bout du monde, où l’on retrouve tous les ingrédients qui
+                                            font le sel des grandes aventures : des contrebandiers de la pire espèce,
+                                            une sorcière malintentionnée, un redoutable dragon, des pirates sales et
+                                            méchants (ou pas), et même un rat qui parle...
+                                        </p>
+                                    </div>
+                                </article>
+                                <article
+                                    class="col-span-12  sm:col-span-6 lg:col-start-5 lg:col-end-9 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <img src="media/couvertures/l-ensoleille.jpg"
+                                        alt="Couverture L'Ensoleillé (French Edition)"
+                                        class="catalogue__carte-image w-[50%]">
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            L'Ensoleillé (French Edition)</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Roman
+                                                indépendant</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : Le
+                                                Livre de Poche</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : 2024,
+                                                Tor</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Contraint de se téléporter de planète en planète afin d’échapper à la
+                                            Brigade nocturne, Nomade ne s’attarde jamais nulle part. Cependant, son
+                                            dernier saut l’ayant vidé de son énergie, il se retrouve coincé sur
+                                            Cantique, un monde inconnu où le soleil désintègre tout sur son passage.
+                                            Capturé par le Roi des Braises, il est sur le point de devenir l’un de ses
+                                            guerriers-esclaves lorsqu’un petit groupe de rebelles débarque pour délivrer
+                                            les autres prisonniers. S’enfuyant avec eux, Nomade devra alors faire un
+                                            choix : libérer le peuple du joug du tyran ou continuer de fuir.
+                                        </p>
+                                    </div>
+                                </article>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Saga : Fils-des-Brumes ére 1 et 2-->
+                    <div
+                        class="col-span-12 catalogue__saga bg-storm/10 border border-ember/30 rounded-lg overflow-hidden">
+                        <input type="checkbox" id="saga-mistborn" class="catalogue__saga-input peer sr-only">
+                        <h3 class="catalogue__saga-titre">
+                            <label for="saga-mistborn"
+                                class="catalogue__saga-bouton flex items-center justify-between p-4 md:p-5 bg-storm/20 text-parchment cursor-pointer hover:bg-storm/30 transition-colors"
+                                aria-expanded="false" aria-controls="panneau-mistborn" id="entete-mistborn">
+                                <span class="catalogue__saga-nom text-xl md:text-2xl">Fils-des-Brumes - Ère 1 et 2
+                                </span>
+                                <svg class="catalogue__saga-icone w-6 h-6 text-ember transition-transform duration-300 peer-checked:rotate-180"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </label>
+                        </h3>
+
+                        <div id="panneau-mistborn"
+                            class="catalogue__panneau max-h-0 overflow-hidden transition-all duration-500 peer-checked:max-h-[8000px]"
+                            role="region" aria-labelledby="entete-mistborn">
+                            <div class="grid grid-cols-12 gap-4 catalogue__grille p-4 md:p-6">
+
+                                <article
+                                    class="col-span-12 sm:col-span-6 lg:col-span-4 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <img src="media/couvertures/mistborn-1-empire-ultime.jpg"
+                                        alt="Couverture de L'Empire Ultime, tome 1 de Fils-des-Brumes"
+                                        class="catalogue__carte-image w-[50%]">
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            Fils-des-Brumes - L'Empire Ultime</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Tome 1</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : 2010,
+                                                trad. Mélanie Fazi</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Juillet 2006,
+                                                Tor</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Les brumes règnent sur la nuit, le Seigneur Maître sur le monde. <br>
+                                            Vin ne connaît de l’Empire Ultime que les brumes de Luthadel, les pluies de
+                                            cendre et le regard d’acier des Grands Inquisiteurs. Depuis plus de mille
+                                            ans, le Seigneur Maître gouverne les hommes par la terreur. Seuls les nobles
+                                            pratiquent l’allomancie, la précieuse magie des métaux. Mais Vin n’est pas
+                                            une adolescente comme les autres. Et le jour où sa route croise celle de
+                                            Kelsier, le plus célèbre voleur de l’Empire, elle est entraînée dans un
+                                            projet fou : renverser l’Empire.
+                                        </p>
+                                    </div>
+                                </article>
+                                <article
+                                    class="col-span-12 sm:col-span-6 lg:col-span-4 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <img src="media/couvertures/mistborn-2.jpg"
+                                        alt="Couverture du Puits de l'Ascension, tome 2 de Fils-des-Brumes"
+                                        class="catalogue__carte-image w-[50%]">
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            Le Puits de l'Ascension</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Tome 2</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : 2010,
+                                                trad. Mélanie Fazi</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Août 2007,
+                                                Tor</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Le Seigneur Maître est tombé. La guerre peut commencer. <br>
+                                            En mettant fin au règne brutal et millénaire du tyran, ils ont réalisé
+                                            l’impossible. À présent, Vin la gamine des rues devenue Fille-des-Brumes, et
+                                            Elend Venture le jeune noble idéaliste, doivent construire un nouveau
+                                            gouvernement sur les cendres de l’Empire. Mais trois armées menées par des
+                                            factions hostiles, dont celle des monstrueux koloss, font le siège de
+                                            Luthadel. Alors que l’étau se resserre, une légende évoquant le mystérieux
+                                            Puits de l’Ascension leur offre une lueur d’espoir. Et si tuer le Seigneur
+                                            Maître avait été la partie la plus facile ?
+                                        </p>
+                                    </div>
+                                </article>
+                                <article
+                                    class="col-span-12 sm:col-span-6 lg:col-span-4 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <img src="media/couvertures/mistborn-3.jpg"
+                                        alt="Couverture du Héros des Siècles, tome 3 de Fils-des-Brumes"
+                                        class="catalogue__carte-image w-[50%]">
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            Le Héros des Siècles</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Tome 3</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : 2011,
+                                                trad. Mélanie Fazi</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Octobre 2008,
+                                                Tor</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Pour mettre fin à la tyrannie, Vin a tué le Seigneur Maître. Mais en
+                                            essayant de fermer le Puits de l'Ascension, elle a laissé s'échapper une des
+                                            formes maléfiques de l'Insondable. Depuis, les Inquisiteurs et les brumes
+                                            font toujours plus de victimes, tandis que les cendres qui tombent du ciel
+                                            menacent d'affamer les hommes et d'ensevelir le pays. Vin et Elend tentent
+                                            de sauver ce qui peut encore l'être. Pour cela, ils doivent à tout prix
+                                            découvrir les derniers secrets du Seigneur Maître : l'ultime cachette
+                                            d'atium, le plus puissant métal des Fils-des-Brumes... et l'identité du
+                                            Héros des Siècles.
+                                        </p>
+                                    </div>
+                                </article>
+                                <article
+                                    class="col-span-12 sm:col-span-6 lg:col-span-4 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <img src="media/couvertures/lalliagedelajustice.jpg"
+                                        alt="Couverture de L'Alliage de la justice (Fils-des-Brumes : Wax & Wayne, Tome 1)"
+                                        class="catalogue__carte-image w-[50%]">
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            L'Alliage de la justice (Fils-des-Brumes : Wax & Wayne, Tome 1)</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Wax & Wayne,
+                                                Tome 1</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : 2012,
+                                                Orbit</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Avril 2011,
+                                                Tor</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Kelsier, Vin, Elend et les autres font désormais partie de l’Histoire – ou
+                                            de la religion. Les chemins de fer côtoient les canaux, les rues sont
+                                            éclairées à l’électricité et les premiers gratte-ciel partent à l’assaut des
+                                            nuages. Mais les anciennes magies allomantique et férochimique existent
+                                            toujours. Un outil précieux pour ceux qui tentent de faire régner la justice
+                                            dans les terres sauvages qu’on appelle les Rocailles. Après vingt ans
+                                            là-bas, Wax Ladrian est de retour à la métropole d’Elendel, bien décidé à
+                                            ranger ses pistolets. Pourtant les demeures et les rues élégantes de la
+                                            ville pourraient bien s’avérer plus dangereuses encore que les plaines
+                                            poussiéreuses des Rocailles.
+                                        </p>
+                                    </div>
+                                </article>
+                                <article
+                                    class="col-span-12 sm:col-span-6 lg:col-span-4 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <img src="media/couvertures/jeuxdemasques.jpg"
+                                        alt="Couverture de Jeux de masques (Fils-des-Brumes : Wax & Wayne, Tome 2)"
+                                        class="catalogue__carte-image w-[50%]">
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            Jeux de masques (Fils-des-Brumes : Wax & Wayne, Tome 2)</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Wax & Wayne,
+                                                Tome 2</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : Le
+                                                Livre de Poche</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Octobre 2015,
+                                                Tor</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Métropole d’Elendel. Wax Ladrian, l’ancien justicier revenu des Rocailles,
+                                            prépare son mariage avec Steris. C’est compter sans la révolte qui gronde
+                                            partout dans la ville : conditions de travail pénibles, industrialisation
+                                            effrénée, corruption des élus… Le chaos domine bientôt le territoire et,
+                                            lors d’une réunion, tous les barons du crime, dont le propre frère du
+                                            gouverneur, sont massacrés. Malgré le danger, Wax, aidé de son dèle acolyte,
+                                            Wayne, et de Marasi, la brillante demi-sœur de Steris, qui a intégré a
+                                            police, est bien décidé à découvrir ce qui se cache derrière ces événements.
+                                        </p>
+                                    </div>
+                                </article>
+                                <article
+                                    class="col-span-12 sm:col-span-6 lg:col-span-4 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <img src="media/couvertures/lesbraceletsdeslarmes.jpg"
+                                        alt="Couverture des Bracelets des Larmes (Fils-des-Brumes : Wax & Wayne, Tome 3)"
+                                        class="catalogue__carte-image w-[50%]">
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            Les Bracelets des Larmes (Fils-des-Brumes : Wax & Wayne, Tome 3)</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Wax & Wayne,
+                                                Tome 3</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : Le
+                                                Livre de Poche</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Janvier 2016,
+                                                Tor</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Les Bracelets des Larmes… On dit que ces cerveaux métalliques du Seigneur
+                                            Maître pourraient transmettre leurs pouvoirs à ceux qui les portent. Des
+                                            chimères auxquelles personne ne croyait, jusqu’à ce qu’un chercheur kandra
+                                            revienne à Elendel avec des images représentant les Bracelets ainsi que des
+                                            écrits indéchiffrables. <br>
+                                            Dans les Villes externes, la révolte contre Elendel gronde. Wax Ladrian,
+                                            accompagné de Wayne, Marasi et Steris, se rend à La Nouvelle-Seran pour
+                                            essayer de découvrir qui en sont les instigateurs. Edwarn, l’oncle dont Wax
+                                            n’a eu aucune nouvelle depuis vingt ans, ne semble pas étranger à cette
+                                            affaire, d’autant qu’il retient prisonnière sa sœur, Telsin. Que mijote-t-il
+                                            ? Et quelles sont les véritables intentions de la mystérieuse organisation
+                                            connue sous le nom du Cercle ?
+                                        </p>
+                                    </div>
+                                </article>
+                                <article
+                                    class="col-span-12  sm:col-start-4 sm:col-span-6 lg:col-start-5 lg:col-end-9 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <img src="media/couvertures/lemetalperdu.jpg"
+                                        alt="Couverture du Métal perdu (Fils-des-Brumes : Wax & Wayne, Tome 4) "
+                                        class="catalogue__carte-image w-[50%]">
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            Le Métal perdu (Fils-des-Brumes : Wax & Wayne, Tome 4) </h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Wax & Wayne,
+                                                Tome 4</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : Le
+                                                Livre de Poche</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Novembre
+                                                2022,
+                                                Tor</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Wax Ladrian, l'ancien garde-loi des Rocailles, est aujourd'hui marié, père
+                                            de deux enfants et sénateur d'Élendel. Il continue malgré tout à traquer le
+                                            Cercle, l'organisation criminelle dirigée par sa sœur Telsin, qui kidnappe
+                                            depuis des années des personnes ayant des ancêtres allomanciens et dont la
+                                            corruption s'étend jusqu'au cœur du Sénat. Alors, lorsque dans une planque
+                                            du Cercle, les constables Marasi et Wayne découvrent du trellium, un métal
+                                            aux propriétés explosives provenant d'une autre planète, ainsi qu'un stock
+                                            d'armes destiné à la cité de Bilming, Wax décide de revêtir une dernière
+                                            fois son manteau de brume afin de mettre un terme aux agissements de sa
+                                            sœur.
+                                        </p>
+                                    </div>
+                                </article>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Saga : Les Archives de Roshar -->
+                    <div
+                        class="col-span-12 catalogue__saga bg-storm/10 border border-ember/30 rounded-lg overflow-hidden">
+                        <input type="checkbox" id="saga-roshar" class="catalogue__saga-input peer sr-only">
+                        <h3 class="catalogue__saga-titre">
+                            <label for="saga-roshar"
+                                class="catalogue__saga-bouton flex items-center justify-between p-4 md:p-5 bg-storm/20 text-parchment cursor-pointer hover:bg-storm/30 transition-colors"
+                                aria-expanded="false" aria-controls="panneau-roshar" id="entete-roshar">
+                                <span class="catalogue__saga-nom text-xl md:text-2xl">Les Archives de
+                                    Roshar</span>
+                                <svg class="catalogue__saga-icone w-6 h-6 text-ember transition-transform duration-300 peer-checked:rotate-180"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </label>
+                        </h3>
+
+                        <div id="panneau-roshar"
+                            class="catalogue__panneau max-h-0 overflow-hidden transition-all duration-500 peer-checked:max-h-[8000px]"
+                            role="region" aria-labelledby="entete-roshar">
+                            <div class="grid grid-cols-12 gap-4 catalogue__grille p-4 md:p-6">
+
+                                <article
+                                    class="col-span-12 sm:col-span-6 lg:col-span-4 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20">
+                                    <div class="catalogue__carte-pile relative w-full h-56 flex items-center justify-center"
+                                        aria-hidden="false">
+                                        <img src="media/couvertures/roshar-1a-voie-des-rois.jpg"
+                                            alt="Couverture de La Voie des Rois, tome 1 (partie 1 et 2)"
+                                            class="catalogue__carte-pile-image catalogue__carte-pile-image--arriere absolute w-32 md:w-36 rounded shadow-lg transition-transform duration-300 ">
+                                        <img src="media/couvertures/roshar-1b-voie-des-rois.jpg" alt=""
+                                            class="catalogue__carte-pile-image catalogue__carte-pile-image--avant absolute w-32 md:w-36 rounded shadow-lg transition-transform duration-300">
+                                    </div>
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            La Voie des Rois - Tome 1 parte 1 et 2</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Tome 1 (2
+                                                volumes en VF)</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : 2015,
+                                                Le Livre de Poche</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Août 2010,
+                                                Tor</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Roshar, monde de pierres et de tempêtes. Des siècles ont passé depuis la
+                                            chute des Chevaliers Radieux, mais leurs avatars, des épées et des armures
+                                            mystiques qui transforment des hommes ordinaires en guerriers invincibles,
+                                            sont toujours là. Pour elles, les hommes s’entre-déchirent. Dans le paysage
+                                            dévasté des Plaines Brisées, Kaladin, enrôlé de force, lutte dans une guerre
+                                            insensée qui dure depuis dix ans, où plusieurs armées combattent séparément
+                                            un unique ennemi. Dalinar Kholin, chef de l’une de ces armées, est fasciné
+                                            par un texte ancien appelé La Voie des Rois. Hanté par des visions des temps
+                                            anciens, il commence à douter de sa santé mentale. De l’autre côté de
+                                            l’océan, la jeune et ambivalente Shallan apprend la magie, et découvre
+                                            certains secrets des Chevaliers Radieux.
+                                        </p>
+                                    </div>
+                                </article>
+
+                                <article
+                                    class="col-span-12 sm:col-span-6 lg:col-span-4 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20">
+                                    <div class="catalogue__carte-pile relative w-full h-56 flex items-center justify-center"
+                                        aria-hidden="false">
+                                        <img src="media/couvertures/lelivredesradieux-pt1.jpg"
+                                            alt="Couverture du Livre des Radieux, tome 2 (partie 1 et 2)"
+                                            class="catalogue__carte-pile-image catalogue__carte-pile-image--arriere absolute w-32 md:w-36 rounded shadow-lg transition-transform duration-300">
+                                        <img src="media/couvertures/lelivredesradieux-pt2.jpg" alt=""
+                                            class="catalogue__carte-pile-image catalogue__carte-pile-image--avant absolute w-32 md:w-36 rounded shadow-lg transition-transform duration-300">
+                                    </div>
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            Le Livre des Radieux - Tome 1 parte 1 et 2</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Tome 2 (2
+                                                volumes en VF)</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : 2017,
+                                                Le Livre de Poche</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Mars 2014,
+                                                Tor</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Roshar, terre de pierres et de tempêtes. Des siècles ont passé depuis la
+                                            chute des Chevaliers Radieux, mais leurs avatars, des épées et des armures
+                                            mystiques qui transforment des hommes ordinaires en guerriers invincibles,
+                                            sont toujours là. <br>
+                                            Au cœur des Plaines Brisées, Kaladin lutte depuis dix ans dans une guerre
+                                            insensée. Dalinar, le chef d’une des armées, est fasciné par un texte
+                                            ancien, La Voie des rois. Au-delà de l'océan, la jeune Shallan apprend la
+                                            magie et découvre certains secrets des Chevaliers Radieux
+                                        </p>
+                                    </div>
+                                </article>
+
+                                <article
+                                    class="col-span-12 sm:col-span-6 lg:col-span-4 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <div class="catalogue__carte-pile relative w-full h-56 flex items-center justify-center"
+                                        aria-hidden="false">
+                                        <img src="media/couvertures/justiciere-vol1.jpg"
+                                            alt="Couverture du Justicière, tome 3 (partie 1 et 2)"
+                                            class="catalogue__carte-pile-image catalogue__carte-pile-image--arriere absolute w-32 md:w-36 rounded shadow-lg transition-transform duration-300">
+                                        <img src="media/couvertures/justiciere-vol2.jpg" alt=""
+                                            class="catalogue__carte-pile-image catalogue__carte-pile-image--avant absolute w-32 md:w-36 rounded shadow-lg transition-transform duration-300">
+                                    </div>
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            Justicière</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Tome 3 (2
+                                                volumes en VF)</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : 2019,
+                                                Le Livre de Poche</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Novembre
+                                                2017, Tor</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Après une victoire éphémère payée au prix fort, les armées aléthies de
+                                            Dalinar Kholin font face à une menace bien plus grande que prévu. Les
+                                            Parshendis ont invoqué la redoutable Tempête Éternelle, qui déferle
+                                            désormais sur Roshar et réveille les parshmens à la conscience de leur
+                                            asservissement millénaire. Kaladin l'Éclairé-des-Tempêtes, tiraillé entre
+                                            son devoir et sa loyauté, doit affronter une vérité inconfortable : la
+                                            colère naissante des parshmens n'est peut-être pas sans fondement. <br>
+                                            Pendant ce temps, dans la cité-tour d'Urithiru, refuge ancestral des
+                                            Chevaliers Radieux niché au-dessus des tempêtes, Shallan Davar met au jour
+                                            des secrets aussi fascinants que troublants. Dalinar, quant à lui, comprend
+                                            que sa quête d'unification d'Alethkar n'était qu'un premier pas : sans la
+                                            réconciliation de toutes les nations de Roshar — et sans qu'il affronte
+                                            lui-même son passé sanglant — la renaissance des Chevaliers Radieux ne
+                                            suffira pas à empêcher l'effondrement de la civilisation.
+                                        </p>
+                                    </div>
+                                </article>
+
+                                <article
+                                    class="col-span-12 sm:col-span-6 lg:col-start-3 lg:col-end-7 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <div class="catalogue__carte-pile relative w-full h-56 flex items-center justify-center"
+                                        aria-hidden="false">
+                                        <img src="media/couvertures/rythmeguerre-pt1.jpg"
+                                            alt="Couverture du Rythme de guerre, tome 3 (partie 1 et 2)"
+                                            class="catalogue__carte-pile-image catalogue__carte-pile-image--arriere absolute w-32 md:w-36 rounded shadow-lg transition-transform duration-300">
+                                        <img src="media/couvertures/rythmeguerre-pt2.jpg" alt=""
+                                            class="catalogue__carte-pile-image catalogue__carte-pile-image--avant absolute w-32 md:w-36 rounded shadow-lg transition-transform duration-300">
+                                    </div>
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            Rythme de guerre</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Tome 4 (2
+                                                volumes en VF)</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF : 2021,
+                                                Le Livre de Poche</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Novembre
+                                                2020, Tor</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Après avoir formé une coalition humaine pour repousser l’invasion des
+                                            Néantifères, Dalinar et ses Chevaliers Radieux ont mené une campagne aussi
+                                            brutale qu’impitoyable. Cependant, aucun des deux camps n’a réussi à prendre
+                                            le dessus et la guerre s’enlise. Le spectre de la trahison possible de son
+                                            allié Taravangian pèse sur chacune des décisions stratégiques de Dalinar.
+                                            <br>
+                                            De son côté, Kaladin Béni-des-foudres doit s’habituer à son nouveau rôle
+                                            parmi les Chevaliers Radieux alors que ses Marchevents font face à leurs
+                                            propres problèmes : des Fusionnés, de plus en plus nombreux, se réveillent
+                                            alors que plus aucuns sprènes d’honneur n’acceptent de se lier avec des
+                                            humains pour faire grossir les rangs des Radieux. Des émissaires de la
+                                            coalition sont envoyés à la forteresse de l’Intégrité Constante pour
+                                            convaincre les sprènes de se liguer avec eux contre les forces du dieu
+                                            maléfique Abjection. Sinon, ils devront se confronter à l’horreur de la
+                                            défaite…
+                                        </p>
+                                    </div>
+                                </article>
+
+                                <article
+                                    class="col-span-12 sm:col-start-4 sm:col-end-10 lg:col-span-4 catalogue__carte bg-abyss/60 rounded-lg overflow-hidden border border-ember/20 flex flex-col items-center">
+                                    <div class="catalogue__carte-pile relative w-full h-56 flex items-center justify-center"
+                                        aria-hidden="false">
+                                        <img src="media/couvertures/ventetverite-pt1.jpg"
+                                            alt="Couverture du Vent et vérité, tome 3 (partie 1 et 2)"
+                                            class="catalogue__carte-pile-image catalogue__carte-pile-image--arriere absolute w-32 md:w-36 rounded shadow-lg transition-transform duration-300 ">
+                                        <img src="media/couvertures/ventetverite-pt2.jpg" alt=""
+                                            class="catalogue__carte-pile-image catalogue__carte-pile-image--avant absolute w-32 md:w-36 rounded shadow-lg transition-transform duration-300">
+                                    </div>
+                                    <div class="p-4">
+                                        <h4
+                                            class="catalogue__carte-titre font-display text-parchment text-lg font-semibold">
+                                            Vent et vérité</h4>
+                                        <p
+                                            class="catalogue__carte-annee font-mono text-xs uppercase tracking-wide mb-2">
+                                            <span class="catalogue__carte-annee-tome text-parchment/70">Tome 5 (2
+                                                volumes en VF)</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">—</span>
+                                            <span class="catalogue__carte-annee-vf text-ember font-semibold">VF :
+                                                2025-2026, Le Livre de Poche</span>
+                                            <span class="catalogue__carte-annee-separateur text-ember/40 mx-1"
+                                                aria-hidden="true">|</span>
+                                            <span class="catalogue__carte-annee-vo text-parchment/50">VO : Décembre
+                                                2024, Tor</span>
+                                        </p>
+                                        <p class="catalogue__carte-synopsis text-parchment/80 text-sm">
+                                            Dans dix jours, Dalinar défiera le champion d’Abjection dans un duel à mort.
+                                            Tandis qu’il se prépare pour cet affrontement, les Chevaliers Radieux
+                                            engagent le combat à travers le monde contre les troupes du dieu maléfique :
+                                            Adolin se rend en Azir, Jasnah à Thaylenah, Sigzil et Venli dans les Plaines
+                                            Brisées, alors que Szeth, accompagné de Kaladin, retourne à Shinovar pour
+                                            purifier sa terre natale de l’influence néfaste des Incréés. Pendant ce
+                                            temps, Shallan, Renarin et Rlain tentent quant à eux de percer les mystères
+                                            entourant l’Incréée Ba-Ado-Mishram. Dans dix jours, la bataille pour Roshar
+                                            commencera.
+                                        </p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section-->
 
 
 

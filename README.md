@@ -30,6 +30,7 @@ Comme le sujet était libre, j'ai choisi de faire un site web dédie à l'un de 
     - auteurInfo.html - section Biographie - (.auteur-bio__marker::after) situés entre chaque chapitre de la timeline. Effet de pulsation lumineuse continue simulant une braise vivante.Technologie : CSS pur (@keyframes), sans librairie externe. Note technique : Le code de cette animation a été placé directement dans le bloc style 'type="text/tailwindcss"' du head (plutôt que dans style.css externe) afin d'éviter un bug de timing au chargement de la page
     - oeuvresInfo.html -  section catalogue an effet de "pile de livres" pour les œuvres publiées en plusieurs volumes en français. Les deux couvertures se superposent avec une légère rotation opposée simulant des livres empilés. Au survol de la carte, les deux images "s'éventent" davantage via une transition CSS fluide, révélant qu'il s'agit de deux volumes distincts. (aucun JavaScript requis). - Pour les cartes à une seule couverture : l'image s'agrandit légèrement et pivote
     scale-105 rotate-12.
+    - Hint iOS — Encart flottant en bas d'écran sur iPhone/iPad, avec animation d'entrée douce translateY(20px) 0, opacité 0 à 1, 0.4s ease-out. Fermable d'un clic.
 
 - Composants Tailwind :
   - Barre de navigation : "Simple Responsive Navigation Bar" - https://www.creative-tim.com/twcomponents/component/simple-responsive-navigation-bar

@@ -9,6 +9,8 @@
     <title>Accueil | La Forge des Mots — Brandon Sanderson</title>
 
     <link rel="manifest" href="manifest.json">
+    <script src="js/install.js" defer></script>
+    <script src="js/ios-hint.js" defer></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -164,6 +166,10 @@
                             class="navbar__link md:inline-flex md:w-auto w-full px-3 py-2 rounded text-parchment font-extrabold items-center justify-center bg-abyss-light hover:bg-storm transition-colors hover:text-orange-horizon ">
                             <span>Communauté</span>
                         </a>
+                        <button id="butInstall" hidden
+                            class="js-install-btn navbar__install forge-btn forge-btn--primary md:inline-flex md:w-auto w-full">
+                            Installer l'app
+                        </button>
 
 
                     </div>

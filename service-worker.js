@@ -1,6 +1,6 @@
 // SERVICE WORKER
 
-const CACHE_NAME = 'la-forge-v1.5.7'; 
+const CACHE_NAME = 'la-forge-v1.5.8';
 const FILES_TO_CACHE = [
     './',
     'index.html',
@@ -32,7 +32,9 @@ const FILES_TO_CACHE = [
     'media/carousel/cosmere.svg',
     'media/hero/bgsections/bgcosmere.jpg',
     'media/hero/bgsections/bgcosmere2.jpg',
+    '"media/hero/bgsections/bgcosmere3.webp"',
     'favicon-48x48.ico',
+    'favicon.ico',
     'media/page-auteur/brandonsanderson.webp',
     'media/page-auteur/evolution-of-brandons.webp',
     'media/page-auteur/byu-building-benson.jpg',
@@ -45,7 +47,37 @@ const FILES_TO_CACHE = [
     'media/page-auteur/evillibrarians.jpg',
     'media/page-auteur/ruetemps.jpg',
     'media/page-auteur/seo-on_img_5013.webp',
-     // Libraries
+    // Romans indépendants du Cosmère
+    "media/couvertures/elantris.jpg",
+    "media/couvertures/warbreaker.jpg",
+    "media/couvertures/lamedelempereur.webp",
+    "media/couvertures/lilenoirebraise.jpg",
+    "media/couvertures/arcanum.jpg",
+    "media/couvertures/sixieme-crepuscule-autres-nouvelles.jpg",
+    "media/couvertures/white-sand.jpg",
+    "media/couvertures/yumi-lepeintrecauchemars.jpg",
+    "media/couvertures/tress-dela-mer-emeraude_.jpg",
+    "media/couvertures/l-ensoleille.jpg",
+    // Fils-des-Brumes 
+    "media/couvertures/mistborn-1-empire-ultime.jpg",
+    "media/couvertures/mistborn-2.jpg",
+    "media/couvertures/mistborn-3.jpg",
+    "media/couvertures/lalliagedelajustice.jpg",
+    "media/couvertures/jeuxdemasques.jpg",
+    "media/couvertures/lesbraceletsdeslarmes.jpg",
+    "media/couvertures/lemetalperdu.jpg",
+    // Les Archives de Roshar
+    "media/couvertures/roshar-1a-voie-des-rois.jpg",
+    "media/couvertures/roshar-1b-voie-des-rois.jpg",
+    "media/couvertures/lelivredesradieux-pt1.jpg",
+    "media/couvertures/lelivredesradieux-pt2.jpg",
+    "media/couvertures/justiciere-vol1.jpg",
+    "media/couvertures/justiciere-vol2.jpg",
+    "media/couvertures/rythmeguerre-pt1.jpg",
+    "media/couvertures/rythmeguerre-pt2.jpg",
+    "media/couvertures/ventetverite-pt1.jpg",
+    "media/couvertures/ventetverite-pt2.jpg",
+    // Libraries
     'https://cdn.jsdelivr.net/combine/npm/daisyui@5/base/rootscrolllock.css,npm/daisyui@5/base/properties.css,npm/daisyui@5/base/scrollbar.css,npm/daisyui@5/base/rootscrollgutter.css,npm/daisyui@5/base/svg.css,npm/daisyui@5/base/rootcolor.css,npm/daisyui@5/base/reset.css,npm/daisyui@5/components/carousel.css',
     'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js',
     'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js',

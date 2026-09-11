@@ -1,6 +1,6 @@
 // SERVICE WORKER
 
-const CACHE_NAME = 'la-forge-v1.5.8';
+const CACHE_NAME = 'la-forge-v1.5.9';
 const FILES_TO_CACHE = [
     './',
     'index.html',
@@ -32,7 +32,7 @@ const FILES_TO_CACHE = [
     'media/carousel/cosmere.svg',
     'media/hero/bgsections/bgcosmere.jpg',
     'media/hero/bgsections/bgcosmere2.jpg',
-    '"media/hero/bgsections/bgcosmere3.webp"',
+    'media/hero/bgsections/bgcosmere3.webp',
     'favicon-48x48.ico',
     'favicon.ico',
     'media/page-auteur/brandonsanderson.webp',

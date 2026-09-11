@@ -1,6 +1,6 @@
 // SERVICE WORKER
 
-const CACHE_NAME = 'la-forge-v1.6';
+const CACHE_NAME = 'la-forge-v1.6.1';
 const FILES_TO_CACHE = [
     './',
     'index.html',
@@ -14,6 +14,8 @@ const FILES_TO_CACHE = [
     'js/navbar.js',
     'js/chiffres.js',
     'js/fadeInOnScroll.js',
+    'js/install.js',
+    'js/ios-hint.js',
     // img - icons
     'media/logo-icons/icon-andr-192x192.png',
     'media/logo-icons/icon-andr-512x512.png',

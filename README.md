@@ -31,6 +31,8 @@ Comme le sujet était libre, j'ai choisi de faire un site web dédie à l'un de 
     - oeuvresInfo.html -  section catalogue an effet de "pile de livres" pour les œuvres publiées en plusieurs volumes en français. Les deux couvertures se superposent avec une légère rotation opposée simulant des livres empilés. Au survol de la carte, les deux images "s'éventent" davantage via une transition CSS fluide, révélant qu'il s'agit de deux volumes distincts. (aucun JavaScript requis). - Pour les cartes à une seule couverture : l'image s'agrandit légèrement et pivote
     scale-105 rotate-12.
     - Hint iOS — Encart flottant en bas d'écran sur iPhone/iPad, avec animation d'entrée douce translateY(20px) 0, opacité 0 à 1, 0.4s ease-out. Fermable d'un clic.
+    - oeuvresInfo.html - section cadeau: effet de survol sur les cartes vedettes (Warbreaker, The Way of Kings Prime). Au survol de la carte, la couverture s'agrandit légèrement et pivote scale-105 rotate-8, rappelant le mouvement d'un objet qu'on tourne entre les mains pour l'examiner. Le lien de lecture gratuite possède également son propre effet : au survol du lien complet, l'icône associée s'agrandit scale-125, signalant l'action de manière distincte du reste de la carte (aucun JavaScript requis).
+    - Pour les liens de la liste "Autres éclats de la forge" : chaque lien se déplace horizontalement au survol hover:translate-x-4, comme si le fragment de texte glissait vers l'avant pour attirer l'attention du lecteur.
 
 - Composants Tailwind :
   - Barre de navigation : "Simple Responsive Navigation Bar" - https://www.creative-tim.com/twcomponents/component/simple-responsive-navigation-bar

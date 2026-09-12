@@ -1,6 +1,6 @@
 // SERVICE WORKER
 
-const CACHE_NAME = 'la-forge-v1.6.1';
+const CACHE_NAME = 'la-forge-v1.6.2';
 const FILES_TO_CACHE = [
     './',
     'index.html',
@@ -79,6 +79,10 @@ const FILES_TO_CACHE = [
     "media/couvertures/rythmeguerre-pt2.jpg",
     "media/couvertures/ventetverite-pt1.jpg",
     "media/couvertures/ventetverite-pt2.jpg",
+    // romans gratuits
+    "media/couvertures/warbreaker-en.jpg",
+    "media/couvertures/the-way-of-kings-prime.jpg",
+    "media/couvertures/firstborn_final_200px.webp",
     // Libraries
     'https://cdn.jsdelivr.net/combine/npm/daisyui@5/base/rootscrolllock.css,npm/daisyui@5/base/properties.css,npm/daisyui@5/base/scrollbar.css,npm/daisyui@5/base/rootscrollgutter.css,npm/daisyui@5/base/svg.css,npm/daisyui@5/base/rootcolor.css,npm/daisyui@5/base/reset.css,npm/daisyui@5/components/carousel.css',
     'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js',

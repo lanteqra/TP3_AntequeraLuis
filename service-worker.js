@@ -35,6 +35,7 @@ const FILES_TO_CACHE = [
     'media/hero/bgsections/bgcosmere.jpg',
     'media/hero/bgsections/bgcosmere2.jpg',
     'media/hero/bgsections/bgcosmere3.webp',
+    'media/hero/bgsections/bgcosmere4.avif',
     'favicon-48x48.ico',
     'favicon.ico',
     'media/page-auteur/brandonsanderson.webp',

@@ -92,6 +92,7 @@
             @apply transition-transform duration-300 ease-out origin-center;
         }
 
+        
         .catalogue__carte:hover .catalogue__carte-image {
             @apply scale-105 rotate-12;
             
@@ -113,7 +114,31 @@
             @apply rotate-12 translate-x-10;
         }
 
+        .cadeau__vedette-icone, .cadeau__eclat-icone {
+            @apply w-10 h-10  transition-transform duration-300 bg-abyss;
+            -webkit-mask-image: url('media/carousel/cosmere.svg');
+            mask-image: url('media/carousel/cosmere.svg');
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-position: center;
+        }
+
+        .cadeau__vedette-image {
+            @apply transition-transform duration-300 ease-out origin-center p-5;
+        }
+        .cadeau__vedette-item:hover .cadeau__vedette-image {
+            @apply scale-105 rotate-8;
+        }
         
+
+        
+
+        .cadeau__eclat-lien {
+            @apply flex hover:translate-x-4;
+        }
 
     </style>
     <link rel="icon" href="favicon-48x48.ico">
@@ -228,7 +253,7 @@
                             Le Catalogue de la Forge
                         </h2>
                         <p
-                            class="catalogue__intro font-sans text-parchment text-base md:text-lg text-center max-w-2xl mx-auto mb-12">
+                            class="catalogue__intro text-parchment text-base md:text-lg text-center max-w-2xl mx-auto mb-12">
                             Voici une sélection forgée avec soin, les tomes les plus essentiels pour quiconque
                             souhaite franchir le seuil du Cosmère pour la première fois. Chaque œuvre présentée
                             ici porte l'empreinte d'un même métal, celui d'un univers partagé où tout se répond.
@@ -1138,115 +1163,166 @@
         </section>
 
         <!-- Section 3 : "cadeau"  -->
-        <section id="cadeau" class="cadeau" aria-labelledby="cadeau__titre">
-            <div class="catalogue-container container mx-auto px-4">
-                <div class="grid grid-cols-12 gap-7">
+        <section id="cadeau" class="cadeau py-16 md:py-24 bg-abyss-light" aria-labelledby="cadeau__titre">
+            <div class="cadeau__container container mx-auto px-4">
+                <div class="cadeau__grid grid grid-cols-12 gap-7">
 
                     <!-- Intro -->
-                    <div class="col-start-4 col-end-10 cadeau__bloc js-fade-in text-center">
-                        <h2 id="cadeau__titre" class="cadeau__titre">
+                    <div
+                        class="col-start-2 col-end-12 md:col-start-4 md:col-end-10 cadeau__bloc js-fade-in text-center">
+                        <h2 id="cadeau__titre"
+                            class="cadeau__titre catalogue__titre font-display text-ember text-3xl md:text-4xl font-bold text-center mb-10">
                             Même le Forgeron offre parfois ses créations
                         </h2>
-                        <p class="cadeau__texte">
-                            Brandon Sanderson met gratuitement à disposition certains de ses textes,
-                            directement sur son site officiel. Aucune traduction française n'existe
-                            pour ces œuvres : elles sont proposées ici dans leur langue d'origine,
-                            l'anglais.
+                        <p
+                            class="cadeau__texte text-parchment text-base md:text-lg text-center max-w-2xl mx-auto mb-12">
+                            Certains alliages ne sont jamais scellés dans leur forme finale. Brandon
+                            Sanderson ouvre parfois les portes de son atelier et laisse voir le métal
+                            encore chaud : un roman achevé qu'il offre librement, une ébauche
+                            abandonnée en pleine trempe — jamais devenue livre — et quelques étincelles
+                            de fiction courte. Rassemblés ici dans leur langue d'origine, l'anglais,
+                            ces textes racontent autant l'univers du Cosmère que la main qui le façonne.
                         </p>
                     </div>
 
-                    <!-- Bloc vedette : Warbreaker -->
-                    <div class="col-span-12  md:col-start-2 md:col-end-8 h-full bg-amber-300 cadeau__vedette js-fade-in">
-                        <div class="cadeau__vedette-contenu">
-                            <span class="cadeau__vedette-etiquette">Roman complet</span>
-                            <ul>
-                                <li>
-                                    <h3 class="cadeau__vedette-titre"><em>Warbreaker</em></h3>
-                                    <p class="cadeau__vedette-texte">
-                                        Publié sous licence Creative Commons, ce roman autonome se déroule
-                                        sur Nalthis, un monde où la couleur et la respiration sont des sources
-                                        de pouvoir. Sanderson l'a offert intégralement à ses lecteurs, en
-                                        version anglaise seulement.
-                                    </p>
-                                    <a href="https://www.brandonsanderson.com/blogs/blog/warbreaker-rights-and-downloads"
-                                        target="_blank" rel="noopener noreferrer" class="cadeau__lien" aria-label="Lire Warbreaker gratuitement sur le site officiel de Brandon Sanderson (ouvre un
-                        nouvel onglet, en anglais)">
-                                        <span class="cadeau__lien-icone" aria-hidden="true"><!-- SVG braise --></span>
-                                        <span class="cadeau__lien-texte">Lire Warbreaker gratuitement</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <h3 class="cadeau__vedette-titre"><em>The Way of Kings Prime</em></h3>
-                                    <p class="cadeau__vedette-texte">
-                                        Publié sous licence Creative ...
-                                    </p>
-                                    <a href="https://www.brandonsanderson.com/pages/the-way-of-kings-prime"
-                                        target="_blank" rel="noopener noreferrer" class="cadeau__eclat-lien"
-                                        aria-label="Lire The Way of Kings Prime, version préliminaire, sur le site officiel de Brandon Sanderson (ouvre un nouvel onglet, en anglais)">
-                                        <span class="cadeau__eclat-titre"><em></em></span>
-                                        <span class="cadeau__eclat-desc">Version préliminaire abandonnée du premier
-                                            tome</span>
-                                    </a>
+                    <!-- Bloc vedette : les deux romans complets -->
+                    <div
+                        class="cadeau__vedette bg-parchment  col-start-2 col-end-12  md:col-start-1 md:col-end-13 lg:col-start-1 lg:col-end-8 h-full  js-fade-in rounded-lg border border-ember p-2">
+                        <div class="cadeau__vedette-content">
+                            <h3
+                                class="cadeau__vedette-etiquette  inline-block font-mono text-2xl font-extrabold uppercase tracking-widest text-ember-dark">
+                                Romans complets</h3>
+                            <div class="cadeau__vedette-liste grid grid-cols-12 ">
+                                <div
+                                    class="cadeau__vedette-item col-span-12 sm:col-start-1 sm:col-end-7 md:col-span-12 flex gap-3 flex-col  md:flex-col lg:flex-row items-center">
+                                    <img src="media/couvertures/warbreaker-en.jpg"
+                                        alt="Couverture - Warbreaker"
+                                        class="cadeau__vedette-image w-52 md:w-56 ">
+                                    <div class="cadeau__vedette-content p-5">
+                                        <h4
+                                            class="cadeau__vedette-titre  text-xl md:text-2xl text-ember-dark font-extrabold mb-5">
+                                            <em>Warbreaker</em>
+                                        </h4>
+                                        <p class="cadeau__vedette-texte text-abyss text-base md:text-lg">
+                                            Publié sous licence Creative Commons, ce roman autonome se déroule
+                                            sur Nalthis, un monde où la couleur et la respiration sont des sources
+                                            de pouvoir. Sanderson l'a offert intégralement à ses lecteurs, en
+                                            version anglaise seulement.
+                                        </p>
+                                        <a href="https://www.brandonsanderson.com/blogs/blog/warbreaker-rights-and-downloads"
+                                            target="_blank" rel="noopener noreferrer"
+                                            class="cadeau__vedette-lien link flex justify-center items-center mt-7 hover:uppercase"
+                                            aria-label="Lire Warbreaker gratuitement sur le site officiel de Brandon Sanderson
+                                    (ouvre un nouvel onglet, en anglais)">
 
-                                </li>
-                            </ul>
+                                            <span class="cadeau__vedette-icone m-5" aria-hidden="true"></span>
+                                            Lire Warbreaker
+                                            gratuitement
+                                        </a>
+                                    </div>
 
+                                </div>
+                                <div
+                                    class="cadeau__vedette-item col-span-12 sm:col-start-7  sm:col-end-13 md:col-span-12 flex gap-3 flex-col  md:flex-col lg:flex-row items-center">
+                                    <img src="media/couvertures/the-way-of-kings-prime.jpg"
+                                        alt="Couverture - The way of kings prime"
+                                        class="cadeau__vedette-image w-52 md:w-56 ">
+                                    <div class="cadeau__vedette-content p-5">
+                                        <h4
+                                            class="cadeau__vedette-titre text-xl md:text-2xl text-ember-dark font-extrabold mb-5">
+                                            <em>The Way of Kings Prime</em>
+                                        </h4>
+                                        <p class="cadeau__vedette-texte  text-abyss text-base md:text-lg">
+                                            Version préliminaire abandonnée du premier tome de la saga
+                                            Stormlight, publiée librement par l'auteur — sans licence
+                                            officielle, simplement à titre de curiosité pour ses lecteurs.
+                                        </p>
+                                        <a href="https://www.brandonsanderson.com/pages/the-way-of-kings-prime"
+                                            target="_blank" rel="noopener noreferrer"
+                                            class="cadeau__vedette-lien link flex justify-center items-center mt-7 hover:uppercase"
+                                            aria-label="Lire The Way of Kings Prime gratuitement sur le site officiel de Brandon Sanderson
+                                    (ouvre un nouvel onglet, en anglais)">
+
+                                            <span class="cadeau__vedette-icone m-5"
+                                                aria-hidden="true"></span>Lire la version
+                                            préliminaire
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- les autres textes gratuits -->
-                    <div class="col-span-12  md:col-start-8 md:col-end-12 h-full bg-red-600 cadeau__eclats-conteneur js-fade-in">
-                        <h3 class="cadeau__eclats-titre">Autres </h3>
-                        <ul class="cadeau__eclats" role="list">
+                    <!-- Des fictions courtes -->
+                    <div
+                        class="cadeau__eclats-conteneur relative col-start-2 col-end-12  lg:col-start-8 lg:col-end-13 h-full   js-fade-in rounded-lg overflow-hidden p-7 bg-[url(media/couvertures/firstborn_final_200px.webp)] bg-cover bg-position-[50%_40%]">
+                        <div class="cadeau__overlay absolute inset-0 bg-abyss/60 z-0" aria-hidden="true"></div>
+                        <div class="relative z-10 flex flex-col">
+                            <h3
+                                class="cadeau__eclats-titre  inline-block font-mono text-2xl font-extrabold uppercase tracking-widest text-ember ">
+                                Autres éclats de la forge</h3>
+                            <p class="cadeau__eclats-texte text-parchment text-base md:text-lg  max-w-2xl mb-7 p-2">
+                                Des fictions courtes </p>
 
+                            <ul class="cadeau__eclats text-parchment mt-5 sm:mt-60 flex flex-col gap-3" role="list">
 
+                                <li class="cadeau__eclat">
+                                    <a href="https://www.brandonsanderson.com/blogs/blog/mistborn-the-eleventh-metal"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="cadeau__eclat-lien forge-btn forge-btn--primary opacity-30 hover:opacity-80"
+                                        aria-label="Lire The Eleventh Metal, nouvelle Mistborn (ouvre un nouvel onglet, en anglais)">
+                                        <span class="cadeau__eclat-icone px-5" aria-hidden="true"></span>
+                                        The Eleventh Metal -
+                                        Nouvelle — les origines de Kelsier
+                                    </a>
+                                </li>
 
-                            <li class="cadeau__eclat">
-                                <a href="https://www.brandonsanderson.com/blogs/blog/mistborn-the-eleventh-metal"
-                                    target="_blank" rel="noopener noreferrer" class="cadeau__eclat-lien"
-                                    aria-label="Lire The Eleventh Metal, nouvelle Mistborn (ouvre un nouvel onglet, en anglais)">
-                                    <span class="cadeau__eclat-titre"><em>The Eleventh Metal</em></span>
-                                    <span class="cadeau__eclat-desc">Nouvelle — les origines de Kelsier</span>
-                                </a>
-                            </li>
+                                <li class="cadeau__eclat">
+                                    <a href="https://www.brandonsanderson.com/blogs/blog/the-hope-of-elantris"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="cadeau__eclat-lien  forge-btn forge-btn--primary opacity-30 hover:opacity-80"
+                                        aria-label="Lire The Hope of Elantris (ouvre un nouvel onglet, en anglais)">
+                                        <span class="cadeau__eclat-icone px-5" aria-hidden="true"></span>
+                                        The Hope of Elantris -
+                                        Nouvelle liée à Elantris
+                                    </a>
+                                </li>
 
-                            <li class="cadeau__eclat">
-                                <a href="https://www.brandonsanderson.com/blogs/blog/the-hope-of-elantris"
-                                    target="_blank" rel="noopener noreferrer" class="cadeau__eclat-lien"
-                                    aria-label="Lire The Hope of Elantris (ouvre un nouvel onglet, en anglais)">
-                                    <span class="cadeau__eclat-titre"><em>The Hope of Elantris</em></span>
-                                    <span class="cadeau__eclat-desc">Nouvelle liée à Elantris</span>
-                                </a>
-                            </li>
+                                <li class="cadeau__eclat">
+                                    <a href="https://www.brandonsanderson.com/blogs/blog/defending-elysium"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="cadeau__eclat-lien forge-btn forge-btn--primary opacity-30 hover:opacity-80"
+                                        aria-label="Lire Defending Elysium (ouvre un nouvel onglet, en anglais)">
+                                        <span class="cadeau__eclat-icone px-5" aria-hidden="true"></span>
+                                        Defending Elysium -
+                                        Nouvelle de science-fiction
+                                    </a>
+                                </li>
 
-                            <li class="cadeau__eclat">
-                                <a href="https://www.brandonsanderson.com/blogs/blog/defending-elysium" target="_blank"
-                                    rel="noopener noreferrer" class="cadeau__eclat-lien"
-                                    aria-label="Lire Defending Elysium (ouvre un nouvel onglet, en anglais)">
-                                    <span class="cadeau__eclat-titre"><em>Defending Elysium</em></span>
-                                    <span class="cadeau__eclat-desc">Nouvelle de science-fiction</span>
-                                </a>
-                            </li>
+                                <li class="cadeau__eclat">
+                                    <a href="https://reactormag.com/firstborn/" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="cadeau__eclat-lien link forge-btn forge-btn--primary opacity-30 hover:opacity-80"
+                                        aria-label="Lire Firstborn sur Reactor Magazine (ouvre un nouvel onglet, en anglais)">
+                                        <span class="cadeau__eclat-icone px-5" aria-hidden="true"></span>
+                                        Firstborn -
+                                        Nouvelle de science-fiction militaire
+                                    </a>
+                                </li>
 
-                            <li class="cadeau__eclat">
-                                <a href="https://reactormag.com/firstborn/" target="_blank" rel="noopener noreferrer"
-                                    class="cadeau__eclat-lien"
-                                    aria-label="Lire Firstborn sur Reactor Magazine (ouvre un nouvel onglet, en anglais)">
-                                    <span class="cadeau__eclat-titre"><em>Firstborn</em></span>
-                                    <span class="cadeau__eclat-desc">Nouvelle de science-fiction militaire</span>
-                                </a>
-                            </li>
+                                <li class="cadeau__eclat">
+                                    <a href="https://www.brandonsanderson.com/blogs/blog/i-hate-dragons-extended-version"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="cadeau__eclat-lien forge-btn forge-btn--primary opacity-30 hover:opacity-80"
+                                        aria-label="Lire I Hate Dragons, version étendue (ouvre un nouvel onglet, en anglais)">
+                                        <span class="cadeau__eclat-icone px-5" aria-hidden="true"></span>
+                                        I Hate Dragons -
+                                        humoristique (version étendue)
+                                    </a>
+                                </li>
 
-                            <li class="cadeau__eclat">
-                                <a href="https://www.brandonsanderson.com/blogs/blog/i-hate-dragons-extended-version"
-                                    target="_blank" rel="noopener noreferrer" class="cadeau__eclat-lien"
-                                    aria-label="Lire I Hate Dragons, version étendue (ouvre un nouvel onglet, en anglais)">
-                                    <span class="cadeau__eclat-titre"><em>I Hate Dragons</em></span>
-                                    <span class="cadeau__eclat-desc">Nouvelle humoristique (version étendue)</span>
-                                </a>
-                            </li>
-
-                        </ul>
+                            </ul>
+                        </div>
                     </div>
 
                 </div>

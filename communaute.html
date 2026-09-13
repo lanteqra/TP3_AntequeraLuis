@@ -18,6 +18,7 @@
 
     <script src="js/carousel.js" defer></script>
     <script src="js/chiffres.js" defer></script>
+    <script src="js/validate-form.js" defer></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
@@ -71,6 +72,10 @@
             outline-offset: 5px;
         }
 
+        .js-fade-in {
+            @apply opacity-0 motion-reduce:opacity-100;
+        }
+
         .forge-btn {
             @apply inline-flex items-center justify-center gap-2 text-sm  tracking-widest
             px-6 py-3 rounded-md transition-all duration-300;
@@ -82,108 +87,40 @@
         .footer__social-item, .footer__link {
             @apply text-ember-light hover:text-ember-dark transition-colors duration-200;
         }
-    
-        /* carousel*/
-        .carousel-item {
-            @apply shrink-0;
-            width: calc(100% - 2rem);
-            max-width: 28rem;
-        }
 
+        .serment__label {
+            @apply text-xs font-bold uppercase flex
+        }
+        
+        .serment__input {
+            @apply w-full bg-abyss-light rounded-lg border border-storm p-2 transition-[border-color,box-shadow] duration-250 ease-in-out placeholder:text-parchment placeholder:opacity-40 mt-4
+        }
+        
+        textarea.serment__input {
+            @apply resize-y min-h-32;
+        }
         
 
-        #worlds-track {
-            @apply flex gap-4;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
+        .serment__erreur {
+            @apply min-h-4 text-[#f87171];
         }
 
-        .worlds-carousel { @apply relative flex items-center gap-3; }
-
-        .worlds-carousel__control {
-        @apply hidden md:flex items-center justify-center w-10 h-10 rounded-full
-                border border-storm-light text-storm-light hover:text-storm shrink-0
-                hover:bg-storm/20 transition-colors;
+        .serment__label--obligatoire {
+            @apply text-[#f87171] pl-2.5;
         }
-
-        .worlds-carousel__dots { @apply flex justify-center gap-2 mt-6; }
-        .worlds-carousel__dot { @apply w-2 h-2 rounded-full bg-ember-dark/50 transition-all duration-300 cursor-pointer border-none; }
-        .worlds-carousel__dot--active { @apply w-5 bg-ember-light; }
-
-        .world-card {
-            @apply relative h-64 rounded-lg overflow-hidden flex flex-col justify-end p-5 border border-ember-dark/20;
-            isolation: isolate;
-        }
-        .world-card::before {
-            content: "";
-            @apply absolute inset-0 -z-10;
-        }
-        .world-card::after {
-            content: "";
-            @apply absolute inset-x-0 bottom-0 h-2/3 -z-[6]; 
-            background: linear-gradient(0deg, rgba(13,17,23,0.95) 15%, transparent 100%);
-        }
-        .world-card__eyebrow { @apply font-mono lg:text-base text-xs uppercase tracking-[0.2em] text-storm-light mb-1; }
-        .world-card__title { @apply lg:text-2xl text-xl font-bold text-ember-light/80 mb-1; }
-        .world-card__desc { @apply lg:text-base text-xs text-parchment-dim leading-relaxed; }
         
-        
-        /* Chaque monde : un dégradé "atmosphère" différent (modificateur BEM) */
-        .world-card--scadrial::before      { background: linear-gradient(150deg, #500303, #282c33 70%); }
-        .world-card--roshar::before        { background: linear-gradient(150deg, #1b2a44, #0d1117 70%); }
-        .world-card--sel::before           { background: linear-gradient(150deg, #26362f, #0d1117 70%); }
-        .world-card--nalthis::before       { background: linear-gradient(150deg, #4a1f38, #0d1117 70%); }
-        .world-card--taldain::before       { background: linear-gradient(150deg, #4a3115, #0d1117 70%); }
-        .world-card--firstofthesun::before { background: linear-gradient(150deg, #1f3a22, #0d1117 70%); }
-        .world-card--threnody::before      { background: linear-gradient(150deg, #550404, #0d1117 70%); }
-        .world-card--upcoming::before      { background: linear-gradient(150deg, #7a5504, #0d1117 70%); }
-
-
-        .world-card__emblem {
-            @apply absolute inset-0 -z-10 bg-ember-light/20;
-            mask-repeat: no-repeat;
-            mask-position: center 25%;
-            mask-size: 50%;
+        .icone-cosmere {
+            @apply w-10 h-10  transition-transform duration-300 bg-abyss;
+            -webkit-mask-image: url('media/carousel/cosmere.svg');
+            mask-image: url('media/carousel/cosmere.svg');
+            -webkit-mask-size: contain;
+            mask-size: contain;
             -webkit-mask-repeat: no-repeat;
-            -webkit-mask-position: center 25%;
-            -webkit-mask-size: 50%;
-            pointer-events: none;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-position: center;
         }
 
-        .world-card--scadrial .world-card__emblem {
-            mask-image: url("media/carousel/scadraial.svg");
-            -webkit-mask-image: url("media/carousel/scadraial.svg");
-        }
-        .world-card--roshar .world-card__emblem {
-            mask-image: url("media/carousel/roshar.svg");
-            -webkit-mask-image: url("media/carousel/roshar.svg");
-        }
-        .world-card--sel .world-card__emblem {
-            mask-image: url("media/carousel/sel.svg");
-            -webkit-mask-image: url("media/carousel/sel.svg");
-        }
-        .world-card--nalthis .world-card__emblem {
-            mask-image: url("media/carousel/nalthis.svg");
-            -webkit-mask-image: url("media/carousel/nalthis.svg");
-        }
-
-        .world-card--taldain .world-card__emblem {
-            mask-image: url("media/carousel/taldain.svg");
-            -webkit-mask-image: url("media/carousel/taldain.svg");
-        }
-        .world-card--firstofthesun .world-card__emblem {
-            mask-image: url("media/carousel/firstofthesun.svg");
-            -webkit-mask-image: url("media/carousel/firstofthesun.svg");
-        }
-        .world-card--threnody .world-card__emblem {
-            mask-image: url("media/carousel/threnody.svg");
-            -webkit-mask-image: url("media/carousel/threnody.svg");
-        }
-        .world-card--upcoming .world-card__emblem {
-            mask-image: url("media/carousel/cosmere.svg");
-            -webkit-mask-image: url("media/carousel/cosmere.svg");
-        }
     </style>
     <link rel="icon" href="favicon-48x48.ico">
 </head>
@@ -248,25 +185,30 @@
     <main id="content">
         <!-- Section hero-guilde -->
         <section id="hero-guilde"
-            class="hero-guilde relative bg-storm bg-[url(media/hero/bgsections/bgcosmere4.avif)] bg-cover bg-position-[50%_20%] bg-no-repeat bg-no-repeat min-h-100 max-h-225 md:min-h-125  border-b-4 border-parchment-dim overflow-hidden  py-7 px-6"
+            class="hero-guilde relative bg-storm bg-[url(media/hero/bgsections/bgcosmere4.avif)] bg-cover bg-position-[50%_20%] bg-no-repeat  min-h-100 max-h-225 md:min-h-125  border-b-4 border-parchment-dim overflow-hidden  py-7 px-6"
             aria-labelledby="hero-guilde__title">
-            <div class="hero-guilde__overlay absolute inset-0 bg-abyss/40 z-0" aria-hidden="true"></div>
+            <div class="hero-guilde__overlay absolute inset-0 bg-abyss/60 z-0" aria-hidden="true"></div>
             <div class="relative z-10 flex items-center">
                 <div class="hero-guilde__container js-fade-in container mx-auto px-4">
                     <div class="hero-guilde__grid grid grid-cols-12items-center text-center mt-10 mb-10 gap-6">
-                        <div class="hero-guilde__content col-span-12 flex flex-col justify-center items-center md:col-start-3 md:col-end-11 gap-6">
+                        <div
+                            class="hero-guilde__content col-span-12 flex flex-col justify-center items-center md:col-start-3 md:col-end-11 gap-6">
                             <p
                                 class="hero-guilde__eyebrow font-mono text-left text-ember-dark uppercase tracking-[0.2em] text-base font-bold mb-3">
                                 La guilde</p>
                             <h1 id="hero-guilde__title"
                                 class="hero-guilde__title hero__title font-display md:text-center  text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold pb-2 mb-5">
-                                Rejoins la Confrérie des Porteurs de Flamme</h1>
+                                Rejoins la Forge des mots</h1>
                             <p
                                 class="hero-guilde__intro text-parchment font-normal text-base sm:text-lg md:text-xl lg:text-2xl [text-shadow:-5px_7px_7px_rgba(0,0,0,0.5)]">
-                                Chaque lecteur qui traverse les pages du Cosmère devient, à sa façon, un forgeron d'histoires. Comme les membres de Pont Quatre, unis par leur serment plutôt que par leur origine, notre guilde rassemble des lecteurs et lectrices que rien ne liait au départ, sinon une étincelle commune trouvée entre les pages. Rejoins la guilde, partage tes serments, et fais entendre ta voix parmi les tiens.
+                                Chaque lecteur qui traverse les pages du Cosmère devient, à sa façon, un forgeron
+                                d'histoires. Comme les membres de Pont Quatre, unis par leur serment plutôt que par leur
+                                origine, notre guilde rassemble des lecteurs et lectrices que rien ne liait au départ,
+                                sinon une étincelle commune trouvée entre les pages. Rejoins la guilde, partage tes
+                                serments, et fais entendre ta voix parmi les tiens.
                             </p>
                             <a href="#serment" class="hero-guilde__cta forge-btn forge-btn--primary">
-                                Prêter serment
+                                Désirez-vous prêter serment ?
                             </a>
 
 
@@ -276,6 +218,185 @@
             </div>
         </section>
 
+
+
+
+
+
+
+        <!-- Section 3 : Serment (formulaire) -->
+        <section id="serment"
+            class="serment relative text-parchment bg-storm bg-[url(media/hero/bgsections/bgcosmere5.jpg)] bg-cover bg-position-[50%_0%] bg-no-repeat w-full border-b-4 border-parchment-dim overflow-hidden"
+            aria-labelledby="serment__titre">
+            <div class="serment__overlay absolute inset-0 bg-abyss/80 z-0" aria-hidden="true"></div>
+            <div class="relative z-10 flex items-center">
+                <div class="serment__container container mx-auto js-fade-in ">
+                    <div class="serment__grid grid grid-cols-12 gap-4 px-6 py-16">
+                        <div class="serment__intro col-span-12 text-center mb-10">
+                            <h2 id="serment__titre"
+                                class="serment__titre font-display text-ember text-3xl md:text-4xl font-bold text-center mb-10">
+                                Prêter Serment
+                            </h2>
+                            <p id="serment-instructions"
+                                class="serment__text mt-2 text-base md:text-lg text-center max-w-2xl mx-auto mb-12">
+                                Franchir cette porte, c'est accepter de prononcer le Premier Idéal, celui que murmurent
+                                tous les écuyers avant de devenir Chevaliers Radieux.
+                                <span class="serment__citation block italic mt-3">« Vie avant la mort. Force avant la
+                                    faiblesse. Voyage avant la destination. »</span>
+                                <span class="serment__note text-[#f87171] block italic text-sm mt-3">Les champs marqués d'un astérisque (*) sont obligatoires
+                                pour que ton serment soit entendu.</span>
+                            </p>
+                            
+                        </div>
+
+                        <form id="formSerment"
+                            class="serment__form col-span-12 md:col-span-10 md:col-start-2 grid grid-cols-12 gap-4 border-4 border-storm/20 hover:border-storm/40 p-5 rounded-xl"
+                            novalidate aria-describedby="serment-instructions">
+
+                            <div class="serment__champ col-span-12 md:col-span-6">
+                                <label for="nom" class="serment__label">Nom / pseudonyme <span
+                                        class="serment__label serment__label--obligatoire">*</span></label>
+                                <input type="text" id="nom" name="nom" class="serment__input w-full"
+                                    aria-describedby="err-nom" placeholder="exe: Kaladin89" required>
+                                <p id="err-nom" class="serment__erreur text-sm" role="alert" aria-live="polite"></p>
+                            </div>
+
+                            <div class="serment__champ col-span-12 md:col-span-6">
+                                <label for="courriel" class="serment__label">Courriel <span
+                                        class="serment__label serment__label--obligatoire">*</span></label>
+                                <input type="email" id="courriel" name="courriel" class="serment__input w-full"
+                                    aria-describedby="err-courriel" placeholder="exe: kaladin89@laforge.com" required>
+                                <p id="err-courriel" class="serment__erreur text-sm" role="alert" aria-live="polite">
+                                </p>
+                            </div>
+
+                            <div class="serment__champ col-span-12 md:col-span-6">
+                                <label for="age" class="serment__label">Tranche d'âge <span
+                                        class="serment__label serment__label--obligatoire">*</span></label>
+                                <select id="age" name="age" class="serment__input w-full" aria-describedby="err-age"
+                                    required>
+                                    <option value="">-- Choisir --</option>
+                                    <option value="13-17">13-17 ans</option>
+                                    <option value="18-24">18-24 ans</option>
+                                    <option value="25-34">25-34 ans</option>
+                                    <option value="35+">35 ans et plus</option>
+                                </select>
+                                <p id="err-age" class="serment__erreur text-sm" role="alert" aria-live="polite"></p>
+                            </div>
+
+                            <div class="serment__champ col-span-12 md:col-span-6">
+                                <label for="saga" class="serment__label">Saga cosmère préférée <span
+                                        class="serment__label serment__label--obligatoire">*</span></label>
+                                <select id="saga" name="saga" class="serment__input w-full" aria-describedby="err-saga"
+                                    required>
+                                    <option value="">-- Choisir --</option>
+                                    <option value="fil-des-rois">Les Archives de Roshar</option>
+                                    <option value="fils-des-brumes">Fils-des-Brumes</option>
+                                    <option value="elantris">Elantris</option>
+                                    <option value="ame-empereur">L'Âme de l'Empereur</option>
+                                </select>
+                                <p id="err-saga" class="serment__erreur text-sm" role="alert" aria-live="polite"></p>
+                            </div>
+
+                            <div class="serment__champ col-span-12">
+                                <label for="personnage" class="serment__label">Personnage préféré <span
+                                        class="serment__label serment__label--obligatoire">*</span></label>
+                                <input type="text" id="personnage" name="personnage" class="serment__input w-full"
+                                    aria-describedby="err-personnage" placeholder="exe: Kaladin, ..." required>
+                                <p id="err-personnage" class="serment__erreur text-sm" role="alert" aria-live="polite">
+                                </p>
+                            </div>
+
+                            <fieldset id="rang-group"
+                                class="serment__champ--rang serment__champ col-span-12 border-4 border-storm/20 hover:border-storm/40 p-5 rounded-xl"
+                                aria-describedby="err-rang">
+                                <legend class="serment__label">Rang souhaité <span
+                                        class="serment__label serment__label--obligatoire">*</span>
+                                </legend>
+                                <div class="flex flex-col sm:flex-row  justify-around mt-4 gap-2.5">
+                                    <label class="inline-flex items-center gap-2 cursor-pointer">
+                                        <input type="radio" name="rang" value="ecuyer" required
+                                            class="radio radio-lg bg-parchment border-ember-light checked:text-ember checked:border-ember" />
+                                        Écuyer
+                                    </label>
+
+                                    <label class="inline-flex items-center gap-2 cursor-pointer">
+                                        <input type="radio" name="rang" value="chevalier"
+                                            class="radio radio-lg bg-parchment border-ember-light checked:text-ember checked:border-ember" />
+                                        Chevalier
+                                    </label>
+
+                                    <label class="inline-flex items-center gap-2 cursor-pointer">
+                                        <input type="radio" name="rang" value="seigneur"
+                                            class="radio radio-lg bg-parchment border-ember-light checked:text-ember checked:border-ember" />
+                                        Seigneur Radieux
+                                    </label>
+                                </div>
+                                <p id="err-rang" class="serment__erreur text-sm" role="alert" aria-live="polite"></p>
+                            </fieldset>
+
+                            <div class="serment__champ col-span-12 md:col-span-6">
+                                <label for="frequence" class="serment__label">Fréquence de lecture <span
+                                        class="serment__label serment__label--obligatoire">*</span></label>
+                                <select id="frequence" name="frequence" class="serment__input w-full"
+                                    aria-describedby="err-frequence" required>
+                                    <option value="">-- Choisir --</option>
+                                    <option value="quotidienne">Quotidienne</option>
+                                    <option value="hebdomadaire">Hebdomadaire</option>
+                                    <option value="mensuelle">Mensuelle</option>
+                                    <option value="occasionnelle">Occasionnelle</option>
+                                </select>
+                                <p id="err-frequence" class="serment__erreur text-sm" role="alert" aria-live="polite">
+                                </p>
+                            </div>
+
+                            <div class="serment__champ col-span-12">
+                                <label for="message" class="serment__label">Message / motivation <span
+                                        class="serment__label serment__label--note text-parchment-dim">(20-500
+                                        caractères)</span>
+                                    <span class="serment__label serment__label--obligatoire">*</span></label>
+                                <textarea id="message" name="message" rows="4" class="serment__input w-full"
+                                    aria-describedby="err-message" placeholder="Raconte-nous ce qui t'a mené jusqu'ici, écuyer... ton premier livre du Cosmère, le personnage qui t'a marqué, ou simplement pourquoi tu veux rejoindre la guilde." required></textarea>
+                                <p id="err-message" class="serment__erreur text-sm" role="alert" aria-live="polite"></p>
+                            </div>
+
+
+                            <fieldset
+                                class="serment__conditions col-span-12 sm:col-span-10 sm:col-start-2 lg:col-span-8 lg:col-start-3 p-3 grid grid-cols-12 grid-rows-3 bg-parchment rounded-xl text-abyss gap-x-2 gap-y-0 sm:gap-x-10">
+                                <legend class="sr-only">Conditions et abonnement</legend>
+                                <img src="media/gifs/stormlight-cosmere.gif"
+                                    class="col-span-4 row-span-3 border rounded-xl w-full h-full object-cover"
+                                    alt="Pixel art de Kaladin levant la main pour réciter un idéal ou prêter un serment, aux côtés de Syl la spren.">
+                                <div class="serment__champ col-span-8 row-span-1 flex items-center gap-2">
+                                    <input type="checkbox" id="reglement" name="reglement"
+                                        class="serment__checkbox checkbox checkbox-lg border-storm bg-storm checked:border-ember checked:bg-ember checked:text-abyss" />
+                                    <label for="reglement" class="serment__label">J'accepte le règlement de la guilde
+                                        <span class="serment__label serment__label--obligatoire">*</span></label>
+                                </div>
+                                <span id="err-reglement" class="serment__erreur text-xs col-span-8 pl-1.5" role="alert"
+                                    aria-live="polite"></span>
+                                <div class="serment__champ col-span-8 flex items-center gap-2">
+                                    <input type="checkbox" id="infolettre" name="infolettre"
+                                        class="serment__checkbox checkbox checkbox-lg border-storm bg-storm checked:border-ember checked:bg-ember checked:text-abyss" />
+                                    <label for="infolettre" class="serment__label">M'abonner à l'infolettre de la
+                                        guilde</label>
+                                </div>
+                            </fieldset>
+
+                            <div class="col-span-12 text-center mt-4">
+                                <button type="submit" class="serment__bouton forge-btn forge-btn--primary ">
+                                    <span class="icone-cosmere" aria-hidden="true"></span> Prêter serment
+                                </button>
+                            </div>
+
+                            <p id="serment-confirmation" class="serment__confirmation hidden col-span-12 text-center mt-6 px-4 py-6 text-3xl font-bold  text-ember [text-shadow:-2px_3px_7px_#c77b3f]" role="status"
+                                aria-live="polite">
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </main>
     <footer class="footer bg-abyss text-parchment text-base border-t-4 border-parchment-dim">

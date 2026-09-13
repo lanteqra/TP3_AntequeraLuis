@@ -85,7 +85,7 @@ const FILES_TO_CACHE = [
     "media/couvertures/the-way-of-kings-prime.jpg",
     "media/couvertures/firstborn_final_200px.webp",
     // Libraries
-    'https://cdn.jsdelivr.net/combine/npm/daisyui@5/base/rootscrolllock.css,npm/daisyui@5/base/properties.css,npm/daisyui@5/base/scrollbar.css,npm/daisyui@5/base/rootscrollgutter.css,npm/daisyui@5/base/svg.css,npm/daisyui@5/base/rootcolor.css,npm/daisyui@5/base/reset.css,npm/daisyui@5/components/carousel.css',
+    'https://cdn.jsdelivr.net/npm/daisyui@5',
     'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js',
     'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js',
     'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js',

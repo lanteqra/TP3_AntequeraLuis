@@ -14,7 +14,7 @@ Luis Antequera - Étudiant en Techniques d'intégration des interfaces Web AEC -
 ## Description :
 
 Dans le cadre du cours Techniques d'intégration des interfaces Web 2, l'objectif de ce projet est de mettre en pratique toutes les compétences vues ensemble (intégration responsive avec Tailwind, BEM, SASS, PWA, accessibilité, Git, etc.), mais surtout de créer un site qui me ressemble.
-Comme le sujet était libre, j'ai choisi de faire un site web dédie à l'un de mes auteurs préférés du moment : le célèbre écrivain [Brandon Sanderson](https://www.brandonsanderson.com/pages/hello-my-names-brandon), auteur de sagas renommées telles que _Fils-des-brumes_ (Mistborn) et _Les Archives de Roshar_ (The Stormlight Archive), qui construisent ensemble le Cosmere, l'univers partagé dans lequel se déroule son œuvre littéraire. Je suis actuellement en train de lire ses livres, et même si je n'ai pas encore terminé, je me passionne profondément pour cet univers.
+Comme le sujet était libre, j'ai choisi de faire un site web dédie à l'un de mes auteurs préférés du moment : le célèbre écrivain [Brandon Sanderson](https://www.brandonsanderson.com/pages/hello-my-names-brandon), auteur de sagas renommées telles que Fils-des-brumes_ (Mistborn) et Les Archives de Roshar (The Stormlight Archive), qui construisent ensemble le Cosmere, l'univers partagé dans lequel se déroule son œuvre littéraire. Je suis actuellement en train de lire ses livres, et même si je n'ai pas encore terminé, je me passionne profondément pour cet univers.
 
 ## Pages du site :
 
@@ -38,7 +38,8 @@ Comme le sujet était libre, j'ai choisi de faire un site web dédie à l'un de 
   - Barre de navigation : "Simple Responsive Navigation Bar" - https://www.creative-tim.com/twcomponents/component/simple-responsive-navigation-bar
   - Carousel : Section 2 de la page index.html - hero de la page auteurinfo.html"Full-bleed carousel" https://daisyui.com/components/carousel/?lang=es#full-bleed-carousel
   - Blockquote: Citations — Section 3 de la page auteurinfo.html - "FlyonUI Blockquote" - https://flyonui.com/docs/content/blockquote/ - utilisées comme référence, le composant a été adapté manuellement, sans installation de la librairie FlyonUI 
-  - -Accordéon : "Accordion" - Section 3 de la page oeuvresInfo.html - https://tailwindflex.com/@abhirajk/accordion-2
+  - Accordéon : "Accordion" - Section 3 de la page oeuvresInfo.html - https://tailwindflex.com/@abhirajk/accordion-2
+  - radio / checkbox : section Serment (formulaire) de la page communaute.html - https://daisyui.com/components/radio/    -    https://daisyui.com/components/checkbox/
 
 - Javascript (animations)
   - Animation Js : 

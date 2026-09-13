@@ -50,6 +50,8 @@ const FILES_TO_CACHE = [
     'media/page-auteur/evillibrarians.jpg',
     'media/page-auteur/ruetemps.jpg',
     'media/page-auteur/seo-on_img_5013.webp',
+    'media/hero/bgsections/bgcosmere5.jpg',
+    'media/gifs/stormlight-cosmere.gif',
     // Romans indépendants du Cosmère
     "media/couvertures/elantris.jpg",
     "media/couvertures/warbreaker.jpg",

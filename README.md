@@ -25,7 +25,7 @@ Comme le sujet était libre, j'ai choisi de faire un site web dédie à l'un de 
 
 - HTML5 sémantique
 - CSS3 (méthodologie BEM, animations)
-  - Animations CSS :
+  * Animations CSS :
     - index - Hero Title / auteurInfo - auteur heri title: Effet de brillance métallique sur le <h1> du hero — technique de gradient text via background-clip: text. Adaptée du tutoriel de Let's Build UI (https://www.letsbuildui.dev/articles/css-text-effects-five-minimal-examples/). - .hero\_\_title (classe partagée, définie une seule fois dans style.css global) — réutilisée sur tous les pages pour garder cohérente visuelle entre tous les Heros du site.
     - auteurInfo.html - section Biographie - (.auteur-bio\_\_marker::after) situés entre chaque chapitre de la timeline. Effet de pulsation lumineuse continue simulant une braise vivante.Technologie : CSS pur (@keyframes), sans librairie externe. Note technique : Le code de cette animation a été placé directement dans le bloc style 'type="text/tailwindcss"' du head (plutôt que dans style.css externe) afin d'éviter un bug de timing au chargement de la page
     - oeuvresInfo.html - section catalogue an effet de "pile de livres" pour les œuvres publiées en plusieurs volumes en français. Les deux couvertures se superposent avec une légère rotation opposée simulant des livres empilés. Au survol de la carte, les deux images "s'éventent" davantage via une transition CSS fluide, révélant qu'il s'agit de deux volumes distincts. (aucun JavaScript requis). - Pour les cartes à une seule couverture : l'image s'agrandit légèrement et pivote
@@ -33,8 +33,9 @@ Comme le sujet était libre, j'ai choisi de faire un site web dédie à l'un de 
     - Hint iOS — Encart flottant en bas d'écran sur iPhone/iPad, avec animation d'entrée douce translateY(20px) 0, opacité 0 à 1, 0.4s ease-out. Fermable d'un clic.
     - oeuvresInfo.html - section cadeau: effet de survol sur les cartes vedettes (Warbreaker, The Way of Kings Prime). Au survol de la carte, la couverture s'agrandit légèrement et pivote scale-105 rotate-8, rappelant le mouvement d'un objet qu'on tourne entre les mains pour l'examiner. Le lien de lecture gratuite possède également son propre effet : au survol du lien complet, l'icône associée s'agrandit scale-125, signalant l'action de manière distincte du reste de la carte (aucun JavaScript requis).
     - Pour les liens de la liste "Autres éclats de la forge" : chaque lien se déplace horizontalement au survol hover:translate-x-4, comme si le fragment de texte glissait vers l'avant pour attirer l'attention du lecteur.
+    - offline.html - Icône de connexion (page hors ligne) - .offline__icon (icône SVG représentant une connexion coupée) - Pulsation continue animate-pulse pour attirer l'attention sur l'état hors ligne - https://tailwindcss.com/docs/animation#pulse
 
-- Composants Tailwind :
+* Composants Tailwind :
   - Barre de navigation : "Simple Responsive Navigation Bar" - https://www.creative-tim.com/twcomponents/component/simple-responsive-navigation-bar
   - Carousel : Section 2 de la page index.html - hero de la page auteurinfo.html"Full-bleed carousel" https://daisyui.com/components/carousel/?lang=es#full-bleed-carousel
   - Blockquote: Citations — Section 3 de la page auteurinfo.html - "FlyonUI Blockquote" - https://flyonui.com/docs/content/blockquote/ - utilisées comme référence, le composant a été adapté manuellement, sans installation de la librairie FlyonUI
@@ -42,7 +43,7 @@ Comme le sujet était libre, j'ai choisi de faire un site web dédie à l'un de 
   - radio / checkbox : section Serment (formulaire) de la page communaute.html - https://daisyui.com/components/radio/ - https://daisyui.com/components/checkbox/
   -  Chat bubble : daisyUI Chat bubble - Section témoignages de la page communaute.html :  chaque témoignage utilise la structure chat / chat-image / chat-header / chat-bubble / chat-footer de daisyUI, alternée en chat-start (gauche) et chat-end (droite). https://daisyui.com/components/chat/
 
-- Javascript (animations)
+* Javascript (animations)
   - Animation Js :
     - general dans le Site : Fade-in/slide-up au scroll (librairie GSAP 3.12.2 + plugin ScrollTrigger) - via la classe utilitaire réutilisable ".js-fade-in" conçue pour être appliquée à n'importe quel élément sur n'importe quelle page du site - le contenu apparaît avec un fondu (opacity 0 → 1), Eases (elastic.out) et une translation verticale (translateY 40px → 0) dès qu'il entre à 85% de la hauteur du viewport - https://gsap.com/docs/v3/GSAP/gsap.fromTo()/
     - index Carousel - carousel.js : construit avec le composant Carousel de DaisyUI https://daisyui.com/components/carousel/?lang=es#full-bleed-carousel. L'autoplay et la pause au survol/focus suivent le patron d'accessibilité Carousel du W3C WAI-ARIA (https://w3.org/WAI/ARIA/apg/patterns/carousel/examples/carousel-1-prev-next).

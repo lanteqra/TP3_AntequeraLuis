@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Site non-officiel dédié à l'écrivain Brandon Sanderson et à son univers du Cosmere.">
-    <title>Accueil | La Forge des Mots — Brandon Sanderson</title>
+        content="Explorez la bibliographie complète de Brandon Sanderson : sagas, cycles et romans indépendants de l'univers du Cosmere.">
+    <title>Œuvres | La Forge des Mots — Brandon Sanderson</title>
 
     <link rel="manifest" href="manifest.json">
     <script src="js/install.js" defer></script>
@@ -78,7 +78,7 @@
             px-6 py-3 rounded-md transition-all duration-300;
         }
         .forge-btn--primary {
-            @apply bg-ember text-abyss hover:uppercase hover:bg-ember-light hover:shadow-[0_0_25px_-5px_var(--color-ember-light)];
+            @apply bg-ember text-abyss hover:font-bold hover:uppercase hover:bg-ember-light hover:shadow-[0_0_25px_-5px_var(--color-ember-light)];
         }
 
         .footer__social-item, .footer__link {
@@ -132,9 +132,6 @@
         .cadeau__vedette-item:hover .cadeau__vedette-image {
             @apply scale-105 rotate-8;
         }
-        
-
-        
 
         .cadeau__eclat-lien {
             @apply flex hover:translate-x-4;
@@ -214,7 +211,7 @@
                         <div
                             class="hero-oeuvres__content col-span-12  flex flex-col justify-center md:col-start-3 md:col-end-11 gap-6">
                             <p
-                                class="hero-oeuvres__eyebrow font-mono text-ember uppercase tracking-[0.2em] text-base mb-3">
+                                class="hero-oeuvres__eyebrow font-mono text-ember-light uppercase tracking-[0.2em] text-base mb-3">
                                 Le Cosmere</p>
                             <h1
                                 class="hero-oeuvres__title hero__title font-display md:text-center  text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold [text-shadow:-5px_7px_7px_rgba(0,0,0,0.5)] pb-2 mb-5">
@@ -230,12 +227,13 @@
                             <div class="hero-oeuvres__quote text-parchment font-normal text-sm sm:text-base md:text-lg lg:text-xl [text-shadow:-0px_-2px_3px_rgba(0,0,0,1)] mb-5
                                 border-l-2 border-ember pl-6 italic">
                                 <p class="hero-oeuvres__quote-text">
-                                    "C'était incroyable combien de livres on pouvait entasser dans une pièce, à
+                                    "C'était incroyable combien de livres on pouvait entasser dans une pièce, <br> à
                                     condition de ne pas vouloir se déplacer beaucoup." <br><span>(“It was amazing how
-                                        many books one could fit into a room, assuming one didn't want to move around
+                                        many books one could fit into a room, <br> assuming one didn't want to move
+                                        around
                                         very much.”)</span> </p>
                                 <p
-                                    class="hero-oeuvres__quote-source flex justify-end mt-2 not-italic font-mono text-sm text-ember/80">
+                                    class="hero-oeuvres__quote-source flex justify-end mt-2 not-italic font-mono text-base text-ember">
                                     Le Puits de l'Ascension (The Well of Ascension)</p>
                             </div>
                         </div>
@@ -252,8 +250,7 @@
                             class="catalogue__titre font-display text-ember text-3xl md:text-4xl font-bold text-center mb-10">
                             Le Catalogue de la Forge
                         </h2>
-                        <p
-                            class="catalogue__intro text-parchment text-base md:text-lg text-center max-w-2xl mx-auto mb-12">
+                        <p class="catalogue__intro text-parchment text-base sm:text-lg md:text-xl mb-5">
                             Voici une sélection forgée avec soin, les tomes les plus essentiels pour quiconque
                             souhaite franchir le seuil du Cosmère pour la première fois. Chaque œuvre présentée
                             ici porte l'empreinte d'un même métal, celui d'un univers partagé où tout se répond.
@@ -1168,14 +1165,13 @@
                 <div class="cadeau__grid grid grid-cols-12 gap-7">
 
                     <!-- Intro -->
-                    <div
-                        class="col-start-2 col-end-12 md:col-start-3 md:col-end-11 cadeau__bloc js-fade-in text-center">
+                    <div class="col-start-2 col-end-12 cadeau__bloc js-fade-in text-center">
                         <h2 id="cadeau__titre"
                             class="cadeau__titre catalogue__titre font-display text-ember text-3xl md:text-4xl font-bold text-center mb-10">
                             Même le Forgeron offre <br> parfois ses créations
                         </h2>
                         <p
-                            class="cadeau__texte text-parchment text-base md:text-lg text-center max-w-2xl mx-auto mb-12">
+                            class="cadeau__texte text-parchment temoignages__text font-normal text-base sm:text-lg md:text-xl mb-12">
                             Certains alliages ne sont jamais scellés dans leur forme finale. Brandon
                             Sanderson ouvre parfois les portes de son atelier et laisse voir le métal
                             encore chaud : un roman achevé qu'il offre librement, une ébauche
@@ -1193,9 +1189,9 @@
                                 class="cadeau__vedette-etiquette  inline-block font-mono text-2xl font-extrabold uppercase tracking-widest text-ember-dark">
                                 Romans complets</h3>
                             <div class="cadeau__vedette-liste grid grid-cols-12 ">
-                                <div class="cadeau__vedette-item col-span-12 sm:col-start-1 sm:col-end-7 lg:col-span-12 flex gap-3 flex-col  md:flex-col lg:flex-row items-center">
-                                    <img src="media/couvertures/warbreaker-en.jpg"
-                                        alt="Couverture - Warbreaker"
+                                <div
+                                    class="cadeau__vedette-item col-span-12 sm:col-start-1 sm:col-end-7 lg:col-span-12 flex gap-3 flex-col  md:flex-col lg:flex-row items-center">
+                                    <img src="media/couvertures/warbreaker-en.jpg" alt="Couverture - Warbreaker"
                                         class="cadeau__vedette-image w-52 md:w-56 ">
                                     <div class="cadeau__vedette-content p-5">
                                         <h4
@@ -1208,20 +1204,22 @@
                                             de pouvoir. Sanderson l'a offert intégralement à ses lecteurs, en
                                             version anglaise seulement.
                                         </p>
-                                        <a href="https://www.brandonsanderson.com/blogs/blog/warbreaker-rights-and-downloads"
-                                            target="_blank" rel="noopener noreferrer"
-                                            class="cadeau__vedette-lien link flex justify-center items-center mt-7 hover:uppercase"
-                                            aria-label="Lire Warbreaker gratuitement sur le site officiel de Brandon Sanderson
-                                    (ouvre un nouvel onglet, en anglais)">
+                                        <div class="cadeau__vedette-action flex justify-center">
+                                            <a href="https://www.brandonsanderson.com/blogs/blog/warbreaker-rights-and-downloads"
+                                                target="_blank" rel="noopener noreferrer"
+                                                class="cadeau__vedette-lien forge-btn--primary forge-btn flex justify-center items-center mt-7"
+                                                aria-label="Lire Warbreaker gratuitement sur le site officiel de Brandon Sanderson (ouvre un nouvel onglet, en anglais)">
 
-                                            <span class="cadeau__vedette-icone m-5" aria-hidden="true"></span>
-                                            Lire Warbreaker
-                                            gratuitement
-                                        </a>
+                                                <span class="cadeau__vedette-icone" aria-hidden="true"></span>
+                                                Lire Warbreaker
+                                                gratuitement
+                                            </a>
+                                        </div>
                                     </div>
 
                                 </div>
-                                <div  class="cadeau__vedette-item col-span-12 sm:col-start-7  sm:col-end-13 lg:col-span-12 flex gap-3 flex-col  md:flex-col lg:flex-row items-center">
+                                <div
+                                    class="cadeau__vedette-item col-span-12 sm:col-start-7  sm:col-end-13 lg:col-span-12 flex gap-3 flex-col  md:flex-col lg:flex-row items-center">
                                     <img src="media/couvertures/the-way-of-kings-prime.jpg"
                                         alt="Couverture - The way of kings prime"
                                         class="cadeau__vedette-image w-52 md:w-56 ">
@@ -1235,16 +1233,18 @@
                                             Stormlight, publiée librement par l'auteur — sans licence
                                             officielle, simplement à titre de curiosité pour ses lecteurs.
                                         </p>
-                                        <a href="https://www.brandonsanderson.com/pages/the-way-of-kings-prime"
-                                            target="_blank" rel="noopener noreferrer"
-                                            class="cadeau__vedette-lien link flex justify-center items-center mt-7 hover:uppercase"
-                                            aria-label="Lire The Way of Kings Prime gratuitement sur le site officiel de Brandon Sanderson
+                                        <div class="cadeau__vedette-action flex justify-center">
+                                            <a href="https://www.brandonsanderson.com/pages/the-way-of-kings-prime"
+                                                target="_blank" rel="noopener noreferrer"
+                                                class="cadeau__vedette-lien forge-btn--primary forge-btn flex justify-center items-center"
+                                                aria-label="Lire The Way of Kings Prime gratuitement sur le site officiel de Brandon Sanderson
                                     (ouvre un nouvel onglet, en anglais)">
 
-                                            <span class="cadeau__vedette-icone m-5"
-                                                aria-hidden="true"></span>Lire la version
-                                            préliminaire
-                                        </a>
+                                                <span class="cadeau__vedette-icone" aria-hidden="true"></span>Lire la
+                                                version
+                                                préliminaire
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

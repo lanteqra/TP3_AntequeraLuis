@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Site non-officiel dédié à l'écrivain Brandon Sanderson et à son univers du Cosmere.">
+        content="Site non-officiel dédié à l'écrivain Brandon Sanderson et à son univers du  Cosmère .">
     <title>Accueil | La Forge des Mots — Brandon Sanderson</title>
 
     <link rel="manifest" href="manifest.json">
@@ -15,6 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/fadeInOnScroll.js" defer></script>
+    <script src="js/slideInOnScroll.js" defer></script>
 
     <script src="js/carousel.js" defer></script>
     <script src="js/chiffres.js" defer></script>
@@ -180,7 +181,7 @@
         </div>
     </header>
     <main id="content">
-        <!-- Section hero-guilde -->
+        <!-- Section 1 : hero-guilde -->
         <section id="hero-guilde"
             class="hero-guilde relative bg-storm bg-[url(media/hero/bgsections/bgcosmere4.avif)] bg-cover bg-position-[50%_20%] bg-no-repeat  min-h-100 max-h-225 md:min-h-125  border-b-4 border-parchment-dim overflow-hidden  py-7 px-6"
             aria-labelledby="hero-guilde__title">
@@ -207,10 +208,194 @@
                             <a href="#serment" class="hero-guilde__cta forge-btn forge-btn--primary">
                                 Désirez-vous prêter serment ?
                             </a>
-
-
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2 : témoignages -->
+        <section class="temoignages bg-parchment" id="temoignages" aria-labelledby="temoignages__titre">
+            <div class="temoignages__container container mx-auto px-4 bg-white">
+                <div class="temoignages__grid grid grid-cols-12 px-6 py-16">
+                    <div
+                        class="temoignages__intro col-span-12 md:col-start-3 md:col-span-8 text-center mb-10  js-fade-in  ">
+                        <h2 id="temoignages__titre"
+                            class="temoignages__titre  font-display text-ember text-2xl md:text-4xl font-bold text-center mb-10">
+                            Le feu de la forge
+                        </h2>
+                        <p class="temoignages__text font-normal text-base sm:text-lg md:text-xl">
+                            Autour du feu, les membres de la forge échangent leurs serments
+                            et leurs découvertes à travers le Cosmère. Certains y racontent
+                            leur premier voyage sur Roshar, d'autres leur rencontre avec un
+                            brumeux ou une Illuminatrice ; tous partagent ce même éclat dans
+                            le regard qui trahit un lecteur conquis. Ici, chaque témoignage
+                            est une braise de plus jetée dans le foyer commun, la preuve
+                            vivante qu'une bonne histoire, une fois lue, ne s'éteint jamais
+                            vraiment.
+                        </p>
+                    </div>
+
+                    <ul class="temoignages__liste col-span-12 grid grid-cols-12 gap-4">
+                        <!-- Composant adapté : daisyUI Chat bubble -->
+                        <!-- G 1-->
+                        <li class="temoignages__message temoignages__message--gauche js-slide-in col-span-12 md:col-span-8 md:col-start-2"
+                            data-direction="gauche">
+                            <div class="chat chat-start">
+                                <div class="chat-image avatar">
+                                    <div
+                                        class="temoignages__avatar w-10 rounded-full hover:scale-150 transition-transform duration-300">
+                                        <img src="media/avatars/kaladin_lit.jpg" alt="Avatar illustré de Kaladin_lit"
+                                            loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="chat-header temoignages__entete">
+                                    Kaladin_Lit
+                                    <span class="temoignages__rang">Chevalier</span>
+                                </div>
+                                <div class="chat-bubble temoignages__bulle bg-parchment ">
+                                    <blockquote class="temoignages__citation">
+                                        « Ce qui distingue Sanderson, c'est sa capacité à relier des dizaines
+                                        d'histoires en un seul univers cohérent, sans jamais sacrifier la qualité de
+                                        chaque récit pris individuellement. Un travail de bâtisseur de mondes
+                                        impressionnant. »
+                                    </blockquote>
+                                </div>
+                                <div class="chat-footer temoignages__pied opacity-50">à propos du Cosmère</div>
+                            </div>
+                        </li>
+                        <!-- D 2-->
+                        <li class="temoignages__message temoignages__message--droite js-slide-in col-span-12  md:col-start-4 md:col-end-12"
+                            data-direction="droite">
+                            <div class="chat chat-end">
+                                <div class="chat-image avatar">
+                                    <div
+                                        class="temoignages__avatar w-10 rounded-full  hover:scale-150 transition-transform duration-300">
+                                        <img src="media/avatars/vin_brumeuse.jpg" alt="Avatar illustré de Vin_Brumeuse"
+                                            loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="chat-header temoignages__entete">
+                                    Vin_Brumeuse
+                                    <span class="temoignages__rang">Écuyer</span>
+                                </div>
+                                <div class="chat-bubble temoignages__bulle bg-storm text-parchment">
+                                    <blockquote class="temoignages__citation">
+                                        « Fils-des-Brumes est le premier livre qui m'a fait croire
+                                        en la magie des systèmes bien pensés. Un système de magie brillant et une
+                                        intrigue qui ne relâche jamais la tension. Vin est de loin l'une des
+                                        protagonistes les plus attachantes que j'ai eu le plaisir de suivre. Un
+                                        excellent point d'entrée dans le Cosmère.»
+                                    </blockquote>
+                                </div>
+                                <div class="chat-footer temoignages__pied opacity-50">à propos de Fils-des-Brumes</div>
+                            </div>
+                        </li>
+                        <!-- G 3-->
+                        <li class="temoignages__message temoignages__message--gauche js-slide-in col-span-12 md:col-span-8 md:col-start-2"
+                            data-direction="gauche">
+                            <div class="chat chat-start">
+                                <div class="chat-image avatar">
+                                    <div
+                                        class="temoignages__avatar w-10 rounded-full hover:scale-150 transition-transform duration-300">
+                                        <img src="media/avatars/shallan_radieuse.webp"
+                                            alt="Avatar illustré de shellen_radieuse" loading="lazy" width="40"
+                                            height="40">
+                                    </div>
+                                </div>
+                                <div class="chat-header temoignages__entete">
+                                    shellan_radieuse
+                                    <span class="temoignages__rang text-parchment-dim">Chevalier</span>
+                                </div>
+                                <div class="chat-bubble temoignages__bulle bg-parchment ">
+                                    <blockquote class="temoignages__citation">
+                                        « Shallan est un personnage d'une richesse rare : artiste, érudite, survivante.
+                                        Voir son don d'Illuminatrice se dévoiler aux côtés de son talent pour le dessin
+                                        m'a complètement conquise. La Voie des Rois pose des bases magistrales pour
+                                        la suite de l'Archive Radieuse. »
+                                    </blockquote>
+                                </div>
+                                <div class="chat-footer temoignages__pied opacity-50">à propos de La Voie des rois</div>
+                            </div>
+                        </li>
+                        <!-- D 4 -->
+                        <li class="temoignages__message temoignages__message--droite js-slide-in col-span-12  md:col-start-4 md:col-end-12"
+                            data-direction="droite">
+                            <div class="chat chat-end">
+                                <div class="chat-image avatar">
+                                    <div
+                                        class="temoignages__avatar w-10 rounded-full hover:scale-150 transition-transform duration-300">
+                                        <img src="media/avatars/lord-rashek.jpg" alt="Avatar illustré de LordRashek"
+                                            loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="chat-header temoignages__entete">
+                                    LordRashek
+                                    <span class="temoignages__rang text-parchment-dim">Seigneur Radieux</span>
+                                </div>
+                                <div class="chat-bubble temoignages__bulle bg-storm text-parchment">
+                                    <blockquote class="temoignages__citation">
+                                        « Sanderson prend son temps pour construire son univers, et ça se sent. Roshar
+                                        est d'une richesse folle, entre tempêtes dévastatrices et créatures fascinantes.
+                                        Un roman dense, mais qui récompense la patience. »
+                                    </blockquote>
+                                </div>
+                                <div class="chat-footer temoignages__pied opacity-50">à propos de La Voie des rois</div>
+                            </div>
+                        </li>
+                        <!-- G 5-->
+                        <li class="temoignages__message temoignages__message--gauche js-slide-in col-span-12 md:col-span-10 md:col-start-2"
+                            data-direction="gauche">
+                            <div class="chat chat-start">
+                                <div class="chat-image avatar">
+                                    <div
+                                        class="temoignages__avatar w-10 rounded-full hover:scale-150 transition-transform duration-300">
+                                        <img src="media/avatars/kelsier.jpg" alt="Avatar illustré de kelsier89"
+                                            loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="chat-header temoignages__entete">
+                                    Kelsier89
+                                    <span class="temoignages__rang text-parchment-dim">Seigneur Radieux</span>
+                                </div>
+                                <div class="chat-bubble temoignages__bulle bg-parchment ">
+                                    <blockquote class="temoignages__citation">
+                                        « Difficile de lâcher ce livre une fois commencé! Entre les braqueurs
+                                        charismatiques, les retournements de situation et la mécanique de l'alomancie,
+                                        tout est pensé pour captiver. Un vrai coup de cœur. »
+                                    </blockquote>
+                                </div>
+                                <div class="chat-footer temoignages__pied opacity-50">à propos du Fils-des-Brumes</div>
+                            </div>
+                        </li>
+                        <!-- D 6-->
+                        <li class="temoignages__message temoignages__message--droite js-slide-in col-span-12 md:col-span-10 md:col-start-2"
+                            data-direction="droite">
+                            <div class="chat chat-end">
+                                <div class="chat-image avatar">
+                                    <div
+                                        class="temoignages__avatar w-10 rounded-full hover:scale-150 transition-transform duration-300">
+                                        <img src="media/avatars/sarene-elantris.jpg" alt="Avatar illustré de Ela-Sarene"
+                                            loading="lazy" class="">
+                                    </div>
+                                </div>
+                                <div class="chat-header temoignages__entete">
+                                    Ela-Sarene
+                                    <span class="temoignages__rang text-parchment-dim">Écuyer</span>
+                                </div>
+                                <div class="chat-bubble temoignages__bulle bg-storm text-parchment">
+                                    <blockquote class="temoignages__citation">
+                                        « Chaque tome du Cosmère me surprend par sa cohérence. Sanderson maîtrise
+                                        parfaitement le rythme entre action et développement des personnages. Un auteur
+                                        incontournable pour tout amateur de fantasy épique. »
+                                    </blockquote>
+                                </div>
+                                <div class="chat-footer temoignages__pied opacity-50">à propos de Brandon Sanderson
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
                 </div>
             </div>
         </section>
@@ -219,11 +404,9 @@
 
 
 
-
-
         <!-- Section 3 : Serment (formulaire) -->
         <section id="serment"
-            class="serment relative text-parchment bg-storm bg-[url(media/hero/bgsections/bgcosmere5.jpg)] bg-cover bg-position-[50%_0%] bg-no-repeat w-full border-b-4 border-parchment-dim overflow-hidden"
+            class="serment relative text-parchment bg-storm bg-[url(media/hero/bgsections/bgcosmere5.jpg)] bg-cover bg-position-[50%_0%] bg-no-repeat w-full border-t-4 border-parchment-dim overflow-hidden"
             aria-labelledby="serment__titre">
             <div class="serment__overlay absolute inset-0 bg-abyss/80 z-0" aria-hidden="true"></div>
             <div class="relative z-10 flex items-center">
@@ -240,12 +423,11 @@
                                 tous les écuyers avant de devenir Chevaliers Radieux.
                                 <span class="serment__citation block italic mt-3">« Vie avant la mort. Force avant la
                                     faiblesse. Voyage avant la destination. »</span>
-                                <span class="serment__note text-[#f87171] block italic text-sm mt-3">Les champs marqués d'un astérisque (*) sont obligatoires
-                                pour que ton serment soit entendu.</span>
+                                <span class="serment__note text-[#f87171] block italic text-sm mt-3">Les champs marqués
+                                    d'un astérisque (*) sont obligatoires
+                                    pour que ton serment soit entendu.</span>
                             </p>
-                            
                         </div>
-
                         <form id="formSerment"
                             class="serment__form col-span-12 md:col-span-10 md:col-start-2 grid grid-cols-12 gap-4 border-4 border-storm/20 hover:border-storm/40 p-5 rounded-xl"
                             novalidate aria-describedby="serment-instructions">
@@ -353,7 +535,9 @@
                                         caractères)</span>
                                     <span class="serment__label serment__label--obligatoire">*</span></label>
                                 <textarea id="message" name="message" rows="4" class="serment__input w-full"
-                                    aria-describedby="err-message" placeholder="Raconte-nous ce qui t'a mené jusqu'ici, écuyer... ton premier livre du Cosmère, le personnage qui t'a marqué, ou simplement pourquoi tu veux rejoindre la guilde." required></textarea>
+                                    aria-describedby="err-message"
+                                    placeholder="Raconte-nous ce qui t'a mené jusqu'ici, écuyer... ton premier livre du Cosmère, le personnage qui t'a marqué, ou simplement pourquoi tu veux rejoindre la guilde."
+                                    required></textarea>
                                 <p id="err-message" class="serment__erreur text-sm" role="alert" aria-live="polite"></p>
                             </div>
 
@@ -386,8 +570,9 @@
                                 </button>
                             </div>
 
-                            <p id="serment-confirmation" class="serment__confirmation hidden col-span-12 text-center mt-6 px-4 py-6 text-3xl font-bold  text-ember [text-shadow:-2px_3px_7px_#c77b3f]" role="status"
-                                aria-live="polite">
+                            <p id="serment-confirmation"
+                                class="serment__confirmation hidden col-span-12 text-center mt-6 px-4 py-6 text-3xl font-bold  text-ember [text-shadow:-2px_3px_7px_#c77b3f]"
+                                role="status" aria-live="polite">
                             </p>
                         </form>
                     </div>
@@ -464,16 +649,17 @@
                             <br>Cégep de Trois-Rivières
                         </p>
                     </div>
-                    <div class="footer__bottom-right col-span-12 sm:col-span-6 flex flex-col justify-center text-center sm:text-right items-center md:items-end mt-2">
-        <p class="footer__names">
-            <span class="footer__names--accent font-bold">
-                Site integré par : </span><br>Luis Antequera
-        </p>
-    </div>
+                    <div
+                        class="footer__bottom-right col-span-12 sm:col-span-6 flex flex-col justify-center text-center sm:text-right items-center md:items-end mt-2">
+                        <p class="footer__names">
+                            <span class="footer__names--accent font-bold">
+                                Site integré par : </span><br>Luis Antequera
+                        </p>
+                    </div>
 
 
+                </div>
             </div>
-        </div>
     </footer>
 
     <!--Service Worker -->

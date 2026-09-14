@@ -1,6 +1,6 @@
 // SERVICE WORKER
 
-const CACHE_NAME = 'la-forge-v1.7.1';
+const CACHE_NAME = 'la-forge-v1.7.2';
 const FILES_TO_CACHE = [
     './',
     'index.html',
@@ -109,6 +109,11 @@ self.addEventListener('install', (evt) => {
             .then((cache) =>
                 cache.addAll(FILES_TO_CACHE)
             )
+    J'ai choisi une boucle avec try/catch individuel plutôt que cache.addAll() :
+    avec addAll(), l'échec d'une seule ressource (ex. un CDN externe indisponible)
+    fait échouer TOUT le cache, y compris mes fichiers locaux. Ici, un échec
+    isolé n'empêche pas la mise en cache du reste — essentiel pour le offline.
+
     );*/
     evt.waitUntil(
         caches.open(CACHE_NAME).then(async (cache) => {

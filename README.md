@@ -9,12 +9,12 @@ Luis Antequera - Étudiant en Techniques d'intégration des interfaces Web AEC -
 ## Liens :
 
 -**Github projet :** [https://github.com/lanteqra/TP3_AntequeraLuis](https://github.com/lanteqra/TP3_AntequeraLuis)
-**Github pages :**
+**Github pages :** [https://lanteqra.github.io/TP3_AntequeraLuis/  ](https://lanteqra.github.io/TP3_AntequeraLuis/)
 
 ## Description :
 
 Dans le cadre du cours Techniques d'intégration des interfaces Web 2, l'objectif de ce projet est de mettre en pratique toutes les compétences vues ensemble (intégration responsive avec Tailwind, BEM, SASS, PWA, accessibilité, Git, etc.), mais surtout de créer un site qui me ressemble.
-Comme le sujet était libre, j'ai choisi de faire un site web dédie à l'un de mes auteurs préférés du moment : le célèbre écrivain [Brandon Sanderson](https://www.brandonsanderson.com/pages/hello-my-names-brandon), auteur de sagas renommées telles que Fils-des-brumes\_ (Mistborn) et Les Archives de Roshar (The Stormlight Archive), qui construisent ensemble le Cosmere, l'univers partagé dans lequel se déroule son œuvre littéraire. Je suis actuellement en train de lire ses livres, et même si je n'ai pas encore terminé, je me passionne profondément pour cet univers.
+Comme le sujet était libre, j'ai choisi de faire un site web dédie à l'un de mes auteurs préférés du moment : le célèbre écrivain [Brandon Sanderson](https://www.brandonsanderson.com/pages/hello-my-names-brandon), auteur de sagas renommées telles que Fils-des-brumes (Mistborn) et Les Archives de Roshar (The Stormlight Archive), qui construisent ensemble le Cosmere, l'univers partagé dans lequel se déroule son œuvre littéraire. Je suis actuellement en train de lire ses livres, et même si je n'ai pas encore terminé, je me passionne profondément pour cet univers.
 
 ## Pages du site :
 

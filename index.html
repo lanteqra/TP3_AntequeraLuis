@@ -110,7 +110,8 @@
         .worlds-carousel__dot--active { @apply w-5 bg-ember-light; }
 
         .world-card {
-            @apply relative h-64 rounded-lg overflow-hidden flex flex-col justify-end p-5 border border-ember-dark/20;
+            @apply relative h-64 rounded-lg overflow-hidden flex flex-col justify-end p-5 
+            border border-ember-dark/20 bg-abyss;
             isolation: isolate;
         }
         .world-card::before {
@@ -119,12 +120,12 @@
         }
         .world-card::after {
             content: "";
-            @apply absolute inset-x-0 bottom-0 h-2/3 -z-[6]; 
-            background: linear-gradient(0deg, rgba(13,17,23,0.95) 15%, transparent 100%);
+            @apply absolute inset-x-0 bottom-0 h-2/3 -z-6; 
+            background: linear-gradient(0deg, rgba(13, 17, 23, 0.596) 50%, transparent 100%);
         }
         .world-card__eyebrow { @apply font-mono lg:text-base text-xs uppercase tracking-[0.2em] text-storm-light mb-1; }
         .world-card__title { @apply lg:text-2xl text-xl font-bold text-ember-light/80 mb-1; }
-        .world-card__desc { @apply lg:text-base text-xs text-parchment-dim leading-relaxed; }
+        .world-card__desc { @apply text-base text-parchment leading-relaxed; }
         
         
         /* Chaque monde : un dégradé "atmosphère" différent (modificateur BEM) */
@@ -247,7 +248,7 @@
         <!-- Section hero -->
         <section id="hero"
             class="hero relative bg-storm bg-[url(media/hero/hero.jpg)] bg-cover bg-right md:bg-center bg-no-repeat w-full  min-h-100 max-h-175 md:min-h-125 md:max-h-225 border-b-4 border-parchment-dim overflow-hidden">
-            <div class="hero__overlay absolute inset-0 bg-abyss/40 z-0" aria-hidden="true"></div>
+            <div class="hero__overlay absolute inset-0 bg-abyss/70 z-0" aria-hidden="true"></div>
             <div class="relative z-10 flex items-center">
                 <div class="hero__container container mx-auto px-4 py-20">
                     <div
@@ -264,7 +265,7 @@
                                 récits.
                             </p>
                             <p
-                                class="hero__description hero__description--secondary text-parchment font-normal text-sm sm:text-base md:text-lg lg:text-xl [text-shadow:-0px_-2px_3px_rgba(0,0,0,1)] mb-5">
+                                class="hero__description hero__description--secondary text-parchment font-normal text-base sm:text-lg md:text-xl lg:text-2xl [text-shadow:-5px_7px_7px_rgba(0,0,0,0.5)]">
                                 Entre les brumes de Scadrial et les tempêtes de Roshar, un souffle commun unit tous
                                 les
                                 mondes : celui de l'Imagination. Ce sanctuaire est dédié à ceux qui croient que les
@@ -274,7 +275,7 @@
                                 commencement. Entrez, et laissez le Cosmere vous révéler ses secrets.</p>
                         </div>
                         <div
-                            class="hero__cta col-span-12 flex flex-col md:flex-row  justify-between md:justify-center gap-6">
+                            class="hero__cta col-span-12 flex flex-col md:flex-row  justify-between md:justify-center gap-6 mt-10">
                             <a class="hero__cta-link relative md:w-auto w-full px-3 py-2 rounded text-parchment text-base md:text-lg lg:text-xl font-extrabold items-center justify-center bg-abyss-light/60 hover:bg-storm transition-colors hover:uppercase  flex overflow-hidden hover:shadow-[0_0_25px_-5px_var(--color-ember-light)] group "
                                 href="auteurInfo.html">
                                 <span class="relative z-10 p-2">
@@ -307,20 +308,16 @@
                     <!-- Colonne gauche -->
                     <div class="univers____header col-start-2 col-end-12 lg:col-span-4 pb-7 pt-10">
                         <div class="univers-seal">
-                            <span class="univers-seal__label text-storm">Univers</span>
+                            <span class="univers-seal__label text-slate-card text-base font-bold ">Univers</span>
                             <div class="univers-seal__content">
                                 <h2 id="cosmere-title"
-                                    class="univers-title font-display text-4xl md:text-5xl mb-4 text-ember font-extrabold">
+                                    class="univers-title font-display text-4xl md:text-5xl mb-4 text-ember-dark font-extrabold">
                                     Un
                                     seul
                                     cosmos,<br>dix mondes</h2>
                                 <p class="univers-text">
                                     Depuis plus de vingt ans, Sanderson tisse patiemment un univers partagé,
-                                    <a href="oeuvresInfo.html"
-                                        class="univers-link text-ember hover:text-ember-dark hover:font-bold">
-                                        le
-                                        cosmere</a>. Chaque roman est une porte vers une
-                                    planète
+                                    le cosmere. Chaque roman est une porte vers une planète
                                     différente, mais tous obéissent à une même cosmologie sous-jacente, les Éclats
                                     d'Adonalsium.
                                 </p>
@@ -491,9 +488,9 @@
                                     d="M3 12h18M12 3c2.5 2.5 3.5 6 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-6-3.5-9s1-6.5 3.5-9Z" />
                             </svg>
                         </div>
-                        <p class="chiffres__valeur font-mono text-4xl sm:text-5xl text-ember-light" data-target="7"
+                        <h3 class="chiffres__valeur font-mono text-4xl sm:text-5xl text-ember-light" data-target="7"
                             data-suffix="">
-                            0</p>
+                            0</h3>
                         <p class="chiffres__label text-parchment/70 text-xs sm:text-sm uppercase tracking-wider mt-2">
                             Mondes du Cosmere<br>construits
                         </p>
@@ -509,8 +506,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 9h6M9 12h4" />
                             </svg>
                         </div>
-                        <p class="chiffres__valeur font-mono text-4xl sm:text-5xl text-ember-light" data-target="40"
-                            data-suffix="+">0</p>
+                        <h3 class="chiffres__valeur font-mono text-4xl sm:text-5xl text-ember-light" data-target="40"
+                            data-suffix="+">0</h3>
                         <p class="chiffres__label text-parchment/70 text-xs sm:text-sm uppercase tracking-wider mt-2">
                             Langues de traduction
                         </p>
@@ -528,11 +525,11 @@
                                     d="M9 15l-2.5 2.5M15 15l2.5 2.5M9 19l-1 2M15 19l1 2" />
                             </svg>
                         </div>
-                        <p class="chiffres__valeur font-mono text-4xl sm:text-5xl text-ember-light" data-target="41"
-                            data-suffix="M$">0</p>
-                        <p class="chiffres__label text-parchment/70 text-xs sm:text-sm uppercase tracking-wider mt-2">
+                        <h3 class="chiffres__valeur font-mono text-4xl sm:text-5xl text-ember-light" data-target="41"
+                            data-suffix="M$">0</h3>
+                        <z class="chiffres__label text-parchment/70 text-xs sm:text-sm uppercase tracking-wider mt-2">
                             Record Kickstarter <br>(2022)
-                        </p>
+                            </p>
                     </div>
                     <!-- 4 - années -->
                     <div
@@ -545,8 +542,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v13" />
                             </svg>
                         </div>
-                        <p class="chiffres__valeur font-mono text-4xl sm:text-5xl text-ember-light" data-target="20"
-                            data-suffix="+">0</p>
+                        <h3 class="chiffres__valeur font-mono text-4xl sm:text-5xl text-ember-light" data-target="20"
+                            data-suffix="+">0</h3>
                         <p class="chiffres__label text-parchment/70 text-xs sm:text-sm uppercase tracking-wider mt-2">
                             Années d'écriture
                         </p>
@@ -663,7 +660,7 @@
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>
     </footer>
 
     <!--Service Worker -->

@@ -106,6 +106,13 @@
         .serment__label--obligatoire {
             @apply text-[#f87171] pl-2.5;
         }
+
+        .serment__conditions .serment__erreur {
+            @apply text-[#b91c1c] text-base;
+        }
+        .serment__conditions .serment__label--obligatoire {
+            @apply text-[#b91c1c] text-base;
+        }
         
         .icone-cosmere {
             @apply w-10 h-10  transition-transform duration-300 bg-abyss;
@@ -192,7 +199,7 @@
                         <div
                             class="hero-guilde__content col-span-12 flex flex-col justify-center items-center md:col-start-3 md:col-end-11 gap-6">
                             <p
-                                class="hero-guilde__eyebrow font-mono text-ember-light uppercase tracking-[0.2em] text-base font-bold mb-3">
+                                class="hero-guilde__eyebrow font-mono text-ember-light uppercase tracking-[0.2em] text-base font-bold mb-3 bg-abyss/10">
                                 La guilde</p>
                             <h1 id="hero-guilde__title"
                                 class="hero-guilde__title hero__title font-display md:text-center  text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold pb-2 mb-5">
@@ -221,7 +228,7 @@
                     <div
                         class="temoignages__intro col-span-12 md:col-start-3 md:col-span-8 text-center mb-10  js-fade-in  ">
                         <h2 id="temoignages__titre"
-                            class="temoignages__titre  font-display text-ember text-2xl md:text-4xl font-bold text-center mb-10">
+                            class="temoignages__titre  font-display text-ember-dark text-2xl md:text-4xl font-bold text-center mb-10">
                             Le feu de la forge
                         </h2>
                         <p class="temoignages__text text-base sm:text-lg md:text-xl">
@@ -251,7 +258,7 @@
                                 </div>
                                 <div class="chat-header temoignages__entete font-bold">
                                     Kaladin_Lit
-                                    <span class="temoignages__rang text-parchment-dim">Chevalier</span>
+                                    <span class="temoignages__rang text-ember-dark">Chevalier</span>
                                 </div>
                                 <div class="chat-bubble temoignages__bulle bg-ember-light  shadow-lg shadow-ember-dark">
                                     <blockquote class="temoignages__citation">
@@ -277,10 +284,10 @@
                                 </div>
                                 <div class="chat-header temoignages__entete font-bold">
                                     Vin_Brumeuse
-                                    <span class="temoignages__rang text-parchment-dim">Écuyer</span>
+                                    <span class="temoignages__rang shadow-ember-dark">Écuyer</span>
                                 </div>
                                 <div
-                                    class="chat-bubble temoignages__bulle bg-storm text-parchment shadow-lg shadow-ember-dark">
+                                    class="chat-bubble temoignages__bulle bg-abyss-light text-parchment shadow-lg shadow-ember-dark">
                                     <blockquote class="temoignages__citation">
                                         « Fils-des-Brumes est le premier livre qui m'a fait croire
                                         en la magie des systèmes bien pensés. Un système de magie brillant et une
@@ -306,7 +313,7 @@
                                 </div>
                                 <div class="chat-header temoignages__entete font-bold">
                                     shellan_radieuse
-                                    <span class="temoignages__rang text-parchment-dim">Chevalier</span>
+                                    <span class="temoignages__rang shadow-ember-dark">Chevalier</span>
                                 </div>
                                 <div class="chat-bubble temoignages__bulle bg-ember-light shadow-lg shadow-ember-dark">
                                     <blockquote class="temoignages__citation">
@@ -332,10 +339,10 @@
                                 </div>
                                 <div class="chat-header temoignages__entete font-bold">
                                     LordRashek
-                                    <span class="temoignages__rang text-parchment-dim">Seigneur Radieux</span>
+                                    <span class="temoignages__rang shadow-ember-dark">Seigneur Radieux</span>
                                 </div>
                                 <div
-                                    class="chat-bubble temoignages__bulle bg-storm text-parchment shadow-lg shadow-ember-dark">
+                                    class="chat-bubble temoignages__bulle bg-abyss-light text-parchment shadow-lg shadow-ember-dark">
                                     <blockquote class="temoignages__citation">
                                         « Sanderson prend son temps pour construire son univers, et ça se sent. Roshar
                                         est d'une richesse folle, entre tempêtes dévastatrices et créatures fascinantes.
@@ -358,7 +365,7 @@
                                 </div>
                                 <div class="chat-header temoignages__entete font-bold">
                                     Kelsier89
-                                    <span class="temoignages__rang text-parchment-dim">Seigneur Radieux</span>
+                                    <span class="temoignages__rang shadow-ember-dark">Seigneur Radieux</span>
                                 </div>
                                 <div class="chat-bubble temoignages__bulle bg-ember-light shadow-lg shadow-ember-dark">
                                     <blockquote class="temoignages__citation">
@@ -383,10 +390,10 @@
                                 </div>
                                 <div class="chat-header temoignages__entete font-bold">
                                     Ela-Sarene
-                                    <span class="temoignages__rang text-parchment-dim">Écuyer</span>
+                                    <span class="temoignages__rang shadow-ember-dark">Écuyer</span>
                                 </div>
                                 <div
-                                    class="chat-bubble temoignages__bulle bg-storm text-parchment shadow-lg shadow-ember-dark">
+                                    class="chat-bubble temoignages__bulle bg-abyss-light text-parchment shadow-lg shadow-ember-dark">
                                     <blockquote class="temoignages__citation">
                                         « Chaque tome du Cosmère me surprend par sa cohérence. Sanderson maîtrise
                                         parfaitement le rythme entre action et développement des personnages. Un auteur
@@ -411,7 +418,7 @@
             <div class="relative z-10 flex items-center">
                 <div class="serment__container container mx-auto js-fade-in ">
                     <div class="serment__grid grid grid-cols-12 gap-4 px-6 py-16">
-                        <div class="serment__intro col-span-12 text-center mb-10">
+                        <div class="serment__intro col-span-12 text-center mb-10 bg-abyss/10">
                             <h2 id="serment__titre"
                                 class="serment__titre font-display text-ember text-3xl md:text-4xl font-bold text-center mb-10">
                                 Prêter Serment
@@ -428,7 +435,7 @@
                             </p>
                         </div>
                         <form id="formSerment"
-                            class="serment__form col-span-12 md:col-span-10 md:col-start-2 grid grid-cols-12 gap-4 border-4 border-storm/20 hover:border-storm/40 p-5 rounded-xl"
+                            class="serment__form col-span-12 md:col-span-10 md:col-start-2 grid grid-cols-12 gap-4 border-4 border-storm/20 hover:border-storm/40 p-5 rounded-xl bg-abyss/10"
                             novalidate aria-describedby="serment-instructions">
 
                             <div class="serment__champ col-span-12 md:col-span-6">
@@ -546,7 +553,7 @@
                                 <legend class="sr-only">Conditions et abonnement</legend>
                                 <img src="media/gifs/stormlight-cosmere.gif"
                                     class="col-span-4 row-span-3 border rounded-xl w-full h-full object-cover"
-                                    alt="Pixel art de Kaladin levant la main pour réciter un idéal ou prêter un serment, aux côtés de Syl la spren.">
+                                    alt="Pixel art de Kaladin levant la main pour réciter un idéal ou prêter un serment.">
                                 <div class="serment__champ col-span-8 row-span-1 flex items-center gap-2">
                                     <input type="checkbox" id="reglement" name="reglement"
                                         class="serment__checkbox checkbox checkbox-lg border-storm bg-storm checked:border-ember checked:bg-ember checked:text-abyss">

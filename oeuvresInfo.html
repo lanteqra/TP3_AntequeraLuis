@@ -203,7 +203,7 @@
         <!-- Section hero-oeuvres -->
         <section id="hero-oeuvres"
             class="hero-oeuvres relative bg-storm bg-[url(media/hero/bgsections/bgcosmere3.webp)] bg-cover bg-right md:bg-center bg-no-repeat h-full border-b-4 border-parchment-dim overflow-hidden  py-7 px-6"
-            aria-labelledby="hero-oeuvres__titre">
+            aria-labelledby="hero-oeuvres__title">
             <div class="hero-oeuvres__overlay absolute inset-0 bg-abyss/40 z-0" aria-hidden="true"></div>
             <div class="relative z-10 flex items-center">
                 <div class="hero-oeuvres__container js-fade-in container mx-auto px-4">
@@ -211,9 +211,9 @@
                         <div
                             class="hero-oeuvres__content col-span-12  flex flex-col justify-center md:col-start-3 md:col-end-11 gap-6">
                             <p
-                                class="hero-oeuvres__eyebrow font-mono text-ember-light uppercase tracking-[0.2em] text-base mb-3">
+                                class="hero-oeuvres__eyebrow font-mono text-ember-light uppercase tracking-[0.2em] text-base mb-3 bg-abyss/10">
                                 Le Cosmere</p>
-                            <h1
+                            <h1 id="hero-oeuvres__title"
                                 class="hero-oeuvres__title hero__title font-display md:text-center  text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold [text-shadow:-5px_7px_7px_rgba(0,0,0,0.5)] pb-2 mb-5">
                                 L'Atelier des Œuvres</h1>
                             <p
@@ -225,7 +225,7 @@
                                 unissent cette forge littéraire
                             </p>
                             <div class="hero-oeuvres__quote text-parchment font-normal text-sm sm:text-base md:text-lg lg:text-xl [text-shadow:-0px_-2px_3px_rgba(0,0,0,1)] mb-5
-                                border-l-2 border-ember pl-6 italic">
+                                border-l-2 border-ember pl-6 italic bg-abyss/10">
                                 <p class="hero-oeuvres__quote-text">
                                     "C'était incroyable combien de livres on pouvait entasser dans une pièce, <br> à
                                     condition de ne pas vouloir se déplacer beaucoup." <br><span>(“It was amazing how
@@ -1164,7 +1164,7 @@
                     <!-- Intro -->
                     <div class="col-start-2 col-end-12 cadeau__bloc js-fade-in text-center">
                         <h2 id="cadeau__titre"
-                            class="cadeau__titre catalogue__titre font-display text-ember text-3xl md:text-4xl font-bold text-center mb-10">
+                            class="cadeau__titre catalogue__titre font-display text-ember-light text-3xl md:text-4xl font-bold text-center mb-10">
                             Même le Forgeron offre <br> parfois ses créations
                         </h2>
                         <p
@@ -1254,7 +1254,7 @@
                         <div class="cadeau__overlay absolute inset-0 bg-abyss/60 z-0" aria-hidden="true"></div>
                         <div class="relative z-10 flex flex-col">
                             <h3
-                                class="cadeau__eclats-titre  inline-block font-mono text-2xl font-extrabold uppercase tracking-widest text-ember ">
+                                class="cadeau__eclats-titre  inline-block font-mono text-2xl font-extrabold uppercase tracking-widest text-ember bg-abyss/10">
                                 Autres éclats de la forge</h3>
                             <p class="cadeau__eclats-texte text-parchment text-base md:text-lg  max-w-2xl mb-7 p-2">
                                 Des fictions courtes </p>
@@ -1264,7 +1264,7 @@
                                 <li class="cadeau__eclat">
                                     <a href="https://www.brandonsanderson.com/blogs/blog/mistborn-the-eleventh-metal"
                                         target="_blank" rel="noopener noreferrer"
-                                        class="cadeau__eclat-lien forge-btn forge-btn--primary opacity-30 hover:opacity-80"
+                                        class="cadeau__eclat-lien forge-btn forge-btn--primary"
                                         aria-label="Lire The Eleventh Metal, nouvelle Mistborn (ouvre un nouvel onglet, en anglais)">
                                         <span class="cadeau__eclat-icone px-5" aria-hidden="true"></span>
                                         The Eleventh Metal -
@@ -1275,7 +1275,7 @@
                                 <li class="cadeau__eclat">
                                     <a href="https://www.brandonsanderson.com/blogs/blog/the-hope-of-elantris"
                                         target="_blank" rel="noopener noreferrer"
-                                        class="cadeau__eclat-lien  forge-btn forge-btn--primary opacity-30 hover:opacity-80"
+                                        class="cadeau__eclat-lien  forge-btn forge-btn--primary"
                                         aria-label="Lire The Hope of Elantris (ouvre un nouvel onglet, en anglais)">
                                         <span class="cadeau__eclat-icone px-5" aria-hidden="true"></span>
                                         The Hope of Elantris -
@@ -1286,7 +1286,7 @@
                                 <li class="cadeau__eclat">
                                     <a href="https://www.brandonsanderson.com/blogs/blog/defending-elysium"
                                         target="_blank" rel="noopener noreferrer"
-                                        class="cadeau__eclat-lien forge-btn forge-btn--primary opacity-30 hover:opacity-80"
+                                        class="cadeau__eclat-lien forge-btn forge-btn--primary"
                                         aria-label="Lire Defending Elysium (ouvre un nouvel onglet, en anglais)">
                                         <span class="cadeau__eclat-icone px-5" aria-hidden="true"></span>
                                         Defending Elysium -
@@ -1297,7 +1297,7 @@
                                 <li class="cadeau__eclat">
                                     <a href="https://reactormag.com/firstborn/" target="_blank"
                                         rel="noopener noreferrer"
-                                        class="cadeau__eclat-lien link forge-btn forge-btn--primary opacity-30 hover:opacity-80"
+                                        class="cadeau__eclat-lien link forge-btn forge-btn--primary"
                                         aria-label="Lire Firstborn sur Reactor Magazine (ouvre un nouvel onglet, en anglais)">
                                         <span class="cadeau__eclat-icone px-5" aria-hidden="true"></span>
                                         Firstborn -
@@ -1308,7 +1308,7 @@
                                 <li class="cadeau__eclat">
                                     <a href="https://www.brandonsanderson.com/blogs/blog/i-hate-dragons-extended-version"
                                         target="_blank" rel="noopener noreferrer"
-                                        class="cadeau__eclat-lien forge-btn forge-btn--primary opacity-30 hover:opacity-80"
+                                        class="cadeau__eclat-lien forge-btn forge-btn--primary"
                                         aria-label="Lire I Hate Dragons, version étendue (ouvre un nouvel onglet, en anglais)">
                                         <span class="cadeau__eclat-icone px-5" aria-hidden="true"></span>
                                         I Hate Dragons -

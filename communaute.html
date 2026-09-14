@@ -26,11 +26,11 @@
     <script src="js/navbar.js" defer></script>
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css"
-        integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" defer>
+        integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous">
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css">
     <!-- Style Tailwind -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -188,7 +188,7 @@
             <div class="hero-guilde__overlay absolute inset-0 bg-abyss/60 z-0" aria-hidden="true"></div>
             <div class="relative z-10 flex items-center">
                 <div class="hero-guilde__container js-fade-in container mx-auto px-4">
-                    <div class="hero-guilde__grid grid grid-cols-12items-center text-center mt-10 mb-10 gap-6">
+                    <div class="hero-guilde__grid grid grid-cols-12 items-center text-center mt-10 mb-10 gap-6">
                         <div
                             class="hero-guilde__content col-span-12 flex flex-col justify-center items-center md:col-start-3 md:col-end-11 gap-6">
                             <p
@@ -436,7 +436,7 @@
                                         class="serment__label serment__label--obligatoire">*</span></label>
                                 <input type="text" id="nom" name="nom" class="serment__input w-full"
                                     aria-describedby="err-nom" placeholder="exe: Kaladin89" required>
-                                <p id="err-nom" class="serment__erreur text-sm" role="alert" aria-live="polite"></p>
+                                <span id="err-nom" class="serment__erreur text-sm" role="alert" aria-live="polite"></span>
                             </div>
 
                             <div class="serment__champ col-span-12 md:col-span-6">
@@ -444,8 +444,8 @@
                                         class="serment__label serment__label--obligatoire">*</span></label>
                                 <input type="email" id="courriel" name="courriel" class="serment__input w-full"
                                     aria-describedby="err-courriel" placeholder="exe: kaladin89@laforge.com" required>
-                                <p id="err-courriel" class="serment__erreur text-sm" role="alert" aria-live="polite">
-                                </p>
+                                <span id="err-courriel" class="serment__erreur text-sm" role="alert" aria-live="polite">
+                                </span>
                             </div>
 
                             <div class="serment__champ col-span-12 md:col-span-6">
@@ -459,7 +459,7 @@
                                     <option value="25-34">25-34 ans</option>
                                     <option value="35+">35 ans et plus</option>
                                 </select>
-                                <p id="err-age" class="serment__erreur text-sm" role="alert" aria-live="polite"></p>
+                                <span id="err-age" class="serment__erreur text-sm" role="alert" aria-live="polite"></span>
                             </div>
 
                             <div class="serment__champ col-span-12 md:col-span-6">
@@ -473,7 +473,7 @@
                                     <option value="elantris">Elantris</option>
                                     <option value="ame-empereur">L'Âme de l'Empereur</option>
                                 </select>
-                                <p id="err-saga" class="serment__erreur text-sm" role="alert" aria-live="polite"></p>
+                                <span id="err-saga" class="serment__erreur text-sm" role="alert" aria-live="polite"></span>
                             </div>
 
                             <div class="serment__champ col-span-12">
@@ -481,8 +481,8 @@
                                         class="serment__label serment__label--obligatoire">*</span></label>
                                 <input type="text" id="personnage" name="personnage" class="serment__input w-full"
                                     aria-describedby="err-personnage" placeholder="exe: Kaladin, ..." required>
-                                <p id="err-personnage" class="serment__erreur text-sm" role="alert" aria-live="polite">
-                                </p>
+                                <span id="err-personnage" class="serment__erreur text-sm" role="alert" aria-live="polite">
+                                </span>
                             </div>
 
                             <fieldset id="rang-group"
@@ -494,23 +494,23 @@
                                 <div class="flex flex-col sm:flex-row  justify-around mt-4 gap-2.5">
                                     <label class="inline-flex items-center gap-2 cursor-pointer">
                                         <input type="radio" name="rang" value="ecuyer" required
-                                            class="radio radio-lg bg-parchment border-ember-light checked:text-ember checked:border-ember" />
+                                            class="radio radio-lg bg-parchment border-ember-light checked:text-ember checked:border-ember">
                                         Écuyer
                                     </label>
 
                                     <label class="inline-flex items-center gap-2 cursor-pointer">
                                         <input type="radio" name="rang" value="chevalier"
-                                            class="radio radio-lg bg-parchment border-ember-light checked:text-ember checked:border-ember" />
+                                            class="radio radio-lg bg-parchment border-ember-light checked:text-ember checked:border-ember">
                                         Chevalier
                                     </label>
 
                                     <label class="inline-flex items-center gap-2 cursor-pointer">
                                         <input type="radio" name="rang" value="seigneur"
-                                            class="radio radio-lg bg-parchment border-ember-light checked:text-ember checked:border-ember" />
+                                            class="radio radio-lg bg-parchment border-ember-light checked:text-ember checked:border-ember">
                                         Seigneur Radieux
                                     </label>
                                 </div>
-                                <p id="err-rang" class="serment__erreur text-sm" role="alert" aria-live="polite"></p>
+                                <span id="err-rang" class="serment__erreur text-sm" role="alert" aria-live="polite"></span>
                             </fieldset>
 
                             <div class="serment__champ col-span-12 md:col-span-6">
@@ -524,8 +524,8 @@
                                     <option value="mensuelle">Mensuelle</option>
                                     <option value="occasionnelle">Occasionnelle</option>
                                 </select>
-                                <p id="err-frequence" class="serment__erreur text-sm" role="alert" aria-live="polite">
-                                </p>
+                                <span id="err-frequence" class="serment__erreur text-sm" role="alert" aria-live="polite">
+                                </span>
                             </div>
 
                             <div class="serment__champ col-span-12">
@@ -537,7 +537,7 @@
                                     aria-describedby="err-message"
                                     placeholder="Raconte-nous ce qui t'a mené jusqu'ici, écuyer... ton premier livre du Cosmère, le personnage qui t'a marqué, ou simplement pourquoi tu veux rejoindre la guilde."
                                     required></textarea>
-                                <p id="err-message" class="serment__erreur text-sm" role="alert" aria-live="polite"></p>
+                                <span id="err-message" class="serment__erreur text-sm" role="alert" aria-live="polite"></span>
                             </div>
 
 
@@ -549,7 +549,7 @@
                                     alt="Pixel art de Kaladin levant la main pour réciter un idéal ou prêter un serment, aux côtés de Syl la spren.">
                                 <div class="serment__champ col-span-8 row-span-1 flex items-center gap-2">
                                     <input type="checkbox" id="reglement" name="reglement"
-                                        class="serment__checkbox checkbox checkbox-lg border-storm bg-storm checked:border-ember checked:bg-ember checked:text-abyss" />
+                                        class="serment__checkbox checkbox checkbox-lg border-storm bg-storm checked:border-ember checked:bg-ember checked:text-abyss">
                                     <label for="reglement" class="serment__label">J'accepte le règlement de la guilde
                                         <span class="serment__label serment__label--obligatoire">*</span></label>
                                 </div>
@@ -557,7 +557,7 @@
                                     aria-live="polite"></span>
                                 <div class="serment__champ col-span-8 flex items-center gap-2">
                                     <input type="checkbox" id="infolettre" name="infolettre"
-                                        class="serment__checkbox checkbox checkbox-lg border-storm bg-storm checked:border-ember checked:bg-ember checked:text-abyss" />
+                                        class="serment__checkbox checkbox checkbox-lg border-storm bg-storm checked:border-ember checked:bg-ember checked:text-abyss">
                                     <label for="infolettre" class="serment__label">M'abonner à l'infolettre de la
                                         guilde</label>
                                 </div>
@@ -569,10 +569,10 @@
                                 </button>
                             </div>
 
-                            <p id="serment-confirmation"
+                            <span id="serment-confirmation"
                                 class="serment__confirmation hidden col-span-12 text-center mt-6 px-4 py-6 text-3xl font-bold  text-ember [text-shadow:-2px_3px_7px_#c77b3f]"
                                 role="status" aria-live="polite">
-                            </p>
+                            </span>
                         </form>
                     </div>
                 </div>
@@ -582,7 +582,7 @@
     </main>
     <footer class="footer bg-abyss text-parchment text-base border-t-4 border-parchment-dim">
         <div class="footer__container container mx-auto px-4 py-8">
-            <div class="footer__grid grid grid-cols-12 gap-4 items-center w-full">
+            <div class="footer__grid grid grid-cols-12 gap-4 items-center">
 
                 <!-- top left -->
                 <div
@@ -649,16 +649,18 @@
                         </p>
                     </div>
                     <div
-                        class="footer__bottom-right col-span-12 sm:col-span-6 flex flex-col justify-center text-center sm:text-right items-center md:items-end mt-2">
+                        class="footer__bottom-right col-span-12 sm:col-span-6  text-center sm:text-right items-center md:items-baseline mt-2">
+
                         <p class="footer__names">
                             <span class="footer__names--accent font-bold">
                                 Site integré par : </span><br>Luis Antequera
                         </p>
                     </div>
-
-
                 </div>
+
+
             </div>
+        </div>
     </footer>
 
     <!--Service Worker -->

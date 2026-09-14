@@ -142,12 +142,11 @@ function setErrorCheckbox(containerId, msg) {
     if (!container) return;
 
     const errorDisplay = document.getElementById("err-" + containerId);
-    if (errorDisplay) {
-        errorDisplay.innerText = msg;
-    }
+    if (errorDisplay) errorDisplay.textContent = msg;
 
     container.closest(".serment__champ").classList.add("error");
     container.closest(".serment__champ").classList.remove("success");
+
 }
 
 function setSuccessCheckbox(containerId) {
@@ -155,9 +154,7 @@ function setSuccessCheckbox(containerId) {
     if (!container) return;
 
     const errorDisplay = document.getElementById("err-" + containerId);
-    if (errorDisplay) {
-        errorDisplay.innerText = "";
-    }
+    if (errorDisplay) errorDisplay.textContent = "";
 
     container.closest(".serment__champ").classList.add("success");
     container.closest(".serment__champ").classList.remove("error");
@@ -168,9 +165,7 @@ function setErrorRadioGroup(containerId, msg) {
     if (!container) return;
 
     const errorDisplay = container.querySelector(".serment__erreur");
-    if (errorDisplay) {
-        errorDisplay.innerText = msg;
-    }
+    if (errorDisplay) errorDisplay.textContent = msg;
 
     container.classList.add("error");
     container.classList.remove("success");
@@ -181,9 +176,7 @@ function setSuccessRadioGroup(containerId) {
     if (!container) return;
 
     const errorDisplay = container.querySelector(".serment__erreur");
-    if (errorDisplay) {
-        errorDisplay.innerText = "";
-    }
+    if (errorDisplay) errorDisplay.textContent = "";
 
     container.classList.add("success");
     container.classList.remove("error");
@@ -193,9 +186,7 @@ const setError = (element, msg) => {
     const inputControl = element.closest ? element.closest(".serment__champ") : element;
     const errorDisplay = inputControl.querySelector(".serment__erreur");
 
-    if (errorDisplay) {
-        errorDisplay.innerText = msg;
-    }
+    if (errorDisplay) errorDisplay.textContent = msg;
 
     inputControl.classList.add("error");
     inputControl.classList.remove("success");
@@ -205,9 +196,7 @@ const setSuccess = (element) => {
     const inputControl = element.closest ? element.closest(".serment__champ") : element;
     const errorDisplay = inputControl.querySelector(".serment__erreur");
 
-    if (errorDisplay) {
-        errorDisplay.innerText = "";
-    }
+    if (errorDisplay) errorDisplay.textContent = "";
 
     inputControl.classList.add("success");
     inputControl.classList.remove("error");

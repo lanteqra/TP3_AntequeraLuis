@@ -1,7 +1,9 @@
 /*@import "tailwindcss";*/
 
+/* .navbar__menu — élément "menu" du bloc BEM "navbar" 
+(composant Tailwind documenté dans le README, section "Composants") */
 @media (min-width: 1024px) {
-    .top-navbar {
+    .navbar__menu {
         display: inline-flex !important;
     }
 }

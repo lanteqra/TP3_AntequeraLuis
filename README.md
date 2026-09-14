@@ -53,3 +53,19 @@ Comme le sujet était libre, j'ai choisi de faire un site web dédie à l'un de 
     - communaute.html - slideOnScroll.js - chaque bulle de chat  a (.js-slide-in) que glisse horizontalement à son entrée dans le viewport : celles marquées data-direction="gauche" arrivent depuis la gauche, celles marquées data-direction="droite" depuis la droite. GSAP + plugin ScrollTrigger, méthode ScrollTrigger.batch() pour déclencher l'animation en cascade (stagger: 0.15) lorsque plusieurs bulles entrent dans le viewport au même moment, plutôt qu'une simple boucle individuelle. - https://gsap.com/docs/v3/Plugins/ScrollTrigger/static.batch()/
 
 **note :** Tous les composants Tailwind () ainsi que les animations CSS et JavaScript utilisées dans ce projet ont été modifiés et adaptés à partir de leurs versions de base afin de correspondre à l'identité visuelle du projet (palette de couleurs, typographies et thème).
+
+## Validations :
+- HTML : 
+'index.html', 'auteurInfo.html', 'oeuvresInfo.html', 'communaute.html', 'offline.html',
+  Les pages HTML du site ont été validées avec succès via https://validator.w3.org/#validate_by_input
+  Mais Les seules erreurs/avertissements restants dans le rapport sont : 
+•	Les erreurs liées à la syntaxe Tailwind CSS (@theme, @apply), inhérentes à l'utilisation du CDN Tailwind Play, qui n'est pas reconnu par le validateur W3C car ce n'est pas du CSS standard.
+•	Les avertissements concernant l'attribut "name" des éléments personnalisés (<box-icon>) (web component de la librairie Boxicons), non reconnu par le validateur car il ne fait pas partie du schéma HTML standard.
+  Ces erreurs ont été approuvées et sont ignorées, tel que confirmé par le professeur.
+- CSS : "valide conformément à la recommandation CSS niveau 3 + SVG !" via https://jigsaw.w3.org/css-validator/validator.html.fr#validate_by_input
+- Méthodologie BEM : La méthodologie BEM a été appliquée de manière cohérente à l'ensemble des classes CSS du projet, assurant une structure claire et maintenable.
+- Score d'accessibilité Google - Lighthouse : 100% sur tous les pages.
+- Score d'accessibilité Wave ( Web accessibility evaluation tool - extension Chrome) : 10 / 10 sur tous les pages.
+- Notes sur les alertes restant en Wave : 
+**note :** sur les liens redondants (logo + "Accueil"), WAVE signale que le logo et le lien "Accueil" pointent vers la même URL (index.html). Ce choix est volontaire afin que les deux éléments restent pleinement fonctionnels et navigables pour tous les utilisateurs, y compris au clavier.
+
